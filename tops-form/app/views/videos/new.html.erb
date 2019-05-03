@@ -1,0 +1,76 @@
+<%=render 'header' %>
+<%= stylesheet_link_tag '/stylesheets/videos' %>
+
+</head>
+<body>
+<h2 class="ui center aligned icon header">
+  <i class="edit outline circular icon"></i>
+  <div class="content">
+    Video Log
+    <div class="sub header">Use this form to enter data for videos</div>
+  </div>
+</h2>
+<div class="ui container center aligned grid">
+
+ <div class="row">
+   <form action="/videos" method="POST" class="ui fluid centered form" style="margin-top: 30px">
+     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+     <div class=" two required fields">
+       <div class="field">
+         <label>Video Link</label>
+         <input type="text" name="link">
+       </div>
+       <div class="field">
+         <label>Author/Presenter</label>
+         <input type="text" name="presenter">
+       </div>
+     </div>
+     <div class="two required fields">
+       <div class="field">
+         <label for="">Video Need to be cut at</label>
+         <input type="text" name="cuts">
+       </div>
+       <div class="field">
+         <label f>Current Book Section</label>
+         <input type="text" name="section">
+       </div>
+     </div>
+     <div class="two required fields">
+       <div class="field">
+         <label>Topic</label>
+         <select class="ui search selection dropdown" name="topic">
+           <option value="">Type Topic Name</option>
+           <option value="151">Algebra</option>
+           <option value="152">Calculus Analysis</option>
+         </select>
+       </div>
+       <div class="field">
+         <label>Possible Course to use</label>
+         <select class="ui fluid search dropdown" multiple="" name = courses[]>
+           <option value="">Type Course Number</option>
+           <option value="151">151</option>
+           <option value="152">152</option>
+         </select>
+       </div>
+     </div>
+
+     <div class="field">
+       <label>Keywords</label>
+       <select class="ui fluid search dropdown" multiple="" name="keywords[]">
+         <option value="">State</option>
+         <option value="AL">Alabama</option>
+         <option value="AK">Alaska</option>
+         <option value="AZ">Arizona</option>
+         <option value="AR">Arkansas</option>
+         <option value="CA">California</option>
+         <option value="CO">Colorado</option>
+         <option value="CT">Connecticut</option>
+       </select>
+     </div>
+
+     <button style="color: white; margin: 20px 0 20px 0" class="ui big submit grey-bg button">Create</button>
+
+   </form>
+ </div>
+</div>
+

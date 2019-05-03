@@ -1,0 +1,40 @@
+<%= stylesheet_link_tag '/stylesheets/welcome' %>
+</head>
+<body>
+
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <%= image_tag("TAM-Logo.png", alt: "TAMU Logo" , class:"ui centered small image " )%>
+    <h1 class="ui  maroon-ltr header ">
+        Tier One Proposal (TOPS)
+    </h1>
+    <form class="ui big form">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <div class="ui huge  segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input type="text" name="username" placeholder="Username">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input type="password" name="password" placeholder="Password">
+          </div>
+        </div>
+        <a href="/videos/new"><div style="color: white" class="ui fluid submit maroon-bg button">Login</div></a>
+      </div>
+
+      <div class="ui error message"></div>
+
+    </form>
+  </div>
+</div>
+
+</body>
+
+</html>
+
+
+

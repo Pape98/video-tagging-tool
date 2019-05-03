@@ -1,0 +1,21 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "semantic-ui";
+
+.maroon{
+  background:#500000 !important;
+}
+
+#main-menu{
+  margin-top: 25px !important;
+  margin-bottom: 35px !important;
+}
+
+#main-menu > a {
+  color: white !important;
+}
+
+form{
+  width: 90%;
+}

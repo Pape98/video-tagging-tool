@@ -9,9 +9,9 @@ class VideosController < ApplicationController
   end
 
   def create
-    #@video = Video.new(video_params)
-    #
-    render plain: params[:courses].inspect
+    @video = Video.new(video_params)
+
+    render plain: "#{params[:cuts]}"
   end
 
   #
@@ -32,7 +32,7 @@ class VideosController < ApplicationController
   # end
 
   def video_params
-    params.require(:video).permit(:link, :courses, :cuts, :section, :keywords, :topic, :presenter)
+    params.permit(:link, :cuts, :courses, :section, :keywords, :topic, :presenter)
   end
 
 end

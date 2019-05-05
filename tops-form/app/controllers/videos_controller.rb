@@ -15,12 +15,12 @@ class VideosController < ApplicationController
 
 
   def edit
-    @video = Movie.find params[:id]
+    @video = Video.find params[:id]
   end
 
   def show
-    id = params[:id] # retrieve movie ID from URI route
-    @video = Movie.find(id) # look up movie by unique ID
+    id = params[:id]
+    @video = Video.find(id)
   end
   #
   # def update

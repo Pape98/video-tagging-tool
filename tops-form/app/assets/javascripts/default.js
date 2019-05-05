@@ -1,3 +1,29 @@
+function fillData(){
+
+    var courses =  $('#courses-label').data('courses');
+    var keywords =  $('#keywords-label').data('keywords');
+    var i;
+    for (i = 1; i < courses.length; i++) {
+        var course = courses[i];
+        var selection = "<a class=\"ui label transition visible\"data-value=" +
+            course + " style=\"display: inline-block !important;\">" +
+            course+"<i class=\"delete icon\"></i></a>";
+        $('#courses + i').after(selection);
+        $("#courses").val(course);
+        console.log($("#courses").val());
+    }
+
+    for (i = 1; i < keywords.length; i++) {
+        var keyword = keywords[i];
+        var selection = "<a class=\"ui label transition visible\"data-value=" +
+            keyword + " style=\"display: inline-block !important;\">" +
+            keyword+"<i class=\"delete icon\"></i></a>";
+        $('#keywords + i').after(selection);
+        $("#keywords").val(keyword);
+        $("#keywords").val();
+    }
+}
+
 $( document ).ready(function() {
     $('.dropdown').dropdown();
 
@@ -19,8 +45,11 @@ $( document ).ready(function() {
         ;
     })
 
+    fillData()
 
-});
+    })
+
+
 
 
 

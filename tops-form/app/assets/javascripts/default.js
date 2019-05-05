@@ -7,12 +7,19 @@ $( document ).ready(function() {
         var selection = "<a class=\"ui label transition visible\"data-value=" +
             cut + " style=\"display: inline-block !important;\">" +
             cut+"<i class=\"delete icon\"></i></a>"
-       // $('#cuts + i').after(selection);
         $('#cuts').append(option);
         $('#cuts + i').after(selection);
         $('#cuts').val(cut);
-        //alert($('#keywords').val())
     })
+    $('.video').click(function () {
+        var link = $(this).attr('data-link');
+        $('iframe').attr('src',link);
+        $('.ui.basic.modal')
+            .modal('show')
+        ;
+    })
+
+
 });
 
 

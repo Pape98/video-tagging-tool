@@ -15,7 +15,7 @@
   <table class="ui center aligned small celled striped table">
     <thead>
     <tr>
-      <th>ID</th>
+<!--      <th>ID</th>-->
       <th>Topic</th>
       <th>Book Section</th>
       <th>Presenter</th>
@@ -23,23 +23,42 @@
       <th>Courses</th>
       <th>Cuts</th>
       <th>Link</th>
+      <th>Update</th>
       <th></th>
     </tr>
     </thead>
     <tbody>
     <%@videos.each do |video|  %>
     <tr>
-      <td><%=video.id%></td>
+<!--      <td><%#=video.id%></td>-->
       <td><%=video.topic%></td>
       <td><%=video.section%></td>
       <td><%=video.presenter%></td>
       <td><%=video.keywords.join("  |  ")%></td>
       <td><%=video.courses.join("  |  ")%></td>
       <td><%=video.cuts.join("  |  ")%></td>
-      <td><a href="<%=video.link%>"><i class="linkify icon"></i></a></td>
+      <td><i class="blue video icon" data-link="<%=video.link%>"></i></td>
+      <td><a href="/videos/<%=video.id%>"><i class="green edit icon"></i></a></td>
       <td><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/videos/<%=video.id%>"><i class="red delete icon"></i></a></td>
     </tr>
     <%end %>
     </tbody>
   </table>
+</div>
+
+<div class="ui center aligned basic modal">
+  <div class="ui icon header">
+    <i class="video icon"></i>
+    Video
+  </div>
+  <div class="ui content" style="text-align: center">
+    <p>Make sure to pause video when done.</p>
+    <p><iframe width="620" height="400"></iframe></p>
+  </div>
+  <div class="actions">
+    <div class="ui red  cancel inverted button">
+      <i class="close icon"></i>
+      Exit
+    </div>
+  </div>
 </div>

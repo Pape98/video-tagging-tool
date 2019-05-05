@@ -28,7 +28,6 @@
          <label>Video Needs to be cut at:</label>
          <select class="ui fluid search dropdown" id="cuts" multiple="" name = "video[cuts][]" multiple>
            <option value="">Cut Times will appear here</option>
-           <option value="5:87">5:87</option>
          </select>
        </div>
        <div class="field">
@@ -64,22 +63,19 @@
      </div>
      <div class="field">
        <label>Keywords</label>
-       <select class="ui fluid search dropdown" multiple="" id ="keywords" name="video[keywords][]" multiple>
-         <option value="">Keywords</option>
-         <option value="Derivatives">Derivatives</option>
-         <option value="Matrix Multiplication">Matrix Multiplication</option>
-       </select>
+<!--       <select class="ui fluid search dropdown" multiple="" id ="keywords" name="video[keywords][]" multiple>-->
+<!--       </select>-->
+       <%= select("post", "keywords", keywords, {},{:id => 'keywords', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[keywords][]"})%>
      </div>
      <h4 class="ui dividing header">Others</h4>
-
-
-
 
      <button style="color: white; margin: 20px 0 20px 0" class="ui big submit grey-bg button">Create</button>
 
    </form>
 
 </div>
+
+
 
 
 

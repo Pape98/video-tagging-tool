@@ -1,8 +1,7 @@
-<%=render 'header' %>
 <%= stylesheet_link_tag '/stylesheets/videos' %>
-
 </head>
 <body>
+<%=render 'header' %>
 <h2 class="ui center aligned icon header">
   <i class="edit outline circular icon"></i>
   <div class="content">
@@ -18,16 +17,16 @@
      <div class=" two required fields">
        <div class="field">
          <label>Video Link</label>
-         <input type="text" name="link">
+         <input type="text" name="video[link]">
        </div>
        <div class="field">
          <label>Author/Presenter</label>
-         <input type="text" name="presenter">
+         <input type="text" name="video[presenter]">
        </div>
      </div>
        <div class=" field">
          <label>Video Needs to be cut at:</label>
-         <select class="ui fluid search dropdown" id="cuts" multiple="" name = cuts[]>
+         <select class="ui fluid search dropdown" id="cuts" multiple="" name = "video[cuts][]" multiple>
            <option value="">Cut Times will appear here</option>
            <option value="5:87">5:87</option>
          </select>
@@ -44,11 +43,11 @@
      <div class="two required fields">
        <div class="field">
          <label f>Current Book Section</label>
-         <input type="text" name="section">
+         <input type="text" name="video[section]">
        </div>
        <div class="field">
          <label>Topic</label>
-         <select class="ui search selection dropdown" name="topic">
+         <select class="ui search selection dropdown" name="video[topic]">
            <option value="">Type Topic Name</option>
            <option value="Algebra">Algebra</option>
            <option value="Calculus Analysis">Calculus Analysis</option>
@@ -57,7 +56,7 @@
      </div>
      <div class="field">
        <label>Possible Course to use</label>
-       <select class="ui fluid search dropdown" multiple="" name = courses[]>
+       <select class="ui fluid search dropdown" multiple="" name = "video[courses][]" multiple>
          <option value="">Type Course Number</option>
          <option value="151">151</option>
          <option value="152">152</option>
@@ -65,7 +64,7 @@
      </div>
      <div class="field">
        <label>Keywords</label>
-       <select class="ui fluid search dropdown" multiple="" id ="keywords" name="keywords[]">
+       <select class="ui fluid search dropdown" multiple="" id ="keywords" name="video[keywords][]" multiple>
          <option value="">Keywords</option>
          <option value="Derivatives">Derivatives</option>
          <option value="Matrix Multiplication">Matrix Multiplication</option>
@@ -81,6 +80,8 @@
    </form>
 
 </div>
+
+
 
 
 

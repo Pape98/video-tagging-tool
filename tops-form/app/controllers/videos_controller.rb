@@ -9,9 +9,8 @@ class VideosController < ApplicationController
   end
 
   def create
-    @video = Video.new(video_params)
-
-    render plain: "#{params[:cuts]}"
+    @video = Video.create!(video_params)
+    redirect_to :action=>"index", :controller=>"videos"
   end
 
   #
@@ -27,12 +26,15 @@ class VideosController < ApplicationController
   #
   # end
   #
-  # def destroy
-  #
-  # end
+  def destroy
+    @video = Video.find(params[:id])
+    @video.destroy
+    redirect_to videos_path
+  end
 
   def video_params
-    params.permit(:link, :cuts, :courses, :section, :keywords, :topic, :presenter)
+    puts "===============#{params}"
+    params.require(:video).permit(:link, :section,:topic, :presenter,:cuts => [], :courses => [], :keywords=> [])
   end
 
 end

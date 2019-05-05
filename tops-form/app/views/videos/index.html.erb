@@ -1,0 +1,45 @@
+<%= stylesheet_link_tag '/stylesheets/videos' %>
+</head>
+<body>
+<%=render 'header' %>
+
+<h2 class="ui center aligned icon header">
+  <i class="edit outline circular icon"></i>
+  <div class="content">
+    Videos Summary
+    <div class="sub header">This page contains information about videos and it is constantly updated</div>
+  </div>
+</h2>
+
+<div class="ui container">
+  <table class="ui center aligned small celled striped table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Topic</th>
+      <th>Book Section</th>
+      <th>Presenter</th>
+      <th>Keywords</th>
+      <th>Courses</th>
+      <th>Cuts</th>
+      <th>Link</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <%@videos.each do |video|  %>
+    <tr>
+      <td><%=video.id%></td>
+      <td><%=video.topic%></td>
+      <td><%=video.section%></td>
+      <td><%=video.presenter%></td>
+      <td><%=video.keywords.join("  |  ")%></td>
+      <td><%=video.courses.join("  |  ")%></td>
+      <td><%=video.cuts.join("  |  ")%></td>
+      <td><a href="<%=video.link%>"><i class="linkify icon"></i></a></td>
+      <td><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/videos/<%=video.id%>"><i class="red delete icon"></i></a></td>
+    </tr>
+    <%end %>
+    </tbody>
+  </table>
+</div>

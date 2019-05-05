@@ -55,7 +55,7 @@
      </div>
      <div class="field">
        <label>Possible Course to use</label>
-       <%= select("post", "courses", courses, {},{:id => 'courses', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[courses][]"})%>
+       <%= select("post", "courses", courses, {include_hidden: false },{:id => 'courses', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[courses][]"})%>
      </div>
      <div class="field">
        <label>Keywords</label>

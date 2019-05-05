@@ -5,11 +5,12 @@ class VideosController < ApplicationController
   end
 
   def new
-    @video = Video.new
+    # default: render 'new' template
   end
 
   def create
     @video = Video.create!(video_params)
+    @video.save
     redirect_to :action=>"index", :controller=>"videos"
   end
 
@@ -22,11 +23,18 @@ class VideosController < ApplicationController
     id = params[:id]
     @video = Video.find(id)
   end
-  #
-  # def update
-  #
-  # end
-  #
+
+  def update
+    @video = Video.find params[:id]
+    if @video.update(video_params)
+      redirect_to @video
+    else
+      render 'new'
+    end
+
+    # flash[:notice] = "#{@movie.title} was successfully updated."
+  end
+
   def destroy
     @video = Video.find(params[:id])
     @video.destroy
@@ -34,7 +42,6 @@ class VideosController < ApplicationController
   end
 
   def video_params
-    puts "===============#{params}"
     params.require(:video).permit(:link, :section,:topic, :presenter,:cuts => [], :courses => [], :keywords=> [])
   end
 

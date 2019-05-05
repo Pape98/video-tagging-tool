@@ -47,7 +47,7 @@
        <div class="field">
          <label>Topic</label>
          <select class="ui search selection dropdown" name="video[topic]">
-           <option value="">Type Topic Name</option>
+           <option value=""selected>Type Topic Name</option>
            <option value="Algebra">Algebra</option>
            <option value="Calculus Analysis">Calculus Analysis</option>
          </select>
@@ -59,7 +59,7 @@
      </div>
      <div class="field">
        <label>Keywords</label>
-       <%= select("post", "keywords", keywords, {},{:id => 'keywords', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[keywords][]"})%>
+       <%= select("post", "keywords", keywords, {include_hidden: false },{:id => 'keywords', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[keywords][]"})%>
      </div>
      <h4 class="ui dividing header">Others</h4>
 

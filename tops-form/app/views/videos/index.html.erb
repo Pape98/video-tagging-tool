@@ -34,8 +34,30 @@
       <td><%=video.topic%></td>
       <td><%=video.section%></td>
       <td><%=video.presenter%></td>
-      <td><%=video.keywords.join("  |  ")%></td>
-      <td><%=video.courses.join("  |  ")%></td>
+      <td>
+        <% video.keywords.each do |keyword| %>
+          <div class="ui  small label">
+            <%=keyword%>
+          </div>
+          <%end %>
+      </td>
+      <td>
+        <% video.courses.each do |course| %>
+          <%case course %>
+          <%when "141" %>
+          <div class="ui red small label">
+            <%=course%>
+          </div>
+          <%when "151" %>
+            <div class="ui yellow small label">
+              <%=course%>
+            </div>
+          <%when "251" %>
+            <div class="ui blue small label">
+              <%=course%>
+            </div>
+        <% end end  %>
+      </td>
       <td><%=video.cuts.join("  |  ")%></td>
       <td><i class="blue video icon" data-link="<%=video.link%>"></i></td>
       <td><a href="/videos/<%=video.id%>"><i class="green edit icon"></i></a></td>

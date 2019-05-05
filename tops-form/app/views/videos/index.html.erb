@@ -45,15 +45,31 @@
         <% video.courses.each do |course| %>
           <%case course %>
           <%when "141" %>
-          <div class="ui red small label">
+          <div class="ui black small label">
             <%=course%>
           </div>
-          <%when "151" %>
+          <%when "142" %>
             <div class="ui yellow small label">
               <%=course%>
             </div>
+          <%when "151" %>
+            <div class="ui pink small label">
+              <%=course%>
+            </div>
+          <%when "152" %>
+            <div class="ui orange small label">
+              <%=course%>
+            </div>
           <%when "251" %>
-            <div class="ui blue small label">
+            <div class="ui teal small label">
+              <%=course%>
+            </div>
+          <%when "304" %>
+            <div class="ui brown small label">
+              <%=course%>
+            </div>
+          <%when "308" %>
+            <div class="ui violet small label">
               <%=course%>
             </div>
         <% end end  %>

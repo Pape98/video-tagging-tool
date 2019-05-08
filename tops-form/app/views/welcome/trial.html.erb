@@ -1,0 +1,6 @@
+<form action="" class="ui form">
+  <div class="field">
+    <label id="keywords-label">Keywords</label>
+    <%= select("post", "keywords", keywords, {include_hidden: false },{:id => 'keywords', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[keywords][]", :value => "oa"})%>
+  </div>
+</form>

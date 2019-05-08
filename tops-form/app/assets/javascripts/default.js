@@ -17,7 +17,8 @@ function fillData(){
 
         for (i = 0; i < keywords.length; i++) {
             var keyword = keywords[i];
-            console.log(keyword)
+            // console.log(keyword)
+            $('div[data-value=\''+keyword+'\']').addClass("active filtered");
             var selection = "<a class=\"ui label transition visible\"data-value=" +
                 keyword + " style=\"display: inline-block !important;\">" +
                 keyword+"<i class=\"delete icon\"></i></a>";
@@ -27,7 +28,6 @@ function fillData(){
 
         for (i = 0; i < cuts.length; i++) {
             var cut = cuts[i];
-            console.log(cut)
             var option = "<option value=\""+cut+"\">"+cut+"</option>";
             var selection = "<a class=\"ui label transition visible\"data-value=" +
                 cut + " style=\"display: inline-block !important;\">" +
@@ -40,6 +40,14 @@ function fillData(){
 }
 
 $( document ).ready(function() {
+
+
+    $('a.ui.label.transition.visible').mouseover(function(){
+        console.log('selected...');
+    });
+
+    $('.menu .item').tab();
+
     $('.dropdown').dropdown();
 
     $('#enter-cut').click(function(){
@@ -59,6 +67,7 @@ $( document ).ready(function() {
             .modal('show')
         ;
     })
+
 
     fillData()
 

@@ -24,11 +24,12 @@
             </button>
           </a>
           <div class="content">
-            <form class="ui center aligned form">
-              <div class="field">
-                <input type="text" name="keyword" placeholder="Keyword">
-              </div>
-              <button class="ui basic blue button" type="submit">Add</button>
+            <form action="/keywords" method="POST" class="ui form" style="margin:0">
+              <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+               <div class="field">
+                <input type="text" name="name" placeholder="Keyword">
+               </div>
+               <button class="ui basic blue button" type="submit">Add</button>
             </form>
           </div>
         </div>
@@ -84,6 +85,167 @@
     <div class="ui list">
       <% keywords.each do |keyword| %>
         <%=keyword_c(keyword) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="D">
+    <div class="ui list">
+      <% keywords.each do |keyword| %>
+        <%=keyword_d(keyword) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="E">
+    <div class="ui list">
+      <% keywords.each do |keyword| %>
+        <%=keyword_e(keyword) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="F">
+    <div class="ui list">
+      <% keywords.each do |keyword| %>
+        <%=keyword_f(keyword) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="G">
+    <div class="ui list">
+      <% keywords.each do |keyword| %>
+        <%=keyword_g(keyword) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="H">
+    <div class="ui list">
+      <% keywords.each do |keyword| %>
+        <%=keyword_h(keyword) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="I">
+    <div class="ui list">
+      <% keywords.each do |keyword| %>
+        <%=keyword_i(keyword) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="J">
+    <div class="ui list">
+      <% keywords.each do |keyword| %>
+        <%=keyword_j(keyword) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="K">
+    <div class="ui list">
+      <% keywords.each do |keyword| %>
+        <%=keyword_k(keyword) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="L">
+    <div class="ui list">
+      <% keywords.each do |keyword| %>
+        <%=keyword_l(keyword) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="M">
+    <div class="ui list">
+      <% keywords.each do |keyword| %>
+        <%=keyword_m(keyword) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="N">
+    <div class="ui list">
+      <% keywords.each do |keyword| %>
+        <%=keyword_n(keyword) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="O">
+    <div class="ui list">
+      <% keywords.each do |keyword| %>
+        <%=keyword_o(keyword) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="P">
+    <div class="ui list">
+      <% keywords.each do |keyword| %>
+        <%=keyword_p(keyword) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="Q">
+    <div class="ui list">
+      <% keywords.each do |keyword| %>
+        <%=keyword_q(keyword) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="R">
+    <div class="ui list">
+      <% keywords.each do |keyword| %>
+        <%=keyword_r(keyword) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="S">
+    <div class="ui list">
+      <% keywords.each do |keyword| %>
+        <%=keyword_s(keyword) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="T">
+    <div class="ui list">
+      <% keywords.each do |keyword| %>
+        <%=keyword_t(keyword) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="U">
+    <div class="ui list">
+      <% keywords.each do |keyword| %>
+        <%=keyword_u(keyword) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="V">
+    <div class="ui list">
+      <% keywords.each do |keyword| %>
+        <%=keyword_v(keyword) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="W">
+    <div class="ui list">
+      <% keywords.each do |keyword| %>
+        <%=keyword_w(keyword) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="X">
+    <div class="ui list">
+      <% keywords.each do |keyword| %>
+        <%=keyword_x(keyword) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="Y">
+    <div class="ui list">
+      <% keywords.each do |keyword| %>
+        <%=keyword_y(keyword) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="Z">
+    <div class="ui list">
+      <% keywords.each do |keyword| %>
+        <%=keyword_z(keyword) %>
       <% end %>
     </div>
   </div>

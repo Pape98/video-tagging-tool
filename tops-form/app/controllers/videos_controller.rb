@@ -1,4 +1,12 @@
 class VideosController < ApplicationController
+  def trial
+    @video = Video.find('5ce7280622918608b34f0238')
+  end
+  @trial = []
+  def postrial
+    @trial = video_params[:keywords]
+    render plain:"#{@trial}"
+  end
 
   def index
     @videos = Video.all
@@ -42,7 +50,11 @@ class VideosController < ApplicationController
   end
 
   def video_params
-    params.require(:video).permit(:link, :section,:topic, :presenter,:cuts => [], :courses => [], :keywords=> [])
+    # if params[:video].key?(:keywords) == false
+    #   params[:video][:keywords] = []
+    # end
+
+      params.require(:video).permit(:link, :section,:topic, :presenter,:keywords=> [],:cuts => [], :courses => [])
   end
 
 end

@@ -2,6 +2,8 @@
 </head>
 <body>
 <%=render 'videos/header' %>
+
+
 <div class="ui center aligned grid">
   <div class="row">
     <h2 class="ui icon header">
@@ -12,12 +14,26 @@
       </div>
     </h2>
   </div>
-  <div class="row">
-    <button class="ui centered positive button">
-      <i class="plus icon"></i>
-      Add Keyword
-    </button>
-  </div>
+  <div class="center-role-form row" style="margin-top: -20px;">
+      <div class="ui secondary vertical accordion menu">
+        <div class="item">
+          <a class="title">
+            <button class="ui positive button" id="addKeyword">
+              <i class="plus icon"></i>
+              Add Keyword
+            </button>
+          </a>
+          <div class="content">
+            <form class="ui center aligned form">
+              <div class="field">
+                <input type="text" name="keyword" placeholder="Keyword">
+              </div>
+              <button class="ui basic blue button" type="submit">Add</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
 
 

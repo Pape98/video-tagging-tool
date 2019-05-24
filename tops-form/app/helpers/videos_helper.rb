@@ -21,5 +21,67 @@ module VideosHelper
     ]
   end
 
+  counter = 0
+
+  def choices value
+
+    choice = value
+    @html = "  <div class=\"field\">
+         <div class=\"ui radio checkbox\">
+           <input type=\"radio\" value=\"Strongly Agree\" name=\"#{choice}\" tabindex=\"0\" class=\"hidden\">
+           <label>Strongly Agree</label>
+         </div>
+       </div>
+      <div class=\"field\">
+         <div class=\"ui radio checkbox\">
+           <input type=\"radio\" value=\"Agree\" name=\"#{choice}\" tabindex=\"0\" class=\"hidden\">
+           <label> Agree</label>
+         </div>
+       </div>
+    <div class=\"field\">
+         <div class=\"ui radio checkbox\">
+           <input type=\"radio\" value=\"Disagree\" name=\"#{choice}\" tabindex=\"0\" class=\"hidden\">
+           <label>Disagree</label>
+         </div>
+       </div>
+        <div class=\"field\">
+         <div class=\"ui radio checkbox\">
+           <input type=\"radio\" value=\"Strongly Disagree\" name=\"#{choice}\" tabindex=\"0\" class=\"hidden\">
+           <label>Strongly Disagree</label>
+         </div>
+       </div>
+<div class=\"field\">
+         <div class=\"ui radio checkbox\">
+           <input type=\"radio\" value=\"Not Applicable\" name=\"#{choice}\" tabindex=\"0\" class=\"hidden\" checked>
+           <label>Not Applicable</label>
+         </div>
+       </div>".html_safe
+    return @html
+  end
+
+  def choices2 value
+
+    choice = value
+    @html = "  <div class=\"field\">
+         <div class=\"ui radio checkbox\">
+           <input type=\"radio\" value=\"Yes\" name=\"#{choice}\" tabindex=\"0\" class=\"hidden\">
+           <label>Yes</label>
+         </div>
+       </div>
+      <div class=\"field\">
+         <div class=\"ui radio checkbox\">
+           <input type=\"radio\" value=\"No\" name=\"#{choice}\" tabindex=\"0\" class=\"hidden\">
+           <label>No</label>
+         </div>
+       </div>
+    <div class=\"field\">
+         <div class=\"ui radio checkbox\">
+           <input type=\"radio\" value=\"Maybe\" name=\"#{choice}\" tabindex=\"0\" class=\"hidden\" checked>
+           <label>Maybe</label>
+         </div>
+       </div>".html_safe
+    return @html
+  end
+
 
 end

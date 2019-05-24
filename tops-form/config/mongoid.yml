@@ -23,13 +23,13 @@ development:
         #   tag_sets:
         #     - use: web
 
-        # The name of the user for authentication.
-        # user: 'user'
+        # The name of the name for authentication.
+        # name: 'name'
 
-        # The password of the user for authentication.
+        # The password of the name for authentication.
         # password: 'password'
 
-        # The user's database roles.
+        # The name's database roles.
         # roles:
         #   - 'dbOwner'
 
@@ -39,7 +39,7 @@ development:
         # Default on mongoDB 3.0 is :scram, default on 2.4 and 2.6 is :plain.
         # auth_mech: :scram
 
-        # The database or source to authenticate the user against.
+        # The database or source to authenticate the name against.
         # (default: the database specified above or admin)
         # auth_source: admin
 

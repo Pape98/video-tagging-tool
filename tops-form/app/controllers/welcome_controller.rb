@@ -2,6 +2,10 @@ class WelcomeController < ApplicationController
 
   def index
   end
-  def trial
+  def name
   end
+  def save
+
+  end
+
 end

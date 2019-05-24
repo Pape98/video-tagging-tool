@@ -3,8 +3,7 @@ function fillData(){
     var courses =  $('#courses-label').data('courses');
     var keywords =  $('#keywords-label').data('keywords');
     var cuts =  $('#cuts-label').data('cuts');
-console.log(keywords)
-    var i;
+
     if(courses != undefined) {
         $('#courses').dropdown('set selected',courses);
     }
@@ -12,9 +11,24 @@ console.log(keywords)
         $('#keywords').dropdown('set selected',keywords);
     }
     if(cuts != undefined) {
+        var i = 0;
+        for(i; i < cuts.length; ++i){
+            addCut(cuts[i]);
+        }
         $('#cuts').dropdown('set selected',cuts);
     }
 
+}
+
+function addCut(val){
+    var cut = val;
+    var option = "<option value=\""+cut+"\">"+cut+"</option>";
+    var selection = "<a class=\"ui label transition visible\"data-value=" +
+        cut + " style=\"display: inline-block !important;\">" +
+        cut+"<i class=\"delete icon\"></i></a>"
+    $('#cuts').append(option);
+    $('#cuts + i').after(selection);
+    $('#cuts').val(cut);
 }
 
 $( document ).ready(function() {
@@ -26,13 +40,7 @@ $( document ).ready(function() {
 
     $('#enter-cut').click(function(){
         var cut = $("#input-cut").val();
-        var option = "<option value=\""+cut+"\">"+cut+"</option>";
-        var selection = "<a class=\"ui label transition visible\"data-value=" +
-            cut + " style=\"display: inline-block !important;\">" +
-            cut+"<i class=\"delete icon\"></i></a>"
-        $('#cuts').append(option);
-        $('#cuts + i').after(selection);
-        $('#cuts').val(cut);
+       addCut(cut)
     })
 
     $('.video').click(function () {
@@ -54,6 +62,27 @@ $( document ).ready(function() {
     $('.ui.radio.checkbox').checkbox();
     fillData()
 
+    var cuts =  $('#cuts-label').data('cuts');
+    var formattedCuts = [];
+    var i = 0;
+    for(i; i < cuts.length; ++i){
+        var cut = {name: cuts[i].toString(), value: cuts[i].toString()};
+        formattedCuts.push(cut);
+    }
+    console.log(formattedCuts)
+
+    $('.cuts').dropdown({
+        apiSettings: {
+            responseAsync: function(settings, callback) {
+                const query = settings.urlData.query;
+                var response = {
+                    success: true,
+                    results: formattedCuts
+                };
+                callback(response);
+            }
+        }
+    });
 
     })
 

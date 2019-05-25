@@ -32,6 +32,8 @@ function addCut(val){
 
 $( document ).ready(function() {
 
+
+
     $('.edit')
         .popup({
             on: 'hover'

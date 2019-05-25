@@ -53,6 +53,29 @@ module VideosHelper
     return @hmtl
   end
 
+  def showchoice2 choice
+    case choice
+    when 'Yes'
+      @hmtl = '
+          <td colspan="2" class="center aligned"><i class="large green checkmark icon"></i></td>
+          <td colspan="2" class="center aligned"><i class="large red close icon"></i></td>
+          <td class="center aligned"><i class="large red close icon"></i></td>
+          '.html_safe
+    when 'No'
+      @hmtl = '
+          <td colspan="2" class="center aligned"><i class="large red close icon"></i></td>
+          <td colspan="2" class="center aligned"><i class="large green checkmark icon"></i></td>
+          <td class="center aligned"><i class="large red close icon"></i></td>
+          '.html_safe
+    when 'Maybe'
+      @hmtl = '
+          <td colspan="2" class="center aligned"><i class="large red close icon"></i></td>
+          <td colspan="2" class="center aligned"><i class="large red close icon"></i></td>
+          <td class="center aligned"><i class="large green checkmark icon"></i></td>'.html_safe
+    end
+    return @hmtl
+  end
+
   def courses
     [
         # "141 - Business Math I",

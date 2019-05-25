@@ -28,16 +28,17 @@
     <div class="center aligned eight wide column">
       <div class="ui 4:3 embed" data-url="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" data-placeholder="https://brandguide.tamu.edu/assets/img/logos/tam-stack.png" data-icon="right circle arrow"></div>
 
-      <a href="/videos/<%=@video.id %>/edit"> <div class="ui big blue basic button" style="margin-top: 20px">Edit</div></a>
+      <a href="/videos/<%=@video.id %>/edit"> <span class="ui big blue basic button" style="margin-top: 20px">Edit</span></a>
+      <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/videos/<%=@video.id%>"class="item" style="color:red"><span class="ui big red basic button" style="margin-top: 20px">Delete</span></a>
 
     </div>
     <div class="eight wide column">
       <table class="ui table" style="margin: 0 !important;">
-        <thead>
-        <tr><th class="five wide">Attributes</th>
-          <th class="eleven wide">Description</th>
-        </tr></thead>
         <tbody>
+        <tr class="beige-bg">
+          <td><b>Attributes</b></td>
+          <td><b>Description</b></td>
+        </tr>
         <tr>
           <td>ID</td>
           <td><%=@video.id%></td>
@@ -111,7 +112,7 @@
         <thead>
         </thead>
         <tbody>
-        <tr>
+        <tr class="beige-bg">
           <td colspan="6"><h3>Sound Quality</h3></td>
         </tr>
         <%= videochoices %>
@@ -138,7 +139,7 @@
         </tbody>
 
         <tbody>
-        <tr>
+        <tr class="beige-bg">
           <td colspan="6"><h3>Video Quality</h3></td>
         </tr>
         <%=videochoices %>
@@ -166,7 +167,7 @@
 
 
         <tbody>
-        <tr>
+        <tr class="beige-bg">
           <td colspan="6"><h3>Cognitive Load</h3></td>
         </tr>
         <%=videochoices %>
@@ -187,7 +188,7 @@
         </tbody>
 
         <tbody>
-        <tr>
+        <tr class="beige-bg">
           <td colspan="6"><h3>Content Quality</h3></td>
         </tr>
         <%=videochoices %>
@@ -211,7 +212,7 @@
 
 
         <tbody>
-        <tr>
+        <tr class="beige-bg">
           <td colspan="6"><h3>Content Organization/Preparation</h3></td>
         </tr>
         <%=videochoices %>
@@ -242,7 +243,7 @@
         </tbody>
 
         <tbody>
-        <tr>
+        <tr class="beige-bg">
           <td colspan="6"><h3>Quality of Visuals</h3></td>
         </tr>
         <%=videochoices %>
@@ -302,7 +303,7 @@
 
 
         <tbody>
-        <tr>
+        <tr class="beige-bg">
           <td colspan="6"><h3>Level of Engagement</h3></td>
         </tr>
         <%=videochoices %>
@@ -376,7 +377,7 @@
 
 
         <tbody>
-        <tr>
+        <tr class="beige-bg">
           <td colspan="8"><h3>Which best describe the type of video?</h3></td>
         </tr>
        <tr>
@@ -387,44 +388,34 @@
        </tr>
         <tr>
           <td>Problem video</td>
-          <td colspan="2"></td>
-          <td colspan="2"></td>
-          <td></td>
+          <%= showchoice2 @video.problem %>
         </tr>
 
         <tr>
           <td>Lecture</td>
-          <td colspan="2"></td>
-          <td colspan="2"></td>
-          <td></td>
+          <%= showchoice2 @video.lecture %>
         </tr>
 
         <tr>
           <td>Review</td>
-          <td colspan="2"></td>
-          <td colspan="2"></td>
-          <td></td>
+          <%= showchoice2 @video.review %>
         </tr>
 
         <tr>
           <td>Explaining a concept</td>
-          <td colspan="2"></td>
-          <td colspan="2"></td>
-          <td></td>
+          <%= showchoice2 @video.concept %>
         </tr>
 
         <tr>
           <td>Supplementary</td>
-          <td colspan="2"></td>
-          <td colspan="2"></td>
-          <td></td>
+          <%= showchoice2 @video.supplementary %>
         </tr>
 
         </tbody>
 
 
         <tbody>
-        <tr>
+        <tr class="beige-bg">
           <td colspan="8"><h3>The video also requires......</h3></td>
         </tr>
         <tr>
@@ -435,23 +426,17 @@
         </tr>
         <tr>
           <td>the student to print out a docment to follow along.</td>
-          <td colspan="2"></td>
-          <td colspan="2"></td>
-          <td></td>
+          <%= showchoice2 @video.print %>
         </tr>
 
         <tr>
           <td>the student to view an external website.</td>
-          <td colspan="2"></td>
-          <td colspan="2"></td>
-          <td></td>
+          <%= showchoice2 @video.view %>
         </tr>
 
         <tr>
           <td>the student to use additional software.</td>
-          <td colspan="2"></td>
-          <td colspan="2"></td>
-          <td></td>
+          <%= showchoice2 @video.use %>
         </tr>
 
         </tbody>

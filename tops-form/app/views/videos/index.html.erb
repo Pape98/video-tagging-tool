@@ -13,82 +13,79 @@
 <div class="ui container">
   <table class="ui very compact small center aligned celled striped table">
     <thead>
-    <tr>
-<!--      <th>ID</th>-->
-      <th>Topic</th>
-      <th>Book Section</th>
-      <th>Presenter</th>
-      <th>Keywords</th>
-      <th>Courses</th>
-      <th>Cuts</th>
-      <th></th>
-    </tr>
     </thead>
     <tbody>
+    <tr class="beige-bg">
+      <td>Topic</td>
+      <td>Book Section</td>
+      <td>Presenter</td>
+      <td>Keywords</td>
+      <td>Courses</td>
+      <td>Cuts</td>
+      <td></td>
+    </tr>
     <%@videos.each do |video|  %>
     <tr>
       <td class="edit" data-title="Last Edited By:" data-content="<%=video.lastEdit%>"><%=video.topic%></td>
       <td><%=video.section%></td>
       <td><%=video.presenter%></td>
       <td>
-        <div class="ui selection list">
          <% video.keywords.each do |keyword| %>
-            <div class="item">
-              <div class="ui black tiny label">
+            <span class="item">
+              <span class="ui grey tiny label" style="margin-top: 10px">
                 <%=keyword%>
-              </div>
-            </div>
+              </span>
+            </span>
           <%end %>
-        </div>
       </td>
       <td>
-        <div class="ui selection list">
+
         <% video.courses.each do |course| %>
           <%case course %>
           <%when "141" %>
-              <div class="item">
-          <div class="ui black tiny label">
+              <span class="item">
+          <span class="ui black tiny label" style="margin-top: 10px" >
             <%=course%>
-          </div>
-              </div>
+          </span>
+              </span>
           <%when "142" %>
-              <div class="item">
-            <div class="ui yellow tiny label">
+              <span class="item">
+            <span class="ui yellow tiny label" style="margin-top: 10px">
               <%=course%>
-            </div>
-              </div>
+            </span>
+              </span>
           <%when "151" %>
-              <div class="item">
-            <div class="ui pink tiny label">
+              <span class="item">
+            <span class="ui pink tiny label" style="margin-top: 10px">
               <%=course%>
-            </div>
-              </div>
+            </span>
+              </span>
           <%when "152" %>
-              <div class="item">
-            <div class="ui orange tiny label">
+              <span class="item">
+            <span class="ui orange tiny label" style="margin-top: 10px">
               <%=course%>
-            </div>
-              </div>
+            </span>
+              </span>
           <%when "251" %>
-              <div class="item">
-            <div class="ui teal tiny label">
+              <span class="item">
+            <span class="ui teal tiny label" style="margin-top: 10px">
               <%=course%>
-            </div>
-              </div>
+            </span>
+              </span>
           <%when "304" %>
-              <div class="item">
-            <div class="ui brown tiny label">
+              <span class="item">
+            <span class="ui brown tiny label" style="margin-top: 10px">
               <%=course%>
-            </div>
-              </div>
+            </span>
+              </span>
           <%when "308" %>
-              <div class="item">
-            <div class="ui violet tiny label">
+              <span class="item">
+            <span class="ui violet tiny label" style="margin-top: 10px">
               <%=course%>
-            </div>
-              </div>
+            </span>
+              </span>
         <% end end  %>
-        </div>
+
       </td>
       <td>
         <div class="ui selection list">

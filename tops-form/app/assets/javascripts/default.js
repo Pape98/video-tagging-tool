@@ -38,6 +38,9 @@ $( document ).ready(function() {
         })
     ;
 
+    $('.ui.embed').embed();
+
+
 
     $('.menu .item').tab();
 

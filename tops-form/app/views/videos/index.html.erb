@@ -21,8 +21,6 @@
       <th>Keywords</th>
       <th>Courses</th>
       <th>Cuts</th>
-      <th>Link</th>
-      <th>Update</th>
       <th></th>
     </tr>
     </thead>
@@ -103,9 +101,13 @@
         <%end %>
       </div>
       </td>
-      <td><i class="blue video icon" data-link="<%=video.link%>"></i></td>
-      <td><a href="/videos/<%=video.id%>/edit"><i class="green edit icon"></i></a></td>
-      <td><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/videos/<%=video.id%>"><i class="red delete icon"></i></a></td>
+    <td>
+      <div class="ui link list">
+      <a href="/videos/<%=video.id%>" class="item">View</a>
+      <a href="/videos/<%=video.id%>/edit" class="item">Update</a>
+      <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/videos/<%=video.id%>"class="item" style="color:red">Delete</a>
+      </div>
+    </td>
     </tr>
     <%end %>
     </tbody>

@@ -21,7 +21,7 @@
        </div>
        <div class="field">
          <label>Author/Presenter</label>
-         <input type="text" name="video[presenter]">
+         <%= select("post", "professors", professors, {include_hidden: false,include_blank: true },{:id => 'presenter', :multiple => false, :class => 'ui fluid search dropdown',:name => "video[presenter]"})%>
        </div>
      </div>
        <div class=" field">
@@ -59,7 +59,7 @@
      </div>
      <div class="field">
        <label>Keywords</label>
-       <%= select("post", "keywords", keywords, {include_hidden: false },{:id => 'keywords', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[keywords][]"})%>
+       <%= select("post", "keywords", keywordNames, {include_hidden: false },{:id => 'keywords', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[keywords][]"})%>
      </div>
 
      <h4 class="ui dividing header">Video Production and Quality</h4>

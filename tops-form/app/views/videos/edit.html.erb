@@ -20,7 +20,7 @@
       </div>
       <div class="field">
         <label>Author/Presenter</label>
-        <%= select("post", "professors", professors, {include_hidden: false },{:id => 'presenter', :multiple => false, :class => 'ui fluid search dropdown',:name => "video[presenter]"})%>
+        <%= select("post", "professors", professors, {include_hidden: false,include_blank: true },{:id => 'presenter', :multiple => false, :class => 'ui fluid search dropdown',:name => "video[presenter]"})%>
       </div>
     </div>
     <div class=" field">

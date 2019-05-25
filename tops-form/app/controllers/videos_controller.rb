@@ -18,7 +18,9 @@ class VideosController < ApplicationController
 
   def create
     @video = Video.create!(video_params)
+    @video.lastEdit = session[:username]
     @video.save
+    flash[:notice] = "Video has been created and has following id:'#{@video.id}'"
     redirect_to :action=>"index", :controller=>"videos"
   end
 
@@ -35,17 +37,20 @@ class VideosController < ApplicationController
   def update
     @video = Video.find params[:id]
     if @video.update(video_params)
+      flash[:notice] = "Video with id '#{@video.id}' has been updated."
+      @video.lastEdit = session[:username]
+      @video.save
       redirect_to @video
     else
       render 'new'
     end
 
-    # flash[:notice] = "#{@movie.title} was successfully updated."
   end
 
   def destroy
     @video = Video.find(params[:id])
     @video.destroy
+    flash[:notice] = "Video with id '#{@video.id}' has been deleted."
     redirect_to videos_path
   end
 

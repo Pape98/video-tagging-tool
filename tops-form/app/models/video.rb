@@ -8,4 +8,5 @@ class Video
   field :courses, type:Array,default: []
   field :keywords, type:Array,default: []
   field :cuts, type:Array,default: []
+  field :lastEdit, type:String
 end

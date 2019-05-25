@@ -11,3 +11,12 @@
     </div>
   </div>
 </div>
+
+<% if flash[:notice] %>
+  <div class="ui text container warning message">
+    <i class="close icon"></i>
+    <div class="header">
+      <%=flash[:notice] %>
+    </div>
+  </div>
+<% end %>

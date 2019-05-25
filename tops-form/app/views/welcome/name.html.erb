@@ -9,7 +9,7 @@
       Tier One Proposal (TOPS)
     </h1>
     <h3>Please enter your first and last Name</h3>
-    <form class="ui form">
+    <form class="ui form" action="/name/save" method="POST">
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <div class="ui big  segment">
         <div class="field">
@@ -18,9 +18,8 @@
             <input type="text" name="username" placeholder="Ex: John Smith">
           </div>
         </div>
-        <a href="/videos"><div style="color: white" class="ui fluid submit maroon-bg button">Next</div></a>
+        <button style="color: white" class="ui fluid submit maroon-bg button">Next</button>
       </div>
-
       <div class="ui error message"></div>
 
     </form>

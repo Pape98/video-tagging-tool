@@ -144,22 +144,22 @@
         <%=videochoices %>
         <tr>
           <td>Overall video moves smoothly and seamlessly from shot to shot. (e.g., writing on a SmartSympodium is smooth and doesn't just appear in a chuck.  You see the writing develop over time.)</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.overallSmooth %></td>
         </tr>
 
         <tr>
           <td>Any transitions that are used in the video are smooth and not distracting. (fade-in or fade-out is okay, transition from one video clip to next.)</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.transiton %></td>
         </tr>
 
         <tr>
           <td>The video is sharp, clear, and in focus.</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.sharpFocus %></td>
         </tr>
 
         <tr>
           <td>Digital effects are used appropriately for emphasis.  (e.g., added features like special effects, graphics. enhace for engagement/entertainment.)</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.effects %></td>
         </tr>
 
         </tbody>
@@ -172,17 +172,17 @@
         <%=videochoices %>
         <tr>
           <td>Uses on-screen text or symbols to highlight important information. (e.g., change in color contrast highlighting information, arrow appears on screen to draw attention to region of screen.)</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.symbol %></td>
         </tr>
 
         <tr>
           <td>Extraneous information is minimized. (i.e., Information delivered via the video is synthesized and to the point. Instructor stays on topic and does not ramble on tangents not relelvant to the informaiton in the video. Music or other auditory/visual aspects have meaning and are not randomly inserted.)</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.informationMinimized %></td>
         </tr>
 
         <tr>
           <td>Uses both auditory and visual channels to convey information. (e.g., while showing a picture or animation, the instructor also gives a verbal explanation of the visual.)</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.conveyMessage %></td>
         </tr>
         </tbody>
 
@@ -193,17 +193,17 @@
         <%=videochoices %>
         <tr>
           <td>Wording is accurate.</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.wordingAccurate %></td>
         </tr>
 
         <tr>
           <td>Wording is appropriate. (e.g., doesn't contain slang, not offensive, professional.)</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.wordingAppropriate %></td>
         </tr>
 
         <tr>
           <td>All the content in the video is accurate and contains no errors.</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.contentAccurate %></td>
 
         </tr>
 
@@ -217,24 +217,24 @@
         <%=videochoices %>
         <tr>
           <td>Content is organized and flows well.</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.contentOrganized %></td>
         </tr>
 
         <tr>
           <td>There are no irrelevant/extraneous references to any other content (i.e., other videos, textbook references, specific exercises, mention of upcoming assignments, etc.)</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.contentRelevant %></td>
         </tr>
 
         <tr>
           <td>There is no sequencing/numbering in the video that would prevent the video from being resequenced within a set of videos.</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.sequencing %></td>
 
 
         </tr>
 
         <tr>
           <td>The video does not reference any weblinks.</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.weblinks %></td>
 
 
         </tr>
@@ -248,52 +248,52 @@
         <%=videochoices %>
         <tr>
           <td>All graphics, video, audio, 3-D, or other enhancements are used effectively to enrich the learning experience.</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.graphicsEffective %></td>
 
         </tr>
 
         <tr>
           <td>Images/graphics are not distracting.</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.graphicsDistraction %></td>
 
         </tr>
 
         <tr>
           <td>Images are high quality (e.g., resolution, ratio aspect, etc.)</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.graphicsQuality %></td>
 
 
         </tr>
 
         <tr>
           <td>Colors used in images/graphics are appropriate.</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.graphicsAppropriate %></td>
 
 
         </tr>
 
         <tr>
           <td>Text size (typed, handwritten) is appropriate.</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.textAppropriate %></td>
 
 
         </tr>
 
         <tr>
           <td>Text/font style is consistent.</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.textConsistent %></td>
 
 
         </tr>
         <tr>
           <td>Amount of text on the slides is appropriate.</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.textAmount %></td>
 
 
         </tr>
         <tr>
           <td>Background is clean/consistent and not distracting.</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.background %></td>
 
 
         </tr>
@@ -308,13 +308,13 @@
         <%=videochoices %>
         <tr>
           <td>The video has interactive questions or features embedded that require the student to answer during the video.  (e.g., instructor asks a question and student pauses video to formulate answer to question.)</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.interactive %></td>
 
         </tr>
 
         <tr>
           <td>The video allows students to control movement of the video (i.e., skip ahead, go to different chapter)</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.studentControl %></td>
 
         </tr>
 
@@ -327,19 +327,19 @@
         <%=videochoices %>
         <tr>
           <td>The presenter is shown (as a talking head) at some point during the video.  </td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.shownPresenter %></td>
 
         </tr>
 
         <tr>
           <td>The video is between 6-10 minutes long or can be broken into videos of 6-10 minutes.</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.videoLength %></td>
 
         </tr>
 
         <tr>
           <td>The video has a personal feel to it.  The presenter comes across as talking to the viewer and not a general audience.</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.personal %></td>
 
 
         </tr>
@@ -347,7 +347,7 @@
 
         <tr>
           <td>The video contains some "moving" parts to it.  (i.e., it is not a slide presentation with a voice over). </td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.moving %></td>
 
 
         </tr>
@@ -355,20 +355,20 @@
 
         <tr>
           <td>The speaker is engaging and keeps the viewers attention (i.e., not monotone and uses voice inflection appropriately)</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.engaging %></td>
 
 
         </tr>
 
         <tr>
           <td>The speaker talks at a normal conversational pace (e.g., does not purposefully slow down).</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.normalPace %></td>
 
 
         </tr>
         <tr>
           <td>The speaker enunciates well.</td>
-          <%= showchoice @video.enhacements %></td>
+          <%= showchoice @video.enunciation %></td>
 
 
         </tr>

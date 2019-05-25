@@ -15,7 +15,8 @@ module VideosHelper
   def showchoice choice
     case choice
     when 'Strongly Agree'
-      @hmtl = ' <td class="center aligned"><i class="large green checkmark icon"></i></td>
+      @hmtl = '
+          <td class="center aligned"><i class="large green checkmark icon"></i></td>
           <td class="center aligned"><i class="large red close icon"></i></td>
           <td class="center aligned"><i class="large red close icon"></i></td>
           <td class="center aligned"><i class="large red close icon"></i></td>
@@ -35,14 +36,15 @@ module VideosHelper
           <td class="center aligned"><i class="large red close icon"></i></td>
           <td class="center aligned"><i class="large red close icon"></i></td>'.html_safe
     when 'Strongly Disagree'
-      @hmtl = ' <td class="center aligned"><i class="large green checkmark icon"></i></td>
+      @hmtl = '
             <td class="center aligned"><i class="large red close icon"></i></td>
             <td class="center aligned"><i class="large red close icon"></i></td>
             <td class="center aligned"><i class="large red close icon"></i></td>
-<td class="center aligned"><i class="large green checkmark icon"></i></td>
+            <td class="center aligned"><i class="large green checkmark icon"></i></td>
             <td class="center aligned"><i class="large red close icon"></i></td>'.html_safe
     when 'Not Applicable'
-      @hmtl = '<td class="center aligned"><i class="large red close icon"></i></td>
+      @hmtl = '
+            <td class="center aligned"><i class="large red close icon"></i></td>
             <td class="center aligned"><i class="large red close icon"></i></td>
             <td class="center aligned"><i class="large red close icon"></i></td>
             <td class="center aligned"><i class="large red close icon"></i></td>

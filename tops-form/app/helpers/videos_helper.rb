@@ -1,7 +1,7 @@
 module VideosHelper
 
   def videochoices
-    @hmtl = "<tr>
+    @hmtl = "<tr class=\"center aligned light-beige-bg\">
           <td class=\"eleven wide\"></td>
           <td class=\"one wide\"><b>Strongly Agree</b></td>
           <td class=\"one wide\"><b>Agree</b></td>

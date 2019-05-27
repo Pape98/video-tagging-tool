@@ -5,7 +5,7 @@ class WelcomeController < ApplicationController
   def name
   end
   def save
-    session[:username] = params[:username]
+    session[:username] = params[:name]
     redirect_to :action=>"index", :controller=>"videos"
   end
 

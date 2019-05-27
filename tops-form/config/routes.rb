@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :videos, :keywords
   get '/trial' , :to => 'videos#trial'
   post 'trial' , :to => 'videos#postrial'

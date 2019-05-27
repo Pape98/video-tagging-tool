@@ -1,0 +1,45 @@
+<%= stylesheet_link_tag '/stylesheets/welcome' %>
+</head>
+<body>
+
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <%= image_tag("TAM-Logo.png", alt: "TAMU Logo" , class:"ui centered small image " )%>
+    <h1 class="ui  maroon-ltr header ">
+      Tier One Proposal (TOPS)
+    </h1>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {:class => "ui form"}) do |f| %>
+      <div class="ui big  segment">
+        <div class="field">
+          <%= f.label :username %>
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </div>
+        </div>
+
+      <div class="field">
+        <%= f.label :password %>
+        <div class="ui left icon input">
+          <i class="lock icon"></i>
+          <%= f.password_field :password, autocomplete: "current-password" %>
+        </div>
+      </div>
+
+  <%# if devise_mapping.rememberable? %>
+<!--    <div class="field">-->
+      <%#= f.check_box :remember_me %>
+      <%#= f.label :remember_me %>
+<!--    </div>-->
+  <%# end %>
+
+      <div class="actions">
+        <%= f.submit "Log in", :class => 'ui fluid submit maroon-bg button' %>
+      </div>
+      </div>
+<% end %>
+    </div>
+    </div>
+
+<%#= render "devise/shared/links" %>

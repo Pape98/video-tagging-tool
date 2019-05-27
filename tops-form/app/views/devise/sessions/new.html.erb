@@ -2,6 +2,8 @@
 </head>
 <body>
 
+
+
 <div class="ui middle aligned center aligned grid">
   <div class="column">
     <%= image_tag("TAM-Logo.png", alt: "TAMU Logo" , class:"ui centered small image " )%>
@@ -15,7 +17,7 @@
           <%= f.label :username %>
           <div class="ui left icon input">
             <i class="user icon"></i>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
           </div>
         </div>
 

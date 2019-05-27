@@ -21,7 +21,7 @@
        </div>
        <div class="field">
          <label>Author/Presenter</label>
-         <%= select("post", "professors", professors, {include_hidden: false,include_blank: true },{:id => 'presenter', :multiple => false, :class => 'ui fluid search dropdown',:name => "video[presenter]"})%>
+         <%= select("post", "professors", professors.sort, {include_hidden: false,include_blank: true },{:id => 'presenter', :multiple => false, :class => 'ui fluid search dropdown',:name => "video[presenter]"})%>
        </div>
      </div>
        <div class=" field">
@@ -238,7 +238,7 @@
          </div>
          <div class="grouped fields">
            <label>The video is between 6-10 minutes long or can be broken into videos of 6-10 minutes.</label>
-           <%= choices "video-Length"%>
+           <%= choices "videoLength"%>
          </div>
          <div class="grouped fields">
            <label>The video has a personal feel to it.  The presenter comes across as talking to the viewer and not a general audience.</label>

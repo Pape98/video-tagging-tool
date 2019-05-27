@@ -19,7 +19,7 @@ class VideosController < ApplicationController
 
   def create
     @video = Video.create!(video_params)
-    @video.lastEdit = session[:username]
+    @video.lastEdit = session[:current_user_name]
     @video.save
     flash[:notice] = "Video has been created and has following id:'#{@video.id}'"
     redirect_to :action=>"index", :controller=>"videos"
@@ -40,7 +40,7 @@ class VideosController < ApplicationController
     @video = Video.find params[:id]
     if @video.update(video_params)
       flash[:notice] = "Video with id '#{@video.id}' has been updated."
-      @video.lastEdit = session[:username]
+      @video.lastEdit = session[:current_user_name]
       @video.save
       redirect_to @video
     else
@@ -59,7 +59,7 @@ class VideosController < ApplicationController
   def video_params
       params.require(:video).permit(:link, :section,:topic, :presenter,
                                     :voice, :noise,:volume,:enhacements,:overallSmooth,
-                                    :transiton,:sharpFocus,:effects,:symbol,:informationMinimized,
+                                    :transition,:sharpFocus,:effects,:symbol,:informationMinimized,
                                     :conveyMessage,:wordingAccurate,:wordingAppropriate,
                                     :contentAccurate,:contentOrganized,:contentRelevant,
                                     :sequencing,:weblinks,:graphicsEffective,:graphicsDistraction,

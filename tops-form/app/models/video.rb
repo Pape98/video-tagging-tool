@@ -14,7 +14,7 @@ class Video
   field :volume, type:String
   field :enhacements, type:String
   field :overallSmooth, type:String
-  field :transiton, type:String
+  field :transition, type:String
   field :sharpFocus, type:String
   field :effects, type:String
   field :symbol, type:String

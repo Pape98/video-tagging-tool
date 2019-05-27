@@ -22,9 +22,9 @@
       <div class="ui segment">
 
         <div class="field">
-          <label for="name">Name</label>
+          <label for="name">First and Last Name</label>
           <div class="ui left icon input">
-            <i class="user icon"></i>
+            <i class="user outline circular icon"></i>
             <input autofocus="autofocus" autocomplete="name" type="text" name="name" id="name" />
           </div>
         </div>
@@ -32,7 +32,7 @@
         <div class="field">
           <%= f.label :username %>
           <div class="ui left icon input">
-            <i class="user icon"></i>
+            <i class="circular user icon"></i>
             <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
           </div>
         </div>
@@ -40,7 +40,7 @@
       <div class="field">
         <%= f.label :password %>
         <div class="ui left icon input">
-          <i class="lock icon"></i>
+          <i class="lock circular icon"></i>
           <%= f.password_field :password, autocomplete: "current-password" %>
         </div>
       </div>

@@ -159,5 +159,110 @@ module VideosHelper
     return @html
   end
 
+  def choices3(value, choice)
+
+    case choice
+    when 'Strongly Agree'
+      a='checked'
+      b=''
+      c=''
+      d=''
+      e=''
+    when 'Agree'
+      a=''
+      b='checked'
+      c=''
+      d=''
+      e=''
+    when 'Disagree'
+      a=''
+      b=''
+      c='checked'
+      d=''
+      e=''
+    when 'Strongly Disagree'
+      a=''
+      b=''
+      c=''
+      d='checked'
+      e=''
+    when 'Not Applicable'
+      a=''
+      b=''
+      c=''
+      d=''
+      e='checked'
+    end
+    @html = "  <div class=\"field\">
+         <div class=\"ui radio checkbox\">
+           <input type=\"radio\" value=\"Strongly Agree\" name=\"video[#{value}]\" tabindex=\"0\" class=\"hidden\"#{a}>
+           <label>Strongly Agree</label>
+         </div>
+       </div>
+      <div class=\"field\">
+         <div class=\"ui radio checkbox\">
+           <input type=\"radio\" value=\"Agree\" name=\"video[#{value}]\" tabindex=\"0\" class=\"hidden\"#{b}>
+           <label> Agree</label>
+         </div>
+       </div>
+    <div class=\"field\">
+         <div class=\"ui radio checkbox\">
+           <input type=\"radio\" value=\"Disagree\" name=\"video[#{value}]\" tabindex=\"0\" class=\"hidden\"#{c}>
+           <label>Disagree</label>
+         </div>
+       </div>
+        <div class=\"field\">
+         <div class=\"ui radio checkbox\">
+           <input type=\"radio\" value=\"Strongly Disagree\" name=\"video[#{value}]\" tabindex=\"0\" class=\"hidden\"#{d}>
+           <label>Strongly Disagree</label>
+         </div>
+       </div>
+<div class=\"field\">
+         <div class=\"ui radio checkbox\">
+           <input type=\"radio\" value=\"Not Applicable\" name=\"video[#{value}]\" tabindex=\"0\" class=\"hidden\" #{e}>
+           <label>Not Applicable</label>
+         </div>
+       </div>".html_safe
+    return @html
+  end
+
+  def choices4 value, choice
+
+    case choice
+    when 'Yes'
+      a='checked'
+      b=''
+      c=''
+    when 'No'
+      a=''
+      b='checked'
+      c=''
+    when 'Maybe'
+      a=''
+      b=''
+      c='checked'
+    end
+    @html = "  <div class=\"field\">
+         <div class=\"ui radio checkbox\">
+           <input type=\"radio\" value=\"Yes\" name=\"video[#{value}]\" tabindex=\"0\" class=\"hidden\"#{a}>
+           <label>Yes</label>
+         </div>
+       </div>
+      <div class=\"field\">
+         <div class=\"ui radio checkbox\">
+           <input type=\"radio\" value=\"No\" name=\"video[#{value}]\" tabindex=\"0\" class=\"hidden\"#{b}>
+           <label>No</label>
+         </div>
+       </div>
+    <div class=\"field\">
+         <div class=\"ui radio checkbox\">
+           <input type=\"radio\" value=\"Maybe\" name=\"video[#{value}]\" tabindex=\"0\" class=\"hidden\" #{c}>
+           <label>Maybe</label>
+         </div>
+       </div>".html_safe
+    return @html
+  end
+
+
 
 end

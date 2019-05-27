@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :videos, :keywords
+  devise_for :users, controllers: { sessions: 'users/sessions' }
+  resources :videos
+  resources :keywords , only: [:index, :create, :destroy]
+
   get '/trial' , :to => 'videos#trial'
   post 'trial' , :to => 'videos#postrial'
-  get '/name' , :to => 'welcome#name'
-  post '/name/save', :to => 'welcome#save'
+
   root 'welcome#index'
 end

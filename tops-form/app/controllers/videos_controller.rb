@@ -1,4 +1,6 @@
 class VideosController < ApplicationController
+
+  before_action :authenticate_user!
   # def trial
   #   @video = Video.find('5ce7280622918608b34f0238')
   # end

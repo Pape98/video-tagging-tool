@@ -19,7 +19,16 @@
     <% end %>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {:class => "ui form"}) do |f| %>
-      <div class="ui big segment">
+      <div class="ui segment">
+
+        <div class="field">
+          <label for="name">Name</label>
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input autofocus="autofocus" autocomplete="name" type="text" name="name" id="name" />
+          </div>
+        </div>
+
         <div class="field">
           <%= f.label :username %>
           <div class="ui left icon input">

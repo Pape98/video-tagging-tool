@@ -8,7 +8,9 @@
     <a class="item">List of Topics</a>
     <div class="right menu">
       <span style="color: white" class=" item"><i class="inverted user icon"></i><%=session[:username]%></span>
-      <a style="color:white" class="item" href="/"><i class="sign-out alternate icon"></i>Logout</a>
+      <% if user_signed_in? %>
+        <a style="color: white"  class="item" rel="nofollow" data-method="delete" href="/users/sign_out"><i class="sign-out alternate icon"></i>Logout</a>
+      <% end %>
     </div>
   </div>
 </div>

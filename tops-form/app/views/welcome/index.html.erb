@@ -1,40 +1,30 @@
 <%= stylesheet_link_tag '/stylesheets/welcome' %>
 </head>
 <body>
-
+  <%# if user_signed_in? %>
+<%= stylesheet_link_tag '/stylesheets/welcome' %>
+</head>
+<body>
 
 <div class="ui middle aligned center aligned grid">
   <div class="column">
     <%= image_tag("TAM-Logo.png", alt: "TAMU Logo" , class:"ui centered small image " )%>
     <h1 class="ui  maroon-ltr header ">
-        Tier One Proposal (TOPS)
+      Tier One Proposal (TOPS)
     </h1>
-    <form class="ui form">
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-      <div class="ui big  segment">
-        <div class="field">
-          <div class="ui left icon input">
-            <i class="user icon"></i>
-            <input type="text" name="username" placeholder="Username">
-          </div>
-        </div>
-        <div class="field">
-          <div class="ui left icon input">
-            <i class="lock icon"></i>
-            <input type="password" name="password" placeholder="Password">
-          </div>
-        </div>
-        <a href="/name"><div style="color: white" class="ui fluid submit maroon-bg button">Login</div></a>
-        <div><%= link_to("Sign Up",new_user_registration_path,{class:"ui yellow button"}) %></div>
-        <div><%= link_to("Login",new_user_session_path,{class:"ui teal button"}) %></div>
-
-      </div>
-
-      <div class="ui error message"></div>
-
-    </form>
+    <% if alert %>
+      <div class="ui container negative message "><%= alert %></div>
+    <% end %>
+    <% if notice %>
+      <div class="ui container warning message"><%= notice %></div>
+    <% end %>
+    <div><%= link_to("Login",new_user_session_path,{class:"ui big maroon-bg button"}) %></div>
   </div>
 </div>
+
+    <div><%= link_to("Sign Up",new_user_registration_path,{class:"ui yellow button"}) %></div>
+
+
 
 
 

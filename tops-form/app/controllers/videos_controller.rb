@@ -18,11 +18,12 @@ class VideosController < ApplicationController
   end
 
   def create
-    @video = Video.create!(video_params)
-    @video.lastEdit = session[:current_user_name]
-    @video.save
-    flash[:notice] = "Video has been created and has following id:'#{@video.id}'"
-    redirect_to :action=>"index", :controller=>"videos"
+    # @video = Video.create!(video_params)
+    # @video.lastEdit = session[:current_user_name]
+    # @video.save
+    # flash[:notice] = "Video has been created and has following id:'#{@video.id}'"
+    # redirect_to :action=>"index", :controller=>"videos"
+    render :json => params[:video]
 
   end
 

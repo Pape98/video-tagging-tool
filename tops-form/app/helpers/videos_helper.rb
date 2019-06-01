@@ -263,6 +263,10 @@ module VideosHelper
     return @html
   end
 
+ def videotimes
+   Videotime.pluck(:time)
+ end
+
 
 
 end

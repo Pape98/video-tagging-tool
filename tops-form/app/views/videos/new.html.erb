@@ -24,19 +24,22 @@
          <%= select("post", "professors", professors.sort, {include_hidden: false,include_blank: true },{:id => 'presenter', :multiple => false, :class => 'ui fluid search dropdown',:name => "video[presenter]"})%>
        </div>
      </div>
+
+     <div class="two required fields">
        <div class=" field">
-         <label>Video Needs to be cut at:</label>
-         <select class="ui fluid search dropdown" id="cuts" multiple="" name = "video[cuts][]" multiple>
-           <option value="">Cut Times will appear here</option>
-         </select>
+         <label>Video Segments</label>
+<!--         <select class="ui fluid search dropdown" id="cuts" multiple="" name = "video[cuts][]" multiple>-->
+<!--           <option value="">Cut Times will appear here</option>-->
+<!--         </select>-->
+         <%= select("post", "videotimes", videotimes, {include_hidden: false,include_blank: true },{:id => 'videotime', :multiple => false, :class => 'ui fluid search dropdown',:name => "video[time]"})%>
+
        </div>
        <div class="field">
-         <label>Enter time here:</label>
-         <span class="ui action input">
-           <input type="text" placeholder="Search..." id="input-cut">
-           <a class="ui green button" id="enter-cut">Enter</a>
-         </span>
+         <label>Keywords</label>
+         <%= select("post", "keywords", keywordNames, {include_hidden: false },{:id => 'keywords', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[keywords][]"})%>
        </div>
+     </div>
+
 
      <h4 class="ui dividing header">Subject Information</h4>
      <div class="two required fields">
@@ -56,10 +59,6 @@
      <div class="field">
        <label>Possible Course to use</label>
        <%= select("post", "courses", courses, {include_hidden: false },{:id => 'courses', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[courses][]"})%>
-     </div>
-     <div class="field">
-       <label>Keywords</label>
-       <%= select("post", "keywords", keywordNames, {include_hidden: false },{:id => 'keywords', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[keywords][]"})%>
      </div>
 
      <h4 class="ui dividing header">Video Production and Quality</h4>

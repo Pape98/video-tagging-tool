@@ -7,7 +7,7 @@ class Video
   field :topic, type:String, default:""
   field :courses, type:Array,default: []
   field :keywords, type:Array,default: []
-  field :cuts, type:Array,default: []
+  field :segments, type:Array,default: []
   field :lastEdit, type:String
   field :voice, type:String
   field :noise, type:String

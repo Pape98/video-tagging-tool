@@ -13,13 +13,12 @@ class VideosController < ApplicationController
   end
 
   def create
-    # @video = Video.create!(video_params)
-    # @video.lastEdit = session[:current_user_name]
-    # @video.save
-    # flash[:notice] = "Video has been created and has following id:'#{@video.id}'"
-    # redirect_to :action=>"index", :controller=>"videos"
-    render :json => params
-
+    @video = Video.create!(video_params)
+    @video.lastEdit = session[:current_user_name]
+    @video.save
+    flash[:notice] = "Video has been created and has following id:'#{@video.id}'"
+    redirect_to :action=>"index", :controller=>"videos"
+    # render :json => params
   end
 
 
@@ -53,7 +52,7 @@ class VideosController < ApplicationController
   end
 
   def video_params
-      params.require(:video).permit(:link,:cut, :section,:topic, :presenter,
+      params.require(:video).permit(:link,:segments, :section,:topic, :presenter,
                                     :voice, :noise,:volume,:enhacements,:overallSmooth,
                                     :transition,:sharpFocus,:effects,:symbol,:informationMinimized,
                                     :conveyMessage,:wordingAccurate,:wordingAppropriate,

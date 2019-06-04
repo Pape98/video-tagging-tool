@@ -29,7 +29,7 @@
        <div class="field" id="timekeyword">
          <label>Segment Start Time/Keywords</label>
          <div class="ui action input">
-           <input type="text" placeholder="Ex: 08:23" name="video[segments[]][cuts]">
+           <input type="text" placeholder="Ex: 08:23" name="video[segments[]][cut]">
            <%= select("post", "keywords", keywordNames, {include_hidden: false },{:id => 'keywords', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[segments[]][keywords][]"})%>
            <div class="ui positive button" id="addField">Add</div>
          </div>
@@ -39,7 +39,7 @@
      <h4 class="ui dividing header">Subject Information</h4>
      <div class="two required fields">
        <div class="field">
-         <label f>Current Book Section</label>
+         <label>Current Book Section</label>
          <input type="text" name="video[section]">
        </div>
        <div class="field">

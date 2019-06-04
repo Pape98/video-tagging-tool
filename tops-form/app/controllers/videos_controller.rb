@@ -18,7 +18,7 @@ class VideosController < ApplicationController
     # @video.save
     # flash[:notice] = "Video has been created and has following id:'#{@video.id}'"
     # redirect_to :action=>"index", :controller=>"videos"
-    render :json => params[:video]
+    render :json => params
 
   end
 

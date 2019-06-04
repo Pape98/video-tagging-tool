@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0a37f72-05ba-4aa8-b013-57c2220d0975" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/javascripts/default.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/default.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/videos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/videos_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/videos/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/videos/new.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/videos/trial.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/videos/trial.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -41,41 +38,52 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/default.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="459" column="18" selection-start-line="459" selection-start-column="18" selection-end-line="459" selection-end-column="18" />
-              <folding>
-                <element signature="e#13274#13279#0" expanded="true" />
-                <element signature="e#13286#13291#0" expanded="true" />
-                <element signature="e#16224#16229#0" expanded="true" />
-                <element signature="e#19759#19764#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/videos/trial.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/videos/new.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="33" column="50" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/assets/javascripts/default.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="277">
+                  <caret line="61" column="120" selection-start-line="61" selection-start-column="120" selection-end-line="61" selection-end-column="120" />
+                  <folding>
+                    <element signature="e#13274#13279#0" expanded="true" />
+                    <element signature="e#13286#13291#0" expanded="true" />
+                    <element signature="e#16224#16229#0" expanded="true" />
+                    <element signature="e#19759#19764#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/videos/trial.html.erb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="120">
+                  <caret line="8" column="169" selection-start-line="8" selection-start-column="169" selection-end-line="8" selection-end-column="169" />
+                  <folding>
+                    <element signature="n#style#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/views/videos/trial.html.erb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="120">
+                  <caret line="8" column="183" selection-start-line="8" selection-start-column="183" selection-end-line="8" selection-end-column="183" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -143,8 +151,8 @@
         <option value="$PROJECT_DIR$/db/seeds.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/videos_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/videos/trial.html.erb" />
         <option value="$PROJECT_DIR$/app/views/videos/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/videos/trial.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/default.js" />
       </list>
     </option>
@@ -350,12 +358,12 @@
       <workItem from="1558989345321" duration="3256000" />
       <workItem from="1558998578226" duration="1750000" />
       <workItem from="1559417829222" duration="3562000" />
-      <workItem from="1559664848255" duration="2170000" />
+      <workItem from="1559664848255" duration="3847000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132889000" />
+    <option name="totallyTimeSpent" value="134566000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -370,7 +378,7 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16397415" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.16397415" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -672,31 +680,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/videos_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/videos/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-87">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="300">
+          <caret line="32" column="184" selection-start-line="32" selection-start-column="184" selection-end-line="32" selection-end-column="184" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/videos/new.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/videos_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="33" column="50" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="50" />
+        <state relative-caret-position="236">
+          <caret line="51" column="27" lean-forward="true" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/videos/trial.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+        <state relative-caret-position="120">
+          <caret line="8" column="169" selection-start-line="8" selection-start-column="169" selection-end-line="8" selection-end-column="169" />
+          <folding>
+            <element signature="n#style#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/default.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="459" column="18" selection-start-line="459" selection-start-column="18" selection-end-line="459" selection-end-column="18" />
+        <state relative-caret-position="277">
+          <caret line="61" column="120" selection-start-line="61" selection-start-column="120" selection-end-line="61" selection-end-column="120" />
           <folding>
             <element signature="e#13274#13279#0" expanded="true" />
             <element signature="e#13286#13291#0" expanded="true" />

@@ -53,7 +53,7 @@ class VideosController < ApplicationController
   end
 
   def video_params
-      params.require(:video).permit(:link, :section,:topic, :presenter,
+      params.require(:video).permit(:link,:cut, :section,:topic, :presenter,
                                     :voice, :noise,:volume,:enhacements,:overallSmooth,
                                     :transition,:sharpFocus,:effects,:symbol,:informationMinimized,
                                     :conveyMessage,:wordingAccurate,:wordingAppropriate,

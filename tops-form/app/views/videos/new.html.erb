@@ -29,7 +29,7 @@
        <div class="field" id="timekeyword">
          <label>Segment Start Time/Keywords</label>
          <div class="ui action input">
-           <input type="text" placeholder="Ex: 08:23" name="cut">
+           <input type="text" placeholder="Ex: 08:23" name="video[cuts][]">
            <%= select("post", "keywords", keywordNames, {include_hidden: false },{:id => 'keywords', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[keywords][]"})%>
            <div class="ui positive button" id="addField">Add</div>
          </div>

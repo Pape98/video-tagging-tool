@@ -55,10 +55,11 @@ $( document ).ready(function() {
         $.each($("#keywords option:selected"), function(){
             keywords.push($(this).val());
         });
+        console.log(keywords)
         var html = "<div class=\"field\">" +
             "         <div class=\"ui action input\">" +
-            " <input type=\"text\" placeholder=\"Ex: 08:23\" name=\"cut\">" +
-            "<select id=\"mfield\" multiple=\"multiple\" class=\"ui fluid search dropdown\" name=\"video[keywords][]\"><option value=\"Absolute\">Absolute</option>" +
+            " <input type=\"text\" placeholder=\"Ex: 08:23\" name=\"video[][cuts]\">" +
+            "<select id=\"keywords\" multiple=\"multiple\" class=\"ui fluid search dropdown\" name=\"video[][keywords][]\"><option value=\"Absolute\">Absolute</option>" +
             "<option value=\"Absolute Convergence\">Absolute Convergence</option>" +
             "<option value=\"Absolute Maximum\">Absolute Maximum</option>" +
             "<option value=\"Absolute Minimum\">Absolute Minimum</option>" +

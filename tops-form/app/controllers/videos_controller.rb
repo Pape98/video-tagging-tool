@@ -1,14 +1,9 @@
 class VideosController < ApplicationController
+  def trial
+  end
 
   before_action :authenticate_user!
-  # def trial
-  #   @video = Video.find('5ce7280622918608b34f0238')
-  # end
-  # @trial = []
-  # def postrial
-  #   @trial = video_params[:keywords]
-  #   render plain:"#{@trial}"
-  # end
+
 
   def index
     @videos = Video.all

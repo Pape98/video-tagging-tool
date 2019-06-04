@@ -1,23 +1,14 @@
 <div class="ui text container" style="margin-top: 20%">
-  <p><%=@video.keywords %></p>
-  <%= form_for(@video) do |f| %>
-<!--    <div class="field">-->
-<!--      <label id="keywords-label" data-keywords='<%#=@video.keywords %>'>Keywords</label>-->
-      <%#= select("post", "keywords", keywords, {include_hidden: false },{:id => 'keywords', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[keywords][]"})%>
-<!--    </div>-->
-    <div class="field">
-            <label id="keywords-label" data-keywords='<%=@video.keywords %>'>Keywords</label>
-      <select id="keywords" multiple="multiple" class="ui fluid search dropdown" name="video[keywords][]">
-      <option value="volvo">Volvo</option>
-      <option value="saab">Saab</option>
-      <option value="opel">Opel</option>
-      <option value="audi">Audi</option>
-    </select>
+  <form action="" class="ui form">
+    <div class="field" id="timekeyword">
+      <label>Segment Start Time/Keywords</label>
+      <div class="ui action input">
+        <input type="text" placeholder="Ex: 08:23" name="cut">
+        <%= select("post", "keywords", keywordNames, {include_hidden: false },{:id => 'keywords', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[keywords][]"})%>
+        <div class="ui positive button" id="addField">Add</div>
+      </div>
     </div>
-    <div class="ui big buttons" style="margin: 20px 0 20px 0">
-      <button style="color: white; "class="ui big submit grey-bg button">Save</button>
-    </div>
-  <% end  %>
+  </form>
 </div>
 
 

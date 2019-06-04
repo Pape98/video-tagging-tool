@@ -25,20 +25,15 @@
        </div>
      </div>
 
-     <div class="two required fields">
-       <div class=" field">
-         <label>Video Segments</label>
-<!--         <select class="ui fluid search dropdown" id="cuts" multiple="" name = "video[cuts][]" multiple>-->
-<!--           <option value="">Cut Times will appear here</option>-->
-<!--         </select>-->
-         <%= select("post", "videotimes", videotimes, {include_hidden: false,include_blank: true },{:id => 'videotime', :multiple => false, :class => 'ui fluid search dropdown',:name => "video[time]"})%>
 
+       <div class="field" id="timekeyword">
+         <label>Segment Start Time/Keywords</label>
+         <div class="ui action input">
+           <input type="text" placeholder="Ex: 08:23" name="cut">
+           <%= select("post", "keywords", keywordNames, {include_hidden: false },{:id => 'keywords', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[keywords][]"})%>
+           <div class="ui positive button" id="addField">Add</div>
+         </div>
        </div>
-       <div class="field">
-         <label>Keywords</label>
-         <%= select("post", "keywords", keywordNames, {include_hidden: false },{:id => 'keywords', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[keywords][]"})%>
-       </div>
-     </div>
 
 
      <h4 class="ui dividing header">Subject Information</h4>

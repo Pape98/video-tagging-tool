@@ -17,10 +17,8 @@
   <div class="row">
     <div class="center aligned eight wide column">
       <div class="ui 4:3 embed" data-url="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" data-placeholder="https://brandguide.tamu.edu/assets/img/logos/tam-stack.png" data-icon="right circle arrow"></div>
-
       <a href="/videos/<%=@video.id %>/edit"> <span class="ui big blue basic button" style="margin-top: 20px">Edit</span></a>
       <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/videos/<%=@video.id%>"class="item" style="color:red"><span class="ui big red basic button" style="margin-top: 20px">Delete</span></a>
-
     </div>
     <div class="eight wide column">
       <table class="ui table" style="margin: 0 !important;">
@@ -41,10 +39,10 @@
           <td>Link</td>
           <td><a href="<%=@video.link%>"><%=@video.link%></a></td>
         </tr>
-        <tr>
-          <td>Cuts</td>
-          <td></td>
-        </tr>
+<!--        <tr>-->
+<!--          <td>Segments</td>-->
+<!--          <td><%#=@video.segments[0][:cut]%></td>-->
+<!--        </tr>-->
         <tr>
           <td>Author/Presenter</td>
           <td><%=@video.presenter%></td>
@@ -72,10 +70,10 @@
         <tr>
           <td>Keywords</td>
           <td>
-            <%@video.keywords.each do |keyword| %>
+            <%@video.segments.each do |segment| %>
               <span class="item">
                 <span class="ui grey medium label" style="margin-top: 10px !important;">
-                  <%=keyword%>
+                  <%=segment%>
                 </span>
               </span>
             <% end %>

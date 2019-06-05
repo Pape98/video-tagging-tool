@@ -18,7 +18,7 @@ class VideosController < ApplicationController
     @video.save
     flash[:notice] = "Video has been created and has following id:'#{@video.id}'"
     redirect_to :action=>"index", :controller=>"videos"
-    # render :json => params
+    # render :json => video_params
   end
 
 
@@ -52,18 +52,18 @@ class VideosController < ApplicationController
   end
 
   def video_params
-      params.require(:video).permit(:link,:segments, :section,:topic, :presenter,
-                                    :voice, :noise,:volume,:enhacements,:overallSmooth,
-                                    :transition,:sharpFocus,:effects,:symbol,:informationMinimized,
-                                    :conveyMessage,:wordingAccurate,:wordingAppropriate,
-                                    :contentAccurate,:contentOrganized,:contentRelevant,
-                                    :sequencing,:weblinks,:graphicsEffective,:graphicsDistraction,
-                                    :graphicsQuality,:graphicsAppropriate,:textAppropriate,
-                                    :textConsistent,:textAmount,:background,:interactive,
-                                    :studentControl,:shownPresenter,:videoLength,:personal,
-                                    :moving,:engaging,:normalPace,:enunciation,:problem,
-                                    :lecture,:review,:concept,:supplementary,:print,:view,:use,
-                                    :keywords=> [],:cuts => [], :courses => [])
+       params.require(:video).permit(:link,:section,:topic, :presenter,
+                                     :voice, :noise,:volume,:enhacements,:overallSmooth,
+                                     :transition,:sharpFocus,:effects,:symbol,:informationMinimized,
+                                     :conveyMessage,:wordingAccurate,:wordingAppropriate,
+                                     :contentAccurate,:contentOrganized,:contentRelevant,
+                                     :sequencing,:weblinks,:graphicsEffective,:graphicsDistraction,
+                                     :graphicsQuality,:graphicsAppropriate,:textAppropriate,
+                                     :textConsistent,:textAmount,:background,:interactive,
+                                     :studentControl,:shownPresenter,:videoLength,:personal,
+                                     :moving,:engaging,:normalPace,:enunciation,:problem,
+                                     :lecture,:review,:concept,:supplementary,:print,:view,:use,
+                                     segments:[:cut,:keywords => []] ,:keywords=> [],:cuts => [], :courses => [])
   end
 
 end

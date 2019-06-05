@@ -1,7 +1,7 @@
 class Video
   include Mongoid::Document
 
-  has_many :rubrics
+  has_many :rubrics, dependent: :destroy
 
   field :link, type: String
   field :presenter, type: String, default:""

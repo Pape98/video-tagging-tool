@@ -13,13 +13,13 @@ class VideosController < ApplicationController
   end
 
   def create
+    params[:rubric][:author] = session[:current_user_name]
     rubric = Rubric.new(rubric_params)
     @video =  rubric.create_video(video_params)
     @video.lastEdit = session[:current_user_name]
     @video.save
     flash[:notice] = "Video has been created and has following id:'#{@video.id}'"
     redirect_to video_path(@video)
-    # redirect_to :action=>"index", :controller=>"videos"
   end
 
 
@@ -68,7 +68,7 @@ class VideosController < ApplicationController
   end
 
   def rubric_params
-    params.require(:rubric).permit(:voice, :noise,:volume,:enhacements,:overallSmooth,
+    params.require(:rubric).permit(:author,:voice, :noise,:volume,:enhacements,:overallSmooth,
                                    :transition,:sharpFocus,:effects,:symbol,:informationMinimized,
                                    :conveyMessage,:wordingAccurate,:wordingAppropriate,
                                    :contentAccurate,:contentOrganized,:contentRelevant,

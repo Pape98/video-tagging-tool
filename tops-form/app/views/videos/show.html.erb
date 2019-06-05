@@ -21,7 +21,7 @@
       <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/videos/<%=@video.id%>"class="item" style="color:red"><span class="ui big red basic button" style="margin-top: 20px">Delete</span></a>
     </div>
     <div class="nine wide column">
-      <table class="ui compact table" style="margin: 0 !important;">
+      <table class="ui very compact table" style="margin: 0 !important;">
         <tbody>
         <tr class="beige-bg">
           <td><b>Attributes</b></td>
@@ -68,7 +68,7 @@
           <td>Segments</td>
           <td>
 
-            <table class="ui celled compact table">
+            <table class="ui center aligned celled very compact table">
               <thead>
                 <tr>
                   <th>Start Time</th>
@@ -81,12 +81,14 @@
               <tr>
                 <td> <%=segment[:cut]%></td>
                 <td>
+                  <%if segment[:keywords] != nil %>
                   <%segment[:keywords].each do |keyword|%>
                     <span class="item">
                       <span class="ui grey tiny label" style="margin-top: 10px !important;">
                     <%=keyword%>
                       </span>
                     </span>
+                  <% end %>
                   <% end %>
                 </td>
               </tr>
@@ -114,334 +116,334 @@
   </div>
   <div class="row">
     <div class="column">
-      <table class="ui table" style="margin: 0 !important;">
-        <tbody>
-        <tr class="beige-bg">
-          <td colspan="6"><h3>Sound Quality</h3></td>
-        </tr>
-        <%= videochoices %>
-        <tr>
-          <td>Speaker's voice is clear.</td>
-          <%= showchoice @video.voice %></td>
-        </tr>
-
-        <tr>
-          <td>There is no background noise.</td>
-          <%= showchoice @video.noise %></td>
-        </tr>
-
-        <tr>
-          <td>Speaker's voice volume is appropriate.</td>
-          <%= showchoice @video.volume %></td>
-
-        </tr>
-
-        <tr>
-          <td>Any enhancements (i.e. music, special sounds) are clear and not distracting.</td>
-          <%= showchoice @video.enhacements %></td>
-        </tr>
-        </tbody>
-
-        <tbody>
-        <tr class="beige-bg">
-          <td colspan="6"><h3>Video Quality</h3></td>
-        </tr>
-        <%=videochoices %>
-        <tr>
-          <td>Overall video moves smoothly and seamlessly from shot to shot. (e.g., writing on a SmartSympodium is smooth and doesn't just appear in a chuck.  You see the writing develop over time.)</td>
-          <%= showchoice @video.overallSmooth %></td>
-        </tr>
-
-        <tr>
-          <td>Any transitions that are used in the video are smooth and not distracting. (fade-in or fade-out is okay, transition from one video clip to next.)</td>
-          <%= showchoice @video.transition %></td>
-        </tr>
-
-        <tr>
-          <td>The video is sharp, clear, and in focus.</td>
-          <%= showchoice @video.sharpFocus %></td>
-        </tr>
-
-        <tr>
-          <td>Digital effects are used appropriately for emphasis.  (e.g., added features like special effects, graphics. enhace for engagement/entertainment.)</td>
-          <%= showchoice @video.effects %></td>
-        </tr>
-
-        </tbody>
-
-        <tbody>
-        <tr class="beige-bg">
-          <td colspan="6"><h3>Cognitive Load</h3></td>
-        </tr>
-        <%=videochoices %>
-        <tr>
-          <td>Uses on-screen text or symbols to highlight important information. (e.g., change in color contrast highlighting information, arrow appears on screen to draw attention to region of screen.)</td>
-          <%= showchoice @video.symbol %></td>
-        </tr>
-
-        <tr>
-          <td>Extraneous information is minimized. (i.e., Information delivered via the video is synthesized and to the point. Instructor stays on topic and does not ramble on tangents not relelvant to the informaiton in the video. Music or other auditory/visual aspects have meaning and are not randomly inserted.)</td>
-          <%= showchoice @video.informationMinimized %></td>
-        </tr>
-
-        <tr>
-          <td>Uses both auditory and visual channels to convey information. (e.g., while showing a picture or animation, the instructor also gives a verbal explanation of the visual.)</td>
-          <%= showchoice @video.conveyMessage %></td>
-        </tr>
-        </tbody>
-
-        <tbody>
-        <tr class="beige-bg">
-          <td colspan="6"><h3>Content Quality</h3></td>
-        </tr>
-        <%=videochoices %>
-        <tr>
-          <td>Wording is accurate.</td>
-          <%= showchoice @video.wordingAccurate %></td>
-        </tr>
-
-        <tr>
-          <td>Wording is appropriate. (e.g., doesn't contain slang, not offensive, professional.)</td>
-          <%= showchoice @video.wordingAppropriate %></td>
-        </tr>
-
-        <tr>
-          <td>All the content in the video is accurate and contains no errors.</td>
-          <%= showchoice @video.contentAccurate %></td>
-
-        </tr>
-        </tbody>
-
-        <tbody>
-        <tr class="beige-bg">
-          <td colspan="6"><h3>Content Organization/Preparation</h3></td>
-        </tr>
-        <%=videochoices %>
-        <tr>
-          <td>Content is organized and flows well.</td>
-          <%= showchoice @video.contentOrganized %></td>
-        </tr>
+<!--      <table class="ui table" style="margin: 0 !important;">-->
+<!--        <tbody>-->
+<!--        <tr class="beige-bg">-->
+<!--          <td colspan="6"><h3>Sound Quality</h3></td>-->
+<!--        </tr>-->
+        <%#= videochoices %>
+<!--        <tr>-->
+<!--          <td>Speaker's voice is clear.</td>-->
+<!--          <%#= showchoice @video.voice %></td>-->
+<!--        </tr>-->
+
+<!--        <tr>-->
+<!--          <td>There is no background noise.</td>-->
+<!--          <%#= showchoice @video.noise %></td>-->
+<!--        </tr>-->
+
+<!--        <tr>-->
+<!--          <td>Speaker's voice volume is appropriate.</td>-->
+<!--          <%#= showchoice @video.volume %></td>-->
+
+<!--        </tr>-->
+
+<!--        <tr>-->
+<!--          <td>Any enhancements (i.e. music, special sounds) are clear and not distracting.</td>-->
+<!--          <%#= showchoice @video.enhacements %></td>-->
+<!--        </tr>-->
+<!--        </tbody>-->
+
+<!--        <tbody>-->
+<!--        <tr class="beige-bg">-->
+<!--          <td colspan="6"><h3>Video Quality</h3></td>-->
+<!--        </tr>-->
+        <%#=videochoices %>
+<!--        <tr>-->
+<!--          <td>Overall video moves smoothly and seamlessly from shot to shot. (e.g., writing on a SmartSympodium is smooth and doesn't just appear in a chuck.  You see the writing develop over time.)</td>-->
+<!--          <%#= showchoice @video.overallSmooth %></td>-->
+<!--        </tr>-->
+
+<!--        <tr>-->
+<!--          <td>Any transitions that are used in the video are smooth and not distracting. (fade-in or fade-out is okay, transition from one video clip to next.)</td>-->
+<!--          <%#= showchoice @video.transition %></td>-->
+<!--        </tr>-->
+
+<!--        <tr>-->
+<!--          <td>The video is sharp, clear, and in focus.</td>-->
+<!--          <%#= showchoice @video.sharpFocus %></td>-->
+<!--        </tr>-->
+
+<!--        <tr>-->
+<!--          <td>Digital effects are used appropriately for emphasis.  (e.g., added features like special effects, graphics. enhace for engagement/entertainment.)</td>-->
+<!--          <%#= showchoice @video.effects %></td>-->
+<!--        </tr>-->
+
+<!--        </tbody>-->
+
+<!--        <tbody>-->
+<!--        <tr class="beige-bg">-->
+<!--          <td colspan="6"><h3>Cognitive Load</h3></td>-->
+<!--        </tr>-->
+        <%#=videochoices %>
+<!--        <tr>-->
+<!--          <td>Uses on-screen text or symbols to highlight important information. (e.g., change in color contrast highlighting information, arrow appears on screen to draw attention to region of screen.)</td>-->
+<!--          <%#= showchoice @video.symbol %></td>-->
+<!--        </tr>-->
+
+<!--        <tr>-->
+<!--          <td>Extraneous information is minimized. (i.e., Information delivered via the video is synthesized and to the point. Instructor stays on topic and does not ramble on tangents not relelvant to the informaiton in the video. Music or other auditory/visual aspects have meaning and are not randomly inserted.)</td>-->
+<!--          <%#= showchoice @video.informationMinimized %></td>-->
+<!--        </tr>-->
+
+<!--        <tr>-->
+<!--          <td>Uses both auditory and visual channels to convey information. (e.g., while showing a picture or animation, the instructor also gives a verbal explanation of the visual.)</td>-->
+<!--          <%#= showchoice @video.conveyMessage %></td>-->
+<!--        </tr>-->
+<!--        </tbody>-->
+
+<!--        <tbody>-->
+<!--        <tr class="beige-bg">-->
+<!--          <td colspan="6"><h3>Content Quality</h3></td>-->
+<!--        </tr>-->
+        <%#=videochoices %>
+<!--        <tr>-->
+<!--          <td>Wording is accurate.</td>-->
+<!--          <%#= showchoice @video.wordingAccurate %></td>-->
+<!--        </tr>-->
+
+<!--        <tr>-->
+<!--          <td>Wording is appropriate. (e.g., doesn't contain slang, not offensive, professional.)</td>-->
+<!--          <%#= showchoice @video.wordingAppropriate %></td>-->
+<!--        </tr>-->
+
+<!--        <tr>-->
+<!--          <td>All the content in the video is accurate and contains no errors.</td>-->
+<!--          <%#= showchoice @video.contentAccurate %></td>-->
+
+<!--        </tr>-->
+<!--        </tbody>-->
+
+<!--        <tbody>-->
+<!--        <tr class="beige-bg">-->
+<!--          <td colspan="6"><h3>Content Organization/Preparation</h3></td>-->
+<!--        </tr>-->
+        <%#=videochoices %>
+<!--        <tr>-->
+<!--          <td>Content is organized and flows well.</td>-->
+<!--          <%#= showchoice @video.contentOrganized %></td>-->
+<!--        </tr>-->
 
-        <tr>
-          <td>There are no irrelevant/extraneous references to any other content (i.e., other videos, textbook references, specific exercises, mention of upcoming assignments, etc.)</td>
-          <%= showchoice @video.contentRelevant %></td>
-        </tr>
+<!--        <tr>-->
+<!--          <td>There are no irrelevant/extraneous references to any other content (i.e., other videos, textbook references, specific exercises, mention of upcoming assignments, etc.)</td>-->
+<!--          <%#= showchoice @video.contentRelevant %></td>-->
+<!--        </tr>-->
 
-        <tr>
-          <td>There is no sequencing/numbering in the video that would prevent the video from being resequenced within a set of videos.</td>
-          <%= showchoice @video.sequencing %></td>
+<!--        <tr>-->
+<!--          <td>There is no sequencing/numbering in the video that would prevent the video from being resequenced within a set of videos.</td>-->
+<!--          <%#= showchoice @video.sequencing %></td>-->
 
 
-        </tr>
+<!--        </tr>-->
 
-        <tr>
-          <td>The video does not reference any weblinks.</td>
-          <%= showchoice @video.weblinks %></td>
+<!--        <tr>-->
+<!--          <td>The video does not reference any weblinks.</td>-->
+<!--          <%#= showchoice @video.weblinks %></td>-->
 
 
-        </tr>
-        </tbody>
+<!--        </tr>-->
+<!--        </tbody>-->
 
-        <tbody>
-        <tr class="beige-bg">
-          <td colspan="6"><h3>Quality of Visuals</h3></td>
-        </tr>
-        <%=videochoices %>
-        <tr>
-          <td>All graphics, video, audio, 3-D, or other enhancements are used effectively to enrich the learning experience.</td>
-          <%= showchoice @video.graphicsEffective %></td>
+<!--        <tbody>-->
+<!--        <tr class="beige-bg">-->
+<!--          <td colspan="6"><h3>Quality of Visuals</h3></td>-->
+<!--        </tr>-->
+        <%#=videochoices %>
+<!--        <tr>-->
+<!--          <td>All graphics, video, audio, 3-D, or other enhancements are used effectively to enrich the learning experience.</td>-->
+<!--          <%#= showchoice @video.graphicsEffective %></td>-->
 
-        </tr>
+<!--        </tr>-->
 
-        <tr>
-          <td>Images/graphics are not distracting.</td>
-          <%= showchoice @video.graphicsDistraction %></td>
+<!--        <tr>-->
+<!--          <td>Images/graphics are not distracting.</td>-->
+<!--          <%#= showchoice @video.graphicsDistraction %></td>-->
 
-        </tr>
+<!--        </tr>-->
 
-        <tr>
-          <td>Images are high quality (e.g., resolution, ratio aspect, etc.)</td>
-          <%= showchoice @video.graphicsQuality %></td>
+<!--        <tr>-->
+<!--          <td>Images are high quality (e.g., resolution, ratio aspect, etc.)</td>-->
+<!--          <%#= showchoice @video.graphicsQuality %></td>-->
 
 
-        </tr>
+<!--        </tr>-->
 
-        <tr>
-          <td>Colors used in images/graphics are appropriate.</td>
-          <%= showchoice @video.graphicsAppropriate %></td>
+<!--        <tr>-->
+<!--          <td>Colors used in images/graphics are appropriate.</td>-->
+<!--          <%#= showchoice @video.graphicsAppropriate %></td>-->
 
 
-        </tr>
+<!--        </tr>-->
 
-        <tr>
-          <td>Text size (typed, handwritten) is appropriate.</td>
-          <%= showchoice @video.textAppropriate %></td>
+<!--        <tr>-->
+<!--          <td>Text size (typed, handwritten) is appropriate.</td>-->
+<!--          <%#= showchoice @video.textAppropriate %></td>-->
 
 
-        </tr>
+<!--        </tr>-->
 
-        <tr>
-          <td>Text/font style is consistent.</td>
-          <%= showchoice @video.textConsistent %></td>
+<!--        <tr>-->
+<!--          <td>Text/font style is consistent.</td>-->
+<!--          <%#= showchoice @video.textConsistent %></td>-->
 
 
-        </tr>
-        <tr>
-          <td>Amount of text on the slides is appropriate.</td>
-          <%= showchoice @video.textAmount %></td>
+<!--        </tr>-->
+<!--        <tr>-->
+<!--          <td>Amount of text on the slides is appropriate.</td>-->
+<!--          <%#= showchoice @video.textAmount %></td>-->
 
 
-        </tr>
-        <tr>
-          <td>Background is clean/consistent and not distracting.</td>
-          <%= showchoice @video.background %></td>
+<!--        </tr>-->
+<!--        <tr>-->
+<!--          <td>Background is clean/consistent and not distracting.</td>-->
+<!--          <%#= showchoice @video.background %></td>-->
 
 
-        </tr>
+<!--        </tr>-->
 
-        </tbody>
+<!--        </tbody>-->
 
-        <tbody>
-        <tr class="beige-bg">
-          <td colspan="6"><h3>Level of Engagement</h3></td>
-        </tr>
-        <%=videochoices %>
-        <tr>
-          <td>The video has interactive questions or features embedded that require the student to answer during the video.  (e.g., instructor asks a question and student pauses video to formulate answer to question.)</td>
-          <%= showchoice @video.interactive %></td>
+<!--        <tbody>-->
+<!--        <tr class="beige-bg">-->
+<!--          <td colspan="6"><h3>Level of Engagement</h3></td>-->
+<!--        </tr>-->
+        <%#=videochoices %>
+<!--        <tr>-->
+<!--          <td>The video has interactive questions or features embedded that require the student to answer during the video.  (e.g., instructor asks a question and student pauses video to formulate answer to question.)</td>-->
+<!--          <%#= showchoice @video.interactive %></td>-->
 
-        </tr>
+<!--        </tr>-->
 
-        <tr>
-          <td>The video allows students to control movement of the video (i.e., skip ahead, go to different chapter)</td>
-          <%= showchoice @video.studentControl %></td>
+<!--        <tr>-->
+<!--          <td>The video allows students to control movement of the video (i.e., skip ahead, go to different chapter)</td>-->
+<!--          <%#= showchoice @video.studentControl %></td>-->
 
-        </tr>
+<!--        </tr>-->
 
-        </tbody>
+<!--        </tbody>-->
 
-        <tbody>
-        <tr class="beige-bg">
-          <td colspan="6"><h3>Overall Presentation</h3></td>
-        </tr>
-        <%=videochoices %>
-        <tr>
-          <td>The presenter is shown (as a talking head) at some point during the video.  </td>
-          <%= showchoice @video.shownPresenter %></td>
+<!--        <tbody>-->
+<!--        <tr class="beige-bg">-->
+<!--          <td colspan="6"><h3>Overall Presentation</h3></td>-->
+<!--        </tr>-->
+        <%#=videochoices %>
+<!--        <tr>-->
+<!--          <td>The presenter is shown (as a talking head) at some point during the video.  </td>-->
+<!--          <%#= showchoice @video.shownPresenter %></td>-->
 
-        </tr>
+<!--        </tr>-->
 
-        <tr>
-          <td>The video is between 6-10 minutes long or can be broken into videos of 6-10 minutes.</td>
-          <%= showchoice @video.videoLength %></td>
+<!--        <tr>-->
+<!--          <td>The video is between 6-10 minutes long or can be broken into videos of 6-10 minutes.</td>-->
+<!--          <%#= showchoice @video.videoLength %></td>-->
 
-        </tr>
+<!--        </tr>-->
 
-        <tr>
-          <td>The video has a personal feel to it.  The presenter comes across as talking to the viewer and not a general audience.</td>
-          <%= showchoice @video.personal %></td>
+<!--        <tr>-->
+<!--          <td>The video has a personal feel to it.  The presenter comes across as talking to the viewer and not a general audience.</td>-->
+<!--          <%#= showchoice @video.personal %></td>-->
 
 
-        </tr>
+<!--        </tr>-->
 
 
-        <tr>
-          <td>The video contains some "moving" parts to it.  (i.e., it is not a slide presentation with a voice over). </td>
-          <%= showchoice @video.moving %></td>
+<!--        <tr>-->
+<!--          <td>The video contains some "moving" parts to it.  (i.e., it is not a slide presentation with a voice over). </td>-->
+<!--          <%#= showchoice @video.moving %></td>-->
 
 
-        </tr>
+<!--        </tr>-->
 
 
-        <tr>
-          <td>The speaker is engaging and keeps the viewers attention (i.e., not monotone and uses voice inflection appropriately)</td>
-          <%= showchoice @video.engaging %></td>
+<!--        <tr>-->
+<!--          <td>The speaker is engaging and keeps the viewers attention (i.e., not monotone and uses voice inflection appropriately)</td>-->
+<!--          <%#= showchoice @video.engaging %></td>-->
 
 
-        </tr>
+<!--        </tr>-->
 
-        <tr>
-          <td>The speaker talks at a normal conversational pace (e.g., does not purposefully slow down).</td>
-          <%= showchoice @video.normalPace %></td>
+<!--        <tr>-->
+<!--          <td>The speaker talks at a normal conversational pace (e.g., does not purposefully slow down).</td>-->
+<!--          <%#= showchoice @video.normalPace %></td>-->
 
 
-        </tr>
-        <tr>
-          <td>The speaker enunciates well.</td>
-          <%= showchoice @video.enunciation %></td>
+<!--        </tr>-->
+<!--        <tr>-->
+<!--          <td>The speaker enunciates well.</td>-->
+<!--          <%#= showchoice @video.enunciation %></td>-->
 
 
-        </tr>
-        </tbody>
+<!--        </tr>-->
+<!--        </tbody>-->
 
-        <tbody>
-        <tr class="beige-bg">
-          <td colspan="8"><h3>Which best describe the type of video?</h3></td>
-        </tr>
-        <tr class="center aligned">
-          <td class="eleven wide"></td>
-          <td colspan="2" class="two wide"><b>Yes</b></td>
-          <td colspan="2" lass="two wide"><b>No</b></td>
-          <td colspan="2" class="two wide"><b>Maybe</b></td>
-        </tr>
-        <tr>
-          <td>Problem video</td>
-          <%= showchoice2 @video.problem %>
-        </tr>
+<!--        <tbody>-->
+<!--        <tr class="beige-bg">-->
+<!--          <td colspan="8"><h3>Which best describe the type of video?</h3></td>-->
+<!--        </tr>-->
+<!--        <tr class="center aligned">-->
+<!--          <td class="eleven wide"></td>-->
+<!--          <td colspan="2" class="two wide"><b>Yes</b></td>-->
+<!--          <td colspan="2" lass="two wide"><b>No</b></td>-->
+<!--          <td colspan="2" class="two wide"><b>Maybe</b></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--          <td>Problem video</td>-->
+          <%#= showchoice2 @video.problem %>
+<!--        </tr>-->
 
-        <tr>
-          <td>Lecture</td>
-          <%= showchoice2 @video.lecture %>
-        </tr>
+<!--        <tr>-->
+<!--          <td>Lecture</td>-->
+          <%#= showchoice2 @video.lecture %>
+<!--        </tr>-->
 
-        <tr>
-          <td>Review</td>
-          <%= showchoice2 @video.review %>
-        </tr>
+<!--        <tr>-->
+<!--          <td>Review</td>-->
+          <%#= showchoice2 @video.review %>
+<!--        </tr>-->
 
-        <tr>
-          <td>Explaining a concept</td>
-          <%= showchoice2 @video.concept %>
-        </tr>
+<!--        <tr>-->
+<!--          <td>Explaining a concept</td>-->
+          <%#= showchoice2 @video.concept %>
+<!--        </tr>-->
 
-        <tr>
-          <td>Supplementary</td>
-          <%= showchoice2 @video.supplementary %>
-        </tr>
+<!--        <tr>-->
+<!--          <td>Supplementary</td>-->
+          <%#= showchoice2 @video.supplementary %>
+<!--        </tr>-->
 
-        </tbody>
+<!--        </tbody>-->
 
 
-        <tbody>
-        <tr class="beige-bg">
-          <td colspan="8"><h3>The video also requires......</h3></td>
-        </tr>
-        <tr class="center aligned">
-          <td class="eleven wide"></td>
-          <td colspan="2" class="two wide"><b>Yes</b></td>
-          <td colspan="2" lass="two wide"><b>No</b></td>
-          <td colspan="2" class="two wide"><b>Maybe</b></td>
-        </tr>
-        <tr>
-          <td>the student to print out a docment to follow along.</td>
-          <%= showchoice2 @video.print %>
-        </tr>
+<!--        <tbody>-->
+<!--        <tr class="beige-bg">-->
+<!--          <td colspan="8"><h3>The video also requires......</h3></td>-->
+<!--        </tr>-->
+<!--        <tr class="center aligned">-->
+<!--          <td class="eleven wide"></td>-->
+<!--          <td colspan="2" class="two wide"><b>Yes</b></td>-->
+<!--          <td colspan="2" lass="two wide"><b>No</b></td>-->
+<!--          <td colspan="2" class="two wide"><b>Maybe</b></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--          <td>the student to print out a docment to follow along.</td>-->
+          <%#= showchoice2 @video.print %>
+<!--        </tr>-->
 
-        <tr>
-          <td>the student to view an external website.</td>
-          <%= showchoice2 @video.view %>
-        </tr>
+<!--        <tr>-->
+<!--          <td>the student to view an external website.</td>-->
+          <%#= showchoice2 @video.view %>
+<!--        </tr>-->
 
-        <tr>
-          <td>the student to use additional software.</td>
-          <%= showchoice2 @video.use %>
-        </tr>
+<!--        <tr>-->
+<!--          <td>the student to use additional software.</td>-->
+          <%#= showchoice2 @video.use %>
+<!--        </tr>-->
 
-        </tbody>
+<!--        </tbody>-->
 
 
 
-      </table>
+<!--      </table>-->
     </div>
   </div>
 </div>

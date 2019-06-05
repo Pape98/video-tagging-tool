@@ -13,12 +13,13 @@ class VideosController < ApplicationController
   end
 
   def create
-    @video = Video.create!(video_params)
+    rubric = Rubric.new(rubric_params)
+    @video =  rubric.create_video(video_params)
     @video.lastEdit = session[:current_user_name]
     @video.save
     flash[:notice] = "Video has been created and has following id:'#{@video.id}'"
-    redirect_to :action=>"index", :controller=>"videos"
-    # render :json => video_params
+    redirect_to video_path(@video)
+    # redirect_to :action=>"index", :controller=>"videos"
   end
 
 
@@ -27,8 +28,9 @@ class VideosController < ApplicationController
   end
 
   def show
-    id = params[:id]
+     id = params[:id]
     @video = Video.find(id)
+    # render plain: "#{id.class}"
   end
 
   def update
@@ -52,18 +54,31 @@ class VideosController < ApplicationController
   end
 
   def video_params
-       params.require(:video).permit(:link,:section,:topic, :presenter,
-                                     :voice, :noise,:volume,:enhacements,:overallSmooth,
-                                     :transition,:sharpFocus,:effects,:symbol,:informationMinimized,
-                                     :conveyMessage,:wordingAccurate,:wordingAppropriate,
-                                     :contentAccurate,:contentOrganized,:contentRelevant,
-                                     :sequencing,:weblinks,:graphicsEffective,:graphicsDistraction,
-                                     :graphicsQuality,:graphicsAppropriate,:textAppropriate,
-                                     :textConsistent,:textAmount,:background,:interactive,
-                                     :studentControl,:shownPresenter,:videoLength,:personal,
-                                     :moving,:engaging,:normalPace,:enunciation,:problem,
-                                     :lecture,:review,:concept,:supplementary,:print,:view,:use,
-                                     segments:[:cut,:keywords => []] ,:keywords=> [],:cuts => [], :courses => [])
+       params.require(:video).permit(:link,
+                                     :section,
+                                     :topic,
+                                     :presenter,
+                                     segments:[:cut,:keywords => []],
+                                     :courses => [])
   end
+
+
+  def create_rubric
+    @rubric = Rubric.create!(rubric_params)
+  end
+
+  def rubric_params
+    params.require(:rubric).permit(:voice, :noise,:volume,:enhacements,:overallSmooth,
+                                   :transition,:sharpFocus,:effects,:symbol,:informationMinimized,
+                                   :conveyMessage,:wordingAccurate,:wordingAppropriate,
+                                   :contentAccurate,:contentOrganized,:contentRelevant,
+                                   :sequencing,:weblinks,:graphicsEffective,:graphicsDistraction,
+                                   :graphicsQuality,:graphicsAppropriate,:textAppropriate,
+                                   :textConsistent,:textAmount,:background,:interactive,
+                                   :studentControl,:shownPresenter,:videoLength,:personal,
+                                   :moving,:engaging,:normalPace,:enunciation,:problem,
+                                   :lecture,:review,:concept,:supplementary,:print,:view,:use)
+  end
+
 
 end

@@ -104,31 +104,31 @@ module VideosHelper
     choice = value
     @html = "  <div class=\"field\">
          <div class=\"ui radio checkbox\">
-           <input type=\"radio\" value=\"Strongly Agree\" name=\"video[#{choice}]\" tabindex=\"0\" class=\"hidden\">
+           <input type=\"radio\" value=\"Strongly Agree\" name=\"rubric[#{choice}]\" tabindex=\"0\" class=\"hidden\">
            <label>Strongly Agree</label>
          </div>
        </div>
       <div class=\"field\">
          <div class=\"ui radio checkbox\">
-           <input type=\"radio\" value=\"Agree\" name=\"video[#{choice}]\" tabindex=\"0\" class=\"hidden\">
+           <input type=\"radio\" value=\"Agree\" name=\"rubric[#{choice}]\" tabindex=\"0\" class=\"hidden\">
            <label> Agree</label>
          </div>
        </div>
     <div class=\"field\">
          <div class=\"ui radio checkbox\">
-           <input type=\"radio\" value=\"Disagree\" name=\"video[#{choice}]\" tabindex=\"0\" class=\"hidden\">
+           <input type=\"radio\" value=\"Disagree\" name=\"rubric[#{choice}]\" tabindex=\"0\" class=\"hidden\">
            <label>Disagree</label>
          </div>
        </div>
         <div class=\"field\">
          <div class=\"ui radio checkbox\">
-           <input type=\"radio\" value=\"Strongly Disagree\" name=\"video[#{choice}]\" tabindex=\"0\" class=\"hidden\">
+           <input type=\"radio\" value=\"Strongly Disagree\" name=\"rubric[#{choice}]\" tabindex=\"0\" class=\"hidden\">
            <label>Strongly Disagree</label>
          </div>
        </div>
 <div class=\"field\">
          <div class=\"ui radio checkbox\">
-           <input type=\"radio\" value=\"Not Applicable\" name=\"video[#{choice}]\" tabindex=\"0\" class=\"hidden\" checked>
+           <input type=\"radio\" value=\"Not Applicable\" name=\"rubric[#{choice}]\" tabindex=\"0\" class=\"hidden\" checked>
            <label>Not Applicable</label>
          </div>
        </div>".html_safe
@@ -140,19 +140,19 @@ module VideosHelper
     choice = value
     @html = "  <div class=\"field\">
          <div class=\"ui radio checkbox\">
-           <input type=\"radio\" value=\"Yes\" name=\"video[#{choice}]\" tabindex=\"0\" class=\"hidden\">
+           <input type=\"radio\" value=\"Yes\" name=\"rubric[#{choice}]\" tabindex=\"0\" class=\"hidden\">
            <label>Yes</label>
          </div>
        </div>
       <div class=\"field\">
          <div class=\"ui radio checkbox\">
-           <input type=\"radio\" value=\"No\" name=\"video[#{choice}]\" tabindex=\"0\" class=\"hidden\">
+           <input type=\"radio\" value=\"No\" name=\"rubric[#{choice}]\" tabindex=\"0\" class=\"hidden\">
            <label>No</label>
          </div>
        </div>
     <div class=\"field\">
          <div class=\"ui radio checkbox\">
-           <input type=\"radio\" value=\"Maybe\" name=\"video[#{choice}]\" tabindex=\"0\" class=\"hidden\" checked>
+           <input type=\"radio\" value=\"Maybe\" name=\"rubric[#{choice}]\" tabindex=\"0\" class=\"hidden\" checked>
            <label>Maybe</label>
          </div>
        </div>".html_safe
@@ -195,31 +195,31 @@ module VideosHelper
     end
     @html = "  <div class=\"field\">
          <div class=\"ui radio checkbox\">
-           <input type=\"radio\" value=\"Strongly Agree\" name=\"video[#{value}]\" tabindex=\"0\" class=\"hidden\"#{a}>
+           <input type=\"radio\" value=\"Strongly Agree\" name=\"rubric[#{value}]\" tabindex=\"0\" class=\"hidden\"#{a}>
            <label>Strongly Agree</label>
          </div>
        </div>
       <div class=\"field\">
          <div class=\"ui radio checkbox\">
-           <input type=\"radio\" value=\"Agree\" name=\"video[#{value}]\" tabindex=\"0\" class=\"hidden\"#{b}>
+           <input type=\"radio\" value=\"Agree\" name=\"rubric[#{value}]\" tabindex=\"0\" class=\"hidden\"#{b}>
            <label> Agree</label>
          </div>
        </div>
     <div class=\"field\">
          <div class=\"ui radio checkbox\">
-           <input type=\"radio\" value=\"Disagree\" name=\"video[#{value}]\" tabindex=\"0\" class=\"hidden\"#{c}>
+           <input type=\"radio\" value=\"Disagree\" name=\"rubric[#{value}]\" tabindex=\"0\" class=\"hidden\"#{c}>
            <label>Disagree</label>
          </div>
        </div>
         <div class=\"field\">
          <div class=\"ui radio checkbox\">
-           <input type=\"radio\" value=\"Strongly Disagree\" name=\"video[#{value}]\" tabindex=\"0\" class=\"hidden\"#{d}>
+           <input type=\"radio\" value=\"Strongly Disagree\" name=\"rubric[#{value}]\" tabindex=\"0\" class=\"hidden\"#{d}>
            <label>Strongly Disagree</label>
          </div>
        </div>
 <div class=\"field\">
          <div class=\"ui radio checkbox\">
-           <input type=\"radio\" value=\"Not Applicable\" name=\"video[#{value}]\" tabindex=\"0\" class=\"hidden\" #{e}>
+           <input type=\"radio\" value=\"Not Applicable\" name=\"rubric[#{value}]\" tabindex=\"0\" class=\"hidden\" #{e}>
            <label>Not Applicable</label>
          </div>
        </div>".html_safe
@@ -244,19 +244,19 @@ module VideosHelper
     end
     @html = "  <div class=\"field\">
          <div class=\"ui radio checkbox\">
-           <input type=\"radio\" value=\"Yes\" name=\"video[#{value}]\" tabindex=\"0\" class=\"hidden\"#{a}>
+           <input type=\"radio\" value=\"Yes\" name=\"rubric[#{value}]\" tabindex=\"0\" class=\"hidden\"#{a}>
            <label>Yes</label>
          </div>
        </div>
       <div class=\"field\">
          <div class=\"ui radio checkbox\">
-           <input type=\"radio\" value=\"No\" name=\"video[#{value}]\" tabindex=\"0\" class=\"hidden\"#{b}>
+           <input type=\"radio\" value=\"No\" name=\"rubric[#{value}]\" tabindex=\"0\" class=\"hidden\"#{b}>
            <label>No</label>
          </div>
        </div>
     <div class=\"field\">
          <div class=\"ui radio checkbox\">
-           <input type=\"radio\" value=\"Maybe\" name=\"video[#{value}]\" tabindex=\"0\" class=\"hidden\" #{c}>
+           <input type=\"radio\" value=\"Maybe\" name=\"rubric[#{value}]\" tabindex=\"0\" class=\"hidden\" #{c}>
            <label>Maybe</label>
          </div>
        </div>".html_safe

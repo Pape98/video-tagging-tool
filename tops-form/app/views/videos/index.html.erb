@@ -19,9 +19,8 @@
       <td>Topic</td>
       <td>Book Section</td>
       <td>Presenter</td>
-      <td>Keywords</td>
+      <td>Segments</td>
       <td>Courses</td>
-      <td>Cuts</td>
       <td></td>
     </tr>
     <%@videos.each do |video|  %>
@@ -30,13 +29,18 @@
       <td><%=video.section%></td>
       <td><%=video.presenter%></td>
       <td>
-         <% video.keywords.each do |keyword| %>
-            <span class="item">
-              <span class="ui grey tiny label" style="margin-top: 10px">
-                <%=keyword%>
-              </span>
-            </span>
-          <%end %>
+        <% temp = [] %>
+        <% video.segments.each do |segment| %>
+<!--                    <span class="item">-->
+<!--                      <span class="ui grey tiny label" style="margin-top: 10px !important;">-->
+                    <%#=keyword%>
+<!--                      </span>-->
+<!--                    </span>-->
+            <%# temp + segment[:keywords]  %>
+
+
+          <%=temp  %>
+      <% end %>
       </td>
       <td>
 
@@ -87,17 +91,7 @@
         <% end end  %>
 
       </td>
-      <td>
-        <div class="ui selection list">
-        <%# video.cuts.each do |cut| %>
-<!--          <div class="item">-->
-<!--            <div class="ui tiny label">-->
-              <%#=cut%>
-<!--            </div>-->
-<!--          </div>-->
-        <%#end %>
-      </div>
-      </td>
+
     <td>
       <div class="ui link list">
       <a href="/videos/<%=video.id%>" class="item">View</a>

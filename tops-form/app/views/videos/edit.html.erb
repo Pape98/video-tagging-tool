@@ -47,12 +47,12 @@
 
     <div class="ui top attached tabular menu">
       <% @video.rubrics.each do |rubric| %>
-        <a class="item active" data-tab="<%=rubric.author%>"><%=rubric.author%>'s Rubric</a>
+        <a class="item" data-tab="<%=rubric.author%>"><%=rubric.author%>'s Rubric</a>
       <% end %>
       <a class="item" id="addReview"><i class="green plus icon"></i>Add Review</a>
     </div>
     <% @video.rubrics.each do |rubric| %>
-      <div class="ui bottom attached tab segment active" data-tab="<%=rubric.author%>">
+      <div class="ui bottom attached tab segment" data-tab="<%=rubric.author%>">
         <div class="ui accordion">
           <div class="title">
             <i class=" dropdown icon"></i>
@@ -318,8 +318,11 @@
   </div>
   <div class="content">
 
-      <%= form_for @video, url: {action: "update"}, html: {class: "ui form"} do |f| %>
-      <div class="ui accordion">
+      <%#= form_for @video, url: {action: "pape"}, html: {class: "ui form"} do |f| %>
+    <form action="/rubric/create/<%=@video.id %>" method="POST" class="ui form" style="margin:0" id="newReview">
+      <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
+
+    <div class="ui accordion">
         <div class="title">
           <i class="dropdown icon"></i>
           Sound Quality
@@ -563,11 +566,11 @@
           </div>
         </div>
       </div>
-        <%end %>
+        <%#end %>
+      </form>
   </div>
   <div class="actions">
-    <div class="ui button">Cancel</div>
-    <div class="ui button">OK</div>
+    <button class="ui positive button" form="newReview">Submit</button>
   </div>
 </div>
 

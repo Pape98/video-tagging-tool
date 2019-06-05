@@ -117,12 +117,24 @@
   <div class="row">
     <div class="column">
       <div class="ui top attached tabular menu">
+        <% x = 1 %>
         <% @video.rubrics.each do |rubric| %>
-            <a class="item active" data-tab="<%=rubric.author%>"><%=rubric.author%>'s Review</a>
+          <% if x == 1 %>
+            <a class="item active" data-tab="<%=rubric.author%>"><%=rubric.author%></a>
+          <% x = 2 %>
+          <% else %>
+          <a class="item" data-tab="<%=rubric.author%>"><%=rubric.author%></a>
+          <% end %>
         <% end %>
+        <% x = 1 %>
       </div>
       <% @video.rubrics.each do |rubric| %>
+        <% if x == 1 %>
         <div class="ui bottom attached tab segment active" data-tab="<%=rubric.author%>">
+          <% x = 2 %>
+        <% else %>
+          <div class="ui bottom attached tab segment" data-tab="<%=rubric.author%>">
+        <% end %>
           <table class="ui table" style="margin: 0 !important;">
             <tbody>
             <tr class="beige-bg">

@@ -43,7 +43,16 @@ class VideosController < ApplicationController
     else
       render 'new'
     end
+  end
 
+  def create_rubric
+    id = params[:id]
+    @video = Video.find(id)
+    params[:rubric][:author] = session[:current_user_name]
+    rubric = Rubric.new(rubric_params)
+    rubric.video = @video
+    rubric.save
+    render json: rubric
   end
 
   def destroy
@@ -62,10 +71,6 @@ class VideosController < ApplicationController
                                      :courses => [])
   end
 
-
-  def create_rubric
-    @rubric = Rubric.create!(rubric_params)
-  end
 
   def rubric_params
     params.require(:rubric).permit(:author,:voice, :noise,:volume,:enhacements,:overallSmooth,

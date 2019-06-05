@@ -34,12 +34,16 @@ function update_ui(){
 $( document ).ready(function() {
 
 
-
     $('.edit')
         .popup({
             on: 'hover'
         })
     ;
+    $('#addReview').click(function () {
+        $('.ui.longer.modal')
+            .modal('show')
+        ;
+    })
 
     $('.ui.embed').embed();
 
@@ -464,13 +468,6 @@ $( document ).ready(function() {
     })
 
 
-    $('.video').click(function () {
-        var link = $(this).attr('data-link');
-        $('iframe').attr('src',link);
-        $('.ui.basic.modal')
-            .modal('show')
-        ;
-    });
 
     $('#addKeyword').click(function(){
         $('.ui.accordion')

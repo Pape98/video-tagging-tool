@@ -15,13 +15,13 @@
     </div>
   </div>
   <div class="row">
-    <div class="center aligned eight wide column">
+    <div class="center aligned seven wide column">
       <div class="ui 4:3 embed" data-url="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" data-placeholder="https://brandguide.tamu.edu/assets/img/logos/tam-stack.png" data-icon="right circle arrow"></div>
       <a href="/videos/<%=@video.id %>/edit"> <span class="ui big blue basic button" style="margin-top: 20px">Edit</span></a>
       <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/videos/<%=@video.id%>"class="item" style="color:red"><span class="ui big red basic button" style="margin-top: 20px">Delete</span></a>
     </div>
-    <div class="eight wide column">
-      <table class="ui table" style="margin: 0 !important;">
+    <div class="nine wide column">
+      <table class="ui compact table" style="margin: 0 !important;">
         <tbody>
         <tr class="beige-bg">
           <td><b>Attributes</b></td>
@@ -39,10 +39,7 @@
           <td>Link</td>
           <td><a href="<%=@video.link%>"><%=@video.link%></a></td>
         </tr>
-<!--        <tr>-->
-<!--          <td>Segments</td>-->
-<!--          <td><%#=@video.segments[0][:cut]%></td>-->
-<!--        </tr>-->
+
         <tr>
           <td>Author/Presenter</td>
           <td><%=@video.presenter%></td>
@@ -68,19 +65,40 @@
           </td>
         </tr>
         <tr>
-          <td>Keywords</td>
+          <td>Segments</td>
           <td>
-            <%@video.segments.each do |segment| %>
-              <span class="item">
-                <span class="ui grey medium label" style="margin-top: 10px !important;">
-                  <%=segment%>
-                </span>
-              </span>
-            <% end %>
+
+            <table class="ui celled compact table">
+              <thead>
+                <tr>
+                  <th>Start Time</th>
+                  <th>Keywords</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              <%@video.segments.each do |segment| %>
+              <tr>
+                <td> <%=segment[:cut]%></td>
+                <td>
+                  <%segment[:keywords].each do |keyword|%>
+                    <span class="item">
+                      <span class="ui grey tiny label" style="margin-top: 10px !important;">
+                    <%=keyword%>
+                      </span>
+                    </span>
+                  <% end %>
+                </td>
+              </tr>
+
+              <% end %>
+              </tbody>
+            </table>
           </td>
         </tr>
         </tbody>
       </table>
+
     </div>
   </div>
 

@@ -71,256 +71,259 @@
           <%else %>
               <div class="ui bottom attached tab segment" data-tab="<%=rubric.author%>">
           <% end %>
-        <%= form_for @video, url: {action: "update"}, html: {class: "ui form"} do |f| %>
-          <div class="ui accordion">
-            <div class="title">
-              <i class=" dropdown icon"></i>
-              Sound Quality
-            </div>
-            <div class="content">
-              <div class="required grouped fields">
-                <label>Speaker's voice is clear.</label>
-                <%= choices3 "voice", rubric.voice %>
+    <form action="/rubric/update/<%=rubric.id %>" method="POST" class="ui form" style="margin:0" id="<%=rubric.author %>">
+      <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
+        <div class="ui accordion">
+              <div class="title">
+                <i class=" dropdown icon"></i>
+                Sound Quality
               </div>
-              <div class="grouped fields">
-                <label>There is no background noise.</label>
-                <%= choices3 "noise", rubric.noise %>
+              <div class="content">
+                <div class="required grouped fields">
+                  <label>Speaker's voice is clear.</label>
+                  <%= choices3 "voice", rubric.voice %>
+                </div>
+                <div class="grouped fields">
+                  <label>There is no background noise.</label>
+                  <%= choices3 "noise", rubric.noise %>
+                </div>
+                <div class="grouped fields">
+                  <label>Speaker's voice volume is appropriate.</label>
+                  <%= choices3 "volume", rubric.volume %>
+                </div>
+                <div class="grouped fields">
+                  <label>Any enhancements (i.e. music, special sounds) are clear and not distracting.</label>
+                  <%= choices3 "enhacements", rubric.enhacements %>
+                </div>
               </div>
-              <div class="grouped fields">
-                <label>Speaker's voice volume is appropriate.</label>
-                <%= choices3 "volume", rubric.volume %>
+              <div class="title">
+                <i class="dropdown icon"></i>
+                Video Quality
               </div>
-              <div class="grouped fields">
-                <label>Any enhancements (i.e. music, special sounds) are clear and not distracting.</label>
-                <%= choices3 "enhacements", rubric.enhacements %>
-              </div>
-            </div>
-            <div class="title">
-              <i class="dropdown icon"></i>
-              Video Quality
-            </div>
-            <div class=" content">
-              <div class="grouped fields">
-                <label>Overall video moves smoothly and seamlessly from shot to shot. (e.g., writing on a SmartSympodium is smooth and doesn't just appear in a chuck.  You see the writing develop over time.)</label>
-                <%= choices3 "overallSmooth", rubric.overallSmooth %>
-              </div>
-              <div class="grouped fields">
-                <label>Any transitions that are used in the video are smooth and not distracting. (fade-in or fade-out is okay, transition from one video clip to next.)</label>
-                <%= choices3 "transition", rubric.transition %>
+              <div class=" content">
+                <div class="grouped fields">
+                  <label>Overall video moves smoothly and seamlessly from shot to shot. (e.g., writing on a SmartSympodium is smooth and doesn't just appear in a chuck.  You see the writing develop over time.)</label>
+                  <%= choices3 "overallSmooth", rubric.overallSmooth %>
+                </div>
+                <div class="grouped fields">
+                  <label>Any transitions that are used in the video are smooth and not distracting. (fade-in or fade-out is okay, transition from one video clip to next.)</label>
+                  <%= choices3 "transition", rubric.transition %>
+                </div>
+
+                <div class="grouped fields">
+                  <label>The video is sharp, clear, and in focus.</label>
+                  <%= choices3 "sharpFocus", rubric.sharpFocus %>
+                </div>
+                <div class="grouped fields">
+                  <label>Digital effects are used appropriately for emphasis.  (e.g., added features like special effects, graphics. enhace for engagement/entertainment.)</label>
+                  <%= choices3 "effects", rubric.effects %>
+                </div>
+
               </div>
 
-              <div class="grouped fields">
-                <label>The video is sharp, clear, and in focus.</label>
-                <%= choices3 "sharpFocus", rubric.sharpFocus %>
+              <div class="title">
+                <i class="dropdown icon"></i>
+                Cognitive Load
               </div>
-              <div class="grouped fields">
-                <label>Digital effects are used appropriately for emphasis.  (e.g., added features like special effects, graphics. enhace for engagement/entertainment.)</label>
-                <%= choices3 "effects", rubric.effects %>
+              <div class="content">
+                <div class="grouped fields">
+                  <label>Uses on-screen text or symbols to highlight important information. (e.g., change in color contrast highlighting information, arrow appears on screen to draw attention to region of screen.)</label>
+                  <%= choices3 "symbol", rubric.symbol %>
+                </div>
+                <div class="grouped fields">
+                  <label>Extraneous information is minimized. (i.e., Information delivered via the video is synthesized and to the point. Instructor stays on topic and does not ramble on tangents not relelvant to the informaiton in the video. Music or other auditory/visual aspects have meaning and are not randomly inserted.)</label>
+                  <%= choices3 "informationMinimized", rubric.informationMinimized %>
+                </div>
+                <div class="grouped fields">
+                  <label>Uses both auditory and visual channels to convey information. (e.g., while showing a picture or animation, the instructor also gives a verbal explanation of the visual.)</label>
+                  <%= choices3 "conveyMessage", rubric.conveyMessage %>
+                </div>
               </div>
 
+              <div class="title">
+                <i class="dropdown icon"></i>
+                Content Quality
+              </div>
+              <div class="content">
+                <div class="grouped fields">
+                  <label>Wording is accurate.</label>
+                  <%= choices3 "wordingAccurate", rubric.wordingAccurate %>
+                </div>
+                <div class="grouped fields">
+                  <label>Wording is appropriate. (e.g., doesn't contain slang, not offensive, professional.)</label>
+                  <%= choices3 "wordingAppropriate", rubric.wordingAppropriate %>
+                </div>
+                <div class="grouped fields">
+                  <label>All the content in the video is accurate and contains no errors.</label>
+                  <%= choices3 "contentAccurate", rubric.contentAccurate %>
+                </div>
+              </div>
+
+              <div class="title">
+                <i class="dropdown icon"></i>
+                Content Organization/Preparation
+              </div>
+              <div class="content">
+                <div class="grouped fields">
+                  <label>Content is organized and flows well.</label>
+                  <%= choices3 "contentOrganized", rubric.contentOrganized %>
+                </div>
+                <div class="grouped fields">
+                  <label>There are no irrelevant/extraneous references to any other content (i.e., other videos, textbook references, specific exercises, mention of upcoming assignments, etc.)</label>
+                  <%= choices3  "contentRelevant", rubric.contentRelevant %>
+                </div>
+                <div class="grouped fields">
+                  <label>There is no sequencing/numbering in the video that would prevent the video from being resequenced within a set of videos.</label>
+                  <%= choices3 "sequencing", rubric.sequencing %>
+                </div>
+                <div class="grouped fields">
+                  <label>The video does not reference any weblinks.</label>
+                  <%= choices3 "weblinks", rubric.weblinks %>
+                </div>
+              </div>
+
+              <div class="title">
+                <i class="dropdown icon"></i>
+                Quality of Visuals
+              </div>
+              <div class="content">
+                <div class="grouped fields">
+                  <label>All graphics, video, audio, 3-D, or other enhancements are used effectively to enrich the learning experience.</label>
+                  <%= choices3 "graphicsEffective", rubric.graphicsEffective %>
+                </div>
+                <div class="grouped fields">
+                  <label>Images/graphics are not distracting.</label>
+                  <%= choices3 "graphicsDistraction", rubric.graphicsDistraction %>
+                </div>
+                <div class="grouped fields">
+                  <label>Images are high quality (e.g., resolution, ratio aspect, etc.)</label>
+                  <%= choices3 "graphicsQuality", rubric.graphicsQuality %>
+                </div>
+                <div class="grouped fields">
+                  <label>Colors used in images/graphics are appropriate.</label>
+                  <%= choices3 "graphicsAppropriate", rubric.graphicsAppropriate %>
+                </div>
+                <div class="grouped fields">
+                  <label>Text size (typed, handwritten) is appropriate.</label>
+                  <%= choices3 "textAppropriate", rubric.textAppropriate %>
+                </div>
+                <div class="grouped fields">
+                  <label>Text/font style is consistent.</label>
+                  <%= choices3 "textConsistent", rubric.textConsistent %>
+                </div>
+                <div class="grouped fields">
+                  <label>Amount of text on the slides is appropriate.</label>
+                  <%= choices3 "textAmount", rubric.textAmount %>
+                </div>
+                <div class="grouped fields">
+                  <label>Background is clean/consistent and not distracting.</label>
+                  <%= choices3 "background", rubric.background %>
+                </div>
+              </div>
+
+              <div class="title">
+                <i class="dropdown icon"></i>
+                Level of Engagement
+              </div>
+              <div class="content">
+                <div class="grouped fields">
+                  <label>The video has interactive questions or features embedded that require the student to answer during the video.  (e.g., instructor asks a question and student pauses video to formulate answer to question.)</label>
+                  <%= choices3 "interactive", rubric.interactive %>
+                </div>
+                <div class="grouped fields">
+                  <label>The video allows students to control movement of the video (i.e., skip ahead, go to different chapter)</label>
+                  <%= choices3 "studentControl", rubric.studentControl %>
+                </div>
+              </div>
+
+              <div class="title">
+                <i class="dropdown icon"></i>
+                Overall Presentation
+              </div>
+              <div class="content">
+                <div class="grouped fields">
+                  <label>The presenter is shown (as a talking head) at some point during the video.  </label>
+                  <%= choices3 "shownPresenter", rubric.shownPresenter %>
+                </div>
+                <div class="grouped fields">
+                  <label>The video is between 6-10 minutes long or can be broken into videos of 6-10 minutes.</label>
+                  <%= choices3 "videoLength", rubric.videoLength %>
+                </div>
+                <div class="grouped fields">
+                  <label>The video has a personal feel to it.  The presenter comes across as talking to the viewer and not a general audience.</label>
+                  <%= choices3 "personal", rubric.personal %>
+                </div>
+                <div class="grouped fields">
+                  <label>The video contains some "moving" parts to it.  (i.e., it is not a slide presentation with a voice over). </label>
+                  <%= choices3 "moving", rubric.moving %>
+                </div>
+                <div class="grouped fields">
+                  <label>The speaker is engaging and keeps the viewers attention (i.e., not monotone and uses voice inflection appropriately)</label>
+                  <%= choices3 "engaging", rubric.engaging %>
+                </div>
+                <div class="grouped fields">
+                  <label>The speaker talks at a normal conversational pace (e.g., does not purposefully slow down).</label>
+                  <%= choices3 "normalPace", rubric.normalPace %>
+                </div>
+                <div class="grouped fields">
+                  <label>The speaker enunciates well.</label>
+                  <%= choices3 "enunciation", rubric.enunciation %>
+                </div>
+              </div>
+
+              <div class="title">
+                <i class="dropdown icon"></i>
+                Which best describe the type of video
+              </div>
+              <div class="content">
+                <div class="grouped fields">
+                  <label>Problem video</label>
+                  <%= choices4 "problem", rubric.problem %>
+                </div>
+                <div class="grouped fields">
+                  <label>Lecture</label>
+                  <%= choices4 "lecture", rubric.lecture %>
+                </div>
+                <div class="grouped fields">
+                  <label>Review</label>
+                  <%= choices4 "review", rubric.review %>
+                </div>
+                <div class="grouped fields">
+                  <label>Explaining a Concept</label>
+                  <%= choices4 "concept", rubric.concept %>
+                </div>
+                <div class="grouped fields">
+                  <label>Supplementary</label>
+                  <%= choices4 "supplementary", rubric.supplementary %>
+                </div>
+              </div>
+
+              <div class="title">
+                <i class="dropdown icon"></i>
+                The video also requires
+              </div>
+              <div class="content">
+                <div class="grouped fields">
+                  <label>the student to print out a document to follow along.</label>
+                  <%= choices4 "print", rubric.print %>
+                </div>
+                <div class="grouped fields">
+                  <label>the student to view an external website.</label>
+                  <%= choices4 "view", rubric.view %>
+                </div>
+                <div class="grouped fields">
+                  <label>the student to use additional software.</label>
+                  <%= choices4 "use", rubric.use%>
+                </div>
+              </div>
             </div>
 
-            <div class="title">
-              <i class="dropdown icon"></i>
-              Cognitive Load
+            <div class="ui center aligned container">
+              <button form = "<%=rubric.author%>" style="margin: 20px 0 20px 0;color: white;" class="ui big submit grey-bg button">Save <%=rubric.author%>'s Rubric</button>
             </div>
-            <div class="content">
-              <div class="grouped fields">
-                <label>Uses on-screen text or symbols to highlight important information. (e.g., change in color contrast highlighting information, arrow appears on screen to draw attention to region of screen.)</label>
-                <%= choices3 "symbol", rubric.symbol %>
-              </div>
-              <div class="grouped fields">
-                <label>Extraneous information is minimized. (i.e., Information delivered via the video is synthesized and to the point. Instructor stays on topic and does not ramble on tangents not relelvant to the informaiton in the video. Music or other auditory/visual aspects have meaning and are not randomly inserted.)</label>
-                <%= choices3 "informationMinimized", rubric.informationMinimized %>
-              </div>
-              <div class="grouped fields">
-                <label>Uses both auditory and visual channels to convey information. (e.g., while showing a picture or animation, the instructor also gives a verbal explanation of the visual.)</label>
-                <%= choices3 "conveyMessage", rubric.conveyMessage %>
-              </div>
-            </div>
+        </form>
+    </div>
 
-            <div class="title">
-              <i class="dropdown icon"></i>
-              Content Quality
-            </div>
-            <div class="content">
-              <div class="grouped fields">
-                <label>Wording is accurate.</label>
-                <%= choices3 "wordingAccurate", rubric.wordingAccurate %>
-              </div>
-              <div class="grouped fields">
-                <label>Wording is appropriate. (e.g., doesn't contain slang, not offensive, professional.)</label>
-                <%= choices3 "wordingAppropriate", rubric.wordingAppropriate %>
-              </div>
-              <div class="grouped fields">
-                <label>All the content in the video is accurate and contains no errors.</label>
-                <%= choices3 "contentAccurate", rubric.contentAccurate %>
-              </div>
-            </div>
-
-            <div class="title">
-              <i class="dropdown icon"></i>
-              Content Organization/Preparation
-            </div>
-            <div class="content">
-              <div class="grouped fields">
-                <label>Content is organized and flows well.</label>
-                <%= choices3 "contentOrganized", rubric.contentOrganized %>
-              </div>
-              <div class="grouped fields">
-                <label>There are no irrelevant/extraneous references to any other content (i.e., other videos, textbook references, specific exercises, mention of upcoming assignments, etc.)</label>
-                <%= choices3  "contentRelevant", rubric.contentRelevant %>
-              </div>
-              <div class="grouped fields">
-                <label>There is no sequencing/numbering in the video that would prevent the video from being resequenced within a set of videos.</label>
-                <%= choices3 "sequencing", rubric.sequencing %>
-              </div>
-              <div class="grouped fields">
-                <label>The video does not reference any weblinks.</label>
-                <%= choices3 "weblinks", rubric.weblinks %>
-              </div>
-            </div>
-
-            <div class="title">
-              <i class="dropdown icon"></i>
-              Quality of Visuals
-            </div>
-            <div class="content">
-              <div class="grouped fields">
-                <label>All graphics, video, audio, 3-D, or other enhancements are used effectively to enrich the learning experience.</label>
-                <%= choices3 "graphicsEffective", rubric.graphicsEffective %>
-              </div>
-              <div class="grouped fields">
-                <label>Images/graphics are not distracting.</label>
-                <%= choices3 "graphicsDistraction", rubric.graphicsDistraction %>
-              </div>
-              <div class="grouped fields">
-                <label>Images are high quality (e.g., resolution, ratio aspect, etc.)</label>
-                <%= choices3 "graphicsQuality", rubric.graphicsQuality %>
-              </div>
-              <div class="grouped fields">
-                <label>Colors used in images/graphics are appropriate.</label>
-                <%= choices3 "graphicsAppropriate", rubric.graphicsAppropriate %>
-              </div>
-              <div class="grouped fields">
-                <label>Text size (typed, handwritten) is appropriate.</label>
-                <%= choices3 "textAppropriate", rubric.textAppropriate %>
-              </div>
-              <div class="grouped fields">
-                <label>Text/font style is consistent.</label>
-                <%= choices3 "textConsistent", rubric.textConsistent %>
-              </div>
-              <div class="grouped fields">
-                <label>Amount of text on the slides is appropriate.</label>
-                <%= choices3 "textAmount", rubric.textAmount %>
-              </div>
-              <div class="grouped fields">
-                <label>Background is clean/consistent and not distracting.</label>
-                <%= choices3 "background", rubric.background %>
-              </div>
-            </div>
-
-            <div class="title">
-              <i class="dropdown icon"></i>
-              Level of Engagement
-            </div>
-            <div class="content">
-              <div class="grouped fields">
-                <label>The video has interactive questions or features embedded that require the student to answer during the video.  (e.g., instructor asks a question and student pauses video to formulate answer to question.)</label>
-                <%= choices3 "interactive", rubric.interactive %>
-              </div>
-              <div class="grouped fields">
-                <label>The video allows students to control movement of the video (i.e., skip ahead, go to different chapter)</label>
-                <%= choices3 "studentControl", rubric.studentControl %>
-              </div>
-            </div>
-
-            <div class="title">
-              <i class="dropdown icon"></i>
-              Overall Presentation
-            </div>
-            <div class="content">
-              <div class="grouped fields">
-                <label>The presenter is shown (as a talking head) at some point during the video.  </label>
-                <%= choices3 "shownPresenter", rubric.shownPresenter %>
-              </div>
-              <div class="grouped fields">
-                <label>The video is between 6-10 minutes long or can be broken into videos of 6-10 minutes.</label>
-                <%= choices3 "videoLength", rubric.videoLength %>
-              </div>
-              <div class="grouped fields">
-                <label>The video has a personal feel to it.  The presenter comes across as talking to the viewer and not a general audience.</label>
-                <%= choices3 "personal", rubric.personal %>
-              </div>
-              <div class="grouped fields">
-                <label>The video contains some "moving" parts to it.  (i.e., it is not a slide presentation with a voice over). </label>
-                <%= choices3 "moving", rubric.moving %>
-              </div>
-              <div class="grouped fields">
-                <label>The speaker is engaging and keeps the viewers attention (i.e., not monotone and uses voice inflection appropriately)</label>
-                <%= choices3 "engaging", rubric.engaging %>
-              </div>
-              <div class="grouped fields">
-                <label>The speaker talks at a normal conversational pace (e.g., does not purposefully slow down).</label>
-                <%= choices3 "normalPace", rubric.normalPace %>
-              </div>
-              <div class="grouped fields">
-                <label>The speaker enunciates well.</label>
-                <%= choices3 "enunciation", rubric.enunciation %>
-              </div>
-            </div>
-
-            <div class="title">
-              <i class="dropdown icon"></i>
-              Which best describe the type of video
-            </div>
-            <div class="content">
-              <div class="grouped fields">
-                <label>Problem video</label>
-                <%= choices4 "problem", rubric.problem %>
-              </div>
-              <div class="grouped fields">
-                <label>Lecture</label>
-                <%= choices4 "lecture", rubric.lecture %>
-              </div>
-              <div class="grouped fields">
-                <label>Review</label>
-                <%= choices4 "review", rubric.review %>
-              </div>
-              <div class="grouped fields">
-                <label>Explaining a Concept</label>
-                <%= choices4 "concept", rubric.concept %>
-              </div>
-              <div class="grouped fields">
-                <label>Supplementary</label>
-                <%= choices4 "supplementary", rubric.supplementary %>
-              </div>
-            </div>
-
-            <div class="title">
-              <i class="dropdown icon"></i>
-              The video also requires
-            </div>
-            <div class="content">
-              <div class="grouped fields">
-                <label>the student to print out a document to follow along.</label>
-                <%= choices4 "print", rubric.print %>
-              </div>
-              <div class="grouped fields">
-                <label>the student to view an external website.</label>
-                <%= choices4 "view", rubric.view %>
-              </div>
-              <div class="grouped fields">
-                <label>the student to use additional software.</label>
-                <%= choices4 "use", rubric.use%>
-              </div>
-            </div>
-          </div>
-          <div class="ui center aligned container">
-            <button style="margin: 20px 0 20px 0;color: white;" class="ui big submit grey-bg button">Save <%=rubric.author%>'s Rubric</button>
-          </div>
-        <%end %>
-      </div>
   <% end %>
 <div class=" ui center aligned container" style="margin: 60px 0 60px 0">
   <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/videos/<%=@video.id%>"><button class="ui huge negative button">Delete Video</button></a>

@@ -43,6 +43,8 @@ class VideosController < ApplicationController
     else
       render 'new'
     end
+
+    render json: params
   end
 
   def create_rubric
@@ -52,7 +54,18 @@ class VideosController < ApplicationController
     rubric = Rubric.new(rubric_params)
     rubric.video = @video
     rubric.save
-    render json: rubric
+    flash[:notice] = "#{rubric.author}'s has been created"
+    redirect_to @video
+
+  end
+
+  def update_rubric
+    id = params[:id]
+    rubric = Rubric.find(id)
+    rubric.update(rubric_params)
+    flash[:notice] = "#{rubric.author}'s has been updated"
+    video = Video.find(rubric.video_id)
+    redirect_to video
   end
 
   def destroy

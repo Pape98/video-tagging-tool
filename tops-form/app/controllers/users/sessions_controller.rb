@@ -12,6 +12,11 @@ class Users::SessionsController < Devise::SessionsController
   def create
     super
     session[:current_user_name] = params[:name]
+    if current_user.username == 'tops-admin'
+      session[:role] = 'admin'
+    else
+      session[:role] = 'student'
+    end
   end
 
   # DELETE /resource/sign_out

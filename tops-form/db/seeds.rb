@@ -405,11 +405,11 @@
     "weighted average",
     "Work"
   ]
-#
-#   keywords.each do |keyword|
-#     Keyword.create!({name:keyword})
-#   end
-#
+
+  keywords.each do |keyword|
+    Keyword.create!({name:keyword})
+  end
+
 
 professors = [
     "Allen,Angela",
@@ -575,11 +575,11 @@ professors = [
     "Vogel,Tom",
     "Walton,Jay",
 ]
-# Professor.create!({firstName:'',lastName:''})
+Professor.create!({firstName:'',lastName:''})
 
-  # professors.each do |professor|
-  #   firstName = professor.split(',')[1]
-  #   lastName = professor.split(',')[0]
-  #   Professor.create!({firstName:'firstName',lastName:lastName})
-  # end
+  professors.each do |professor|
+    firstName = professor.split(',')[1]
+    lastName = professor.split(',')[0]
+    Professor.create!({firstName:'firstName',lastName:lastName})
+  end
 

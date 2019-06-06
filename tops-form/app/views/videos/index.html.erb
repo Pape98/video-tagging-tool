@@ -1,0 +1,105 @@
+<%= stylesheet_link_tag '/stylesheets/videos' %>
+</head>
+<body>
+<%=render 'header' %>
+
+<h2 class="ui center aligned icon header">
+  <i class="edit outline circular icon"></i>
+  <div class="content">
+    Videos Summary
+    <div class="sub header">This page contains information about videos and it is constantly updated</div>
+  </div>
+</h2>
+<div class="ui container">
+  <table class="ui very compact small center aligned celled striped table">
+    <thead>
+    </thead>
+    <tbody>
+    <tr class="beige-bg">
+      <td>Topic</td>
+      <td>Book Section</td>
+      <td>Presenter</td>
+      <td>Segments</td>
+      <td>Courses</td>
+      <td></td>
+    </tr>
+    <%@videos.each do |video|  %>
+    <tr>
+      <td class="edit" data-title="Last Edited By:" data-content="<%=video.lastEdit%>"><%=video.topic%></td>
+      <td><%=video.section%></td>
+      <td><%=video.presenter%></td>
+      <td>
+        <% keywords = [] %>
+        <% video.segments.each do |segment| %>
+            <% keywords = keywords + segment[:keywords]  %>
+        <% end %>
+        <% keywords.uniq.each do |keyword| %>
+          <span class="item">
+            <span class="ui grey tiny label" style="margin-top: 10px !important;"> <%=keyword %>
+            </span>
+          </span>
+        <% end %>
+
+      </td>
+      <td>
+
+        <% video.courses.each do |course| %>
+          <%case course %>
+          <%when "141" %>
+              <span class="item">
+          <span class="ui black tiny label" style="margin-top: 10px" >
+            <%=course%>
+          </span>
+              </span>
+          <%when "142" %>
+              <span class="item">
+            <span class="ui yellow tiny label" style="margin-top: 10px">
+              <%=course%>
+            </span>
+              </span>
+          <%when "151" %>
+              <span class="item">
+            <span class="ui pink tiny label" style="margin-top: 10px">
+              <%=course%>
+            </span>
+              </span>
+          <%when "152" %>
+              <span class="item">
+            <span class="ui orange tiny label" style="margin-top: 10px">
+              <%=course%>
+            </span>
+              </span>
+          <%when "251" %>
+              <span class="item">
+            <span class="ui teal tiny label" style="margin-top: 10px">
+              <%=course%>
+            </span>
+              </span>
+          <%when "304" %>
+              <span class="item">
+            <span class="ui brown tiny label" style="margin-top: 10px">
+              <%=course%>
+            </span>
+              </span>
+          <%when "308" %>
+              <span class="item">
+            <span class="ui violet tiny label" style="margin-top: 10px">
+              <%=course%>
+            </span>
+              </span>
+        <% end end  %>
+
+      </td>
+
+    <td>
+      <div class="ui link list">
+      <a href="/videos/<%=video.id%>" class="item">View</a>
+      <a href="/videos/<%=video.id%>/edit" class="item">Edit</a>
+      <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/videos/<%=video.id%>"class="item" style="color:red">Delete</a>
+      </div>
+    </td>
+    </tr>
+    <%end %>
+    </tbody>
+  </table>
+</div>

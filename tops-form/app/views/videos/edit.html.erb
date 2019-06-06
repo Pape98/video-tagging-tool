@@ -24,6 +24,33 @@
         <%= select("post", "professors", professors.sort, {include_hidden: false,include_blank: true },{:id => 'presenter', :multiple => false, :class => 'ui fluid search dropdown',:name => "video[presenter]"})%>
       </div>
     </div>
+    <div class="field" id="timekeyword">
+      <label>Segment Start Time/Keywords</label>
+      <%counter = 1 %>
+        <% @video.segments.each do |segment|  %>
+        <div class="field">
+          <div class="ui action input">
+            <input class="cut-input" data-cut="<%=segment[:cut]%>" data-keywords="<%=segment[:keywords]%>" type="text" value="<%=segment[:cut] %>" name="video[segments[]][cut]">
+            <% if counter == 1 %>
+              <%= select("post", "keywords", keywordNames, {include_hidden: false },{:id => 'keywords', :multiple => true, :class => 'ui fluid search dropdown '+segment[:cut] ,:name => "video[segments[]][keywords][]"})%>
+              <div class="ui positive button" id="addField">Add</div>
+              <% counter = 2 %>
+              <% else %>
+              <%= select("post", "keywords", keywordNames, {include_hidden: false },{:id => segment[:cut], :multiple => true, :class => 'ui fluid search dropdown '+segment[:cut] ,:name => "video[segments[]][keywords][]"})%>
+          <% end %>
+          </div>
+        </div>
+        <% end %>
+    </div>
+
+<!--    <div class="field" id="timekeyword">-->
+<!--      <label>Segment Start Time/Keywords</label>-->
+<!--      <div class="ui action input">-->
+<!--        <input type="text" placeholder="Ex: 08:23" name="video[segments[]][cut]">-->
+        <%#= select("post", "keywords", keywordNames, {include_hidden: false },{:id => 'keywords', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[segments[]][keywords][]"})%>
+<!--        <div class="ui positive button" id="addField">Add</div>-->
+<!--      </div>-->
+<!--    </div>-->
 
 
     <h4 class="ui dividing header">Subject Information</h4>

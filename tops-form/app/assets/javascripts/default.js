@@ -1,9 +1,8 @@
 function fillData(){
 
     var courses =  $('#courses-label').data('courses');
-    var keywords =  $('#keywords-label').data('keywords');
-    var cuts =  $('#cuts-label').data('cuts');
     var presenter =  $('#presenter-label').data('presenter');
+    var x = $('.cut-input')
 
     if(courses != undefined) {
         $('#courses').dropdown('set selected',courses);
@@ -11,19 +10,15 @@ function fillData(){
     if(presenter != undefined) {
         $('#presenter').dropdown('set selected',presenter);
     }
-    if(keywords != undefined) {
-        $('#keywords').dropdown('set selected',keywords);
+    for(var i = 0; i < x.length; ++i){
+        var keywords = $(x[i]).data('keywords');
+        var cut = $(x[i]).data('cut');
+        $('.'+cut).dropdown('set selected',keywords);
+        console.log(keywords)
     }
-    if(cuts != undefined) {
-        var i = 0;
-        for(i; i < cuts.length; ++i){
-            addCut(cuts[i]);
-        }
-        console.log(cuts)
-        $('#cuts').dropdown('set selected',cuts);
-    }
-
+    update_ui()
 }
+
 
 function addCut(val){
     var cut = val;
@@ -36,6 +31,21 @@ function update_ui(){
 }
 
 $( document ).ready(function() {
+
+    $('.ui.form')
+        .form({
+            fields: {
+                name: {
+                    identifier: 'name',
+                    rules: [
+
+                        {
+                            type: 'empty',
+                            prompt: 'Please enter your name'
+                        },
+                    ]
+                },
+            }})
 
 
     $('.edit')
@@ -484,13 +494,6 @@ $( document ).ready(function() {
     $('.ui.radio.checkbox').checkbox();
     fillData()
 
-    var cuts =  $('#cuts-label').data('cuts');
-    var formattedCuts = [];
-    var i = 0;
-    for(i; i < cuts.length; ++i){
-        var cut = {name: cuts[i].toString(), value: cuts[i].toString()};
-        formattedCuts.push(cut);
-    }
 
     $('.cuts').dropdown({
         apiSettings: {
@@ -504,40 +507,6 @@ $( document ).ready(function() {
             }
         }
     });
-
-    $('.ui.form')
-        .form({
-            fields: {
-                username: {
-                    identifier: 'username',
-                    rules: [
-                        {
-                            type: 'empty',
-                            prompt: 'Please enter a username'
-                        }
-                    ]
-                },
-                password: {
-                    identifier: 'password',
-                    rules: [
-
-                        {
-                            type: 'empty',
-                            prompt: 'Please enter a password'
-                        },
-                    ]
-                },
-                name: {
-                    identifier: 'name',
-                    rules: [
-
-                        {
-                            type: 'empty',
-                            prompt: 'Please enter your name'
-                        },
-                    ]
-                },
-            }})
 
 
     })

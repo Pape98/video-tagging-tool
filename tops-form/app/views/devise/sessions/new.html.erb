@@ -18,7 +18,7 @@
       <div class="ui container warning message"><%= notice %></div>
     <% end %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {:class => "ui form"}) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {:class => "ui form",:id => "loginform"}) do |f| %>
       <div class="ui segment">
 
         <div class="field">
@@ -49,6 +49,7 @@
       <div class="actions">
         <%= f.submit "Log in", :class => 'ui fluid submit maroon-bg button' %>
       </div>
+        <div class="ui error message"></div>
       </div>
 <% end %>
     </div>

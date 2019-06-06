@@ -3,9 +3,13 @@ function fillData(){
     var courses =  $('#courses-label').data('courses');
     var keywords =  $('#keywords-label').data('keywords');
     var cuts =  $('#cuts-label').data('cuts');
+    var presenter =  $('#presenter-label').data('presenter');
 
     if(courses != undefined) {
         $('#courses').dropdown('set selected',courses);
+    }
+    if(presenter != undefined) {
+        $('#presenter').dropdown('set selected',presenter);
     }
     if(keywords != undefined) {
         $('#keywords').dropdown('set selected',keywords);

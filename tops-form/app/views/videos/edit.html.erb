@@ -20,7 +20,7 @@
         <input type="text" name="video[link]" value="<%=@video.link%>">
       </div>
       <div class="field">
-        <label>Author/Presenter</label>
+        <label id="presenter-label" data-presenter ="<%=@video.presenter%>" >Author/Presenter</label>
         <%= select("post", "professors", professors.sort, {include_hidden: false,include_blank: true },{:id => 'presenter', :multiple => false, :class => 'ui fluid search dropdown',:name => "video[presenter]"})%>
       </div>
     </div>
@@ -33,8 +33,8 @@
         <input type="text" name="video[section]" value="<%=@video.section%>">
       </div>
       <div class="field">
-        <label>Topic</label>
-        <input type="text" name="video[topic]">
+        <label >Topic</label>
+        <input type="text" name="video[topic]" value="<%=@video.topic%>">
       </div>
     </div>
     <div class="field">
@@ -42,7 +42,7 @@
       <%= select("post", "courses", courses, {include_hidden: false },{:id => 'courses', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[courses][]"})%>
     </div>
     <div class="ui center aligned container">
-      <button class="ui huge submit grey-bg button" style="margin: 20px 0 20px 0;color: white">Save Video Information</button>
+      <button class="ui basic blue huge submit  button" style="margin: 20px 0 20px 0;color: white">Save Video Information</button>
 
     </div>
 <!--      <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/videos/<%#=@video.id%>"><button class="ui negative button">Delete</button></a>-->
@@ -319,7 +319,7 @@
             </div>
 
             <div class="ui center aligned container">
-              <button form = "<%=rubric.author%>" style="margin: 20px 0 20px 0;color: white;" class="ui big submit grey-bg button">Save <%=rubric.author%>'s Rubric</button>
+              <button form = "<%=rubric.author%>" style="margin: 20px 0 20px 0;color: white;" class="ui basic huge  submit blue button">Save <%=rubric.author%>'s Rubric</button>
             </div>
         </form>
     </div>

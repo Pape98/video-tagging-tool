@@ -43,8 +43,6 @@ class VideosController < ApplicationController
     else
       render 'new'
     end
-
-    render json: params
   end
 
   def create_rubric

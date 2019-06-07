@@ -160,7 +160,6 @@ test:
 production:
   clients:
     default:
-      uri: <%= ENV['MONGODB_URI'] %>
       database: tops-production
       hosts:
         - localhost:27017

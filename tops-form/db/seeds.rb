@@ -580,6 +580,6 @@ Professor.create!({firstName:'',lastName:''})
   professors.each do |professor|
     firstName = professor.split(',')[1]
     lastName = professor.split(',')[0]
-    Professor.create!({firstName:'firstName',lastName:lastName})
+    Professor.create!({firstName:firstName,lastName:lastName})
   end
 

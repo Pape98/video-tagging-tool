@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0a37f72-05ba-4aa8-b013-57c2220d0975" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/videos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/videos_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/videos_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/videos_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/rubric.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/rubric.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/videos/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/videos/edit.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/videos/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/videos/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/videos/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/videos/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/videos/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/videos/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/development.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/development.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/7e/b7a427daf49efb" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/7e/b7a427daf49efb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-load-path-cache" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-load-path-cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/environments/production.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/production.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -73,13 +63,41 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/videos/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
               <caret line="475" column="44" selection-start-line="475" selection-start-column="44" selection-end-line="475" selection-end-column="44" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/log/production.log">
+          <provider selected="true" editor-type-id="LogFileEditorProvider" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/environment.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="98">
+              <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/log/development.log">
+          <provider selected="true" editor-type-id="LogFileEditorProvider" />
         </entry>
       </file>
     </leaf>
@@ -98,6 +116,7 @@
       <find>@video</find>
       <find>Topic</find>
       <find>bundl</find>
+      <find>config.log_level</find>
     </findStrings>
     <replaceStrings>
       <replace>#{keywordString}</replace>
@@ -147,7 +166,6 @@
         <option value="$PROJECT_DIR$/app/controllers/users/sessions_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/videos/_header.html.erb" />
         <option value="$PROJECT_DIR$/config/initializers/assets.rb" />
-        <option value="$PROJECT_DIR$/config/environments/production.rb" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/config/database.yml" />
         <option value="$PROJECT_DIR$/log/production.log" />
@@ -164,6 +182,7 @@
         <option value="$PROJECT_DIR$/app/views/videos/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/helpers/videos_helper.rb" />
         <option value="$PROJECT_DIR$/app/views/videos/show.html.erb" />
+        <option value="$PROJECT_DIR$/config/environments/production.rb" />
       </list>
     </option>
   </component>
@@ -208,14 +227,13 @@
             <path>
               <item name="tops-form" type="b2602c69:ProjectViewProjectNode" />
               <item name="tops-form" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="helpers" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tops-form" type="b2602c69:ProjectViewProjectNode" />
               <item name="tops-form" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="environments" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -391,12 +409,12 @@
       <workItem from="1559943957220" duration="803000" />
       <workItem from="1559997046614" duration="245000" />
       <workItem from="1560371032596" duration="1527000" />
-      <workItem from="1560547791468" duration="3984000" />
+      <workItem from="1560547791468" duration="4921000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181306000" />
+    <option name="totallyTimeSpent" value="182243000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -424,7 +442,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32956153" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49919224" visible="true" weight="0.27864215" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49919224" visible="true" weight="0.47807637" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5024233" side_tool="true" weight="0.4950495" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -544,9 +562,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tmp/pids/server.pid" />
-    <entry file="file://$PROJECT_DIR$/log/development.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-375" />
@@ -574,13 +589,6 @@
     <entry file="file://$PROJECT_DIR$/yarn.lock">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-42">
-          <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/test_helper.rb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -588,9 +596,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/.yarn-integrity">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/production.log">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/test/application_system_test_case.rb">
@@ -628,13 +633,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/environment.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
@@ -731,6 +729,28 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="475" column="44" selection-start-line="475" selection-start-column="44" selection-end-line="475" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/production.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/development.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environment.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
         </state>
       </provider>
     </entry>

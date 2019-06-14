@@ -55,19 +55,19 @@ module VideosHelper
 
   def showchoice2 choice
     case choice
-    when 'Yes'
+    when 'Yes'  , 'Used as is'
       @hmtl = '
           <td colspan="2" class="center aligned"><i class="large green checkmark icon"></i></td>
           <td colspan="2" class="center aligned"><i class="large red close icon"></i></td>
           <td class="center aligned"><i class="large red close icon"></i></td>
           '.html_safe
-    when 'No'
+    when 'No', 'Used with revision'
       @hmtl = '
           <td colspan="2" class="center aligned"><i class="large red close icon"></i></td>
           <td colspan="2" class="center aligned"><i class="large green checkmark icon"></i></td>
           <td class="center aligned"><i class="large red close icon"></i></td>
           '.html_safe
-    when 'Maybe'
+    when 'Maybe', 'Not used'
       @hmtl = '
           <td colspan="2" class="center aligned"><i class="large red close icon"></i></td>
           <td colspan="2" class="center aligned"><i class="large red close icon"></i></td>
@@ -75,6 +75,7 @@ module VideosHelper
     end
     return @hmtl
   end
+
 
   def courses
     [
@@ -261,6 +262,44 @@ module VideosHelper
          </div>
        </div>".html_safe
     return @html
+  end
+
+  def choices5 choice
+     case choice
+     when 'Used as is'
+               a='checked'
+               b=''
+               c=''
+     when 'Used with revision'
+               a=''
+               b='checked'
+               c=''
+     when 'Not used'
+               a=''
+               b=''
+               c='checked'
+     end
+
+    @hmtl = "<div class=\"field\">
+            <div class=\"ui radio checkbox\">
+              <input type=\"radio\" value=\"Used as is\" name=\"rubric[overall]\" tabindex=\"0\" class=\"hidden\" #{a}>
+              <label>Used as is</label>
+            </div>
+          </div>
+          <div class=\"field\">
+            <div class=\"ui radio checkbox\">
+              <input type=\"radio\" value=\"Used with revision\" name=\"rubric[overall]\" tabindex=\"0\" class=\"hidden\" #{b}>
+              <label> Used with revision</label>
+            </div>
+          </div>
+          <div class=\"field\">
+            <div class=\"ui radio checkbox\">
+              <input type=\"radio\" value=\"Not used\" name=\"rubric[overall]\" tabindex=\"0\" class=\"hidden\" #{c}
+              <label>Not used</label>
+            </div>
+          </div>".html_safe
+
+
   end
 
  def videotimes

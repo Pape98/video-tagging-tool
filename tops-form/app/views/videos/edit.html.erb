@@ -105,7 +105,7 @@
                 <i class=" dropdown icon"></i>
                 Sound Quality
               </div>
-              <div class="content">
+              <div class="ui center aligned  content">
                 <div class="required grouped fields">
                   <label>Speaker's voice is clear.</label>
                   <%= choices3 "voice", rubric.voice %>
@@ -226,10 +226,10 @@
                   <label>Images are high quality (e.g., resolution, ratio aspect, etc.)</label>
                   <%= choices3 "graphicsQuality", rubric.graphicsQuality %>
                 </div>
-                <div class="grouped fields">
-                  <label>Colors used in images/graphics are appropriate.</label>
-                  <%= choices3 "graphicsAppropriate", rubric.graphicsAppropriate %>
-                </div>
+<!--                <div class="grouped fields">-->
+<!--                  <label>Colors used in images/graphics are appropriate.</label>-->
+                  <%#= choices3 "graphicsAppropriate", rubric.graphicsAppropriate %>
+<!--                </div>-->
                 <div class="grouped fields">
                   <label>Text size (typed, handwritten) is appropriate.</label>
                   <%= choices3 "textAppropriate", rubric.textAppropriate %>
@@ -273,11 +273,11 @@
                   <%= choices3 "shownPresenter", rubric.shownPresenter %>
                 </div>
                 <div class="grouped fields">
-                  <label>The video is between 6-10 minutes long or can be broken into videos of 6-10 minutes.</label>
+                  <label>The video can be broken into videos less than 10 minutes in length.  (If video is already less than 10 minutes record N/A).  Please note the timestamps where the video can be cut when possible.</label>
                   <%= choices3 "videoLength", rubric.videoLength %>
                 </div>
                 <div class="grouped fields">
-                  <label>The video has a personal feel to it.  The presenter comes across as talking to the viewer and not a general audience.</label>
+                  <label>The presenter comes across as talking to the viewer and not a general audience.  (e.g., a video that is a recording of a "live" class lecture is not personal because the audience is an actual class)</label>
                   <%= choices3 "personal", rubric.personal %>
                 </div>
                 <div class="grouped fields">
@@ -327,23 +327,36 @@
 
               <div class="title">
                 <i class="dropdown icon"></i>
-                The video also requires
+                The video...
               </div>
               <div class="content">
                 <div class="grouped fields">
-                  <label>the student to print out a document to follow along.</label>
+                  <label>has a document students can print out.</label>
                   <%= choices4 "print", rubric.print %>
                 </div>
                 <div class="grouped fields">
-                  <label>the student to view an external website.</label>
+                  <label>requires the student to use external website.</label>
                   <%= choices4 "view", rubric.view %>
                 </div>
                 <div class="grouped fields">
-                  <label>the student to use additional software.</label>
+                  <label>requires the student to use additional software.</label>
                   <%= choices4 "use", rubric.use%>
                 </div>
               </div>
+
+          <div class="title">
+            <i class="dropdown icon"></i>
+            Overall
+          </div>
+          <div class="content">
+            <div class="grouped fields">
+              <label>Overall this video should be...</label>
+              <%= choices5 rubric.overall%>
             </div>
+          </div>
+            </div>
+
+
 
             <div class="ui center aligned container">
               <button form = "<%=rubric.author%>" style="margin: 20px 0 20px 0;color: white;" class="ui basic huge  submit blue button">Save <%=rubric.author%>'s Rubric</button>
@@ -495,10 +508,10 @@
             <label>Images are high quality (e.g., resolution, ratio aspect, etc.)</label>
             <%= choices "graphicsQuality"%>
           </div>
-          <div class="grouped fields">
-            <label>Colors used in images/graphics are appropriate.</label>
-            <%= choices "graphicsAppropriate"%>
-          </div>
+<!--          <div class="grouped fields">-->
+<!--            <label>Colors used in images/graphics are appropriate.</label>-->
+            <%#= choices "graphicsAppropriate"%>
+<!--          </div>-->
           <div class="grouped fields">
             <label>Text size (typed, handwritten) is appropriate.</label>
             <%= choices "textAppropriate"%>
@@ -542,7 +555,7 @@
             <%= choices "shownPresenter" %>
           </div>
           <div class="grouped fields">
-            <label>The video is between 6-10 minutes long or can be broken into videos of 6-10 minutes.</label>
+            <label>The video can be broken into videos less than 10 minutes in length.  (If video is already less than 10 minutes record N/A).  Please note the timestamps where the video can be cut when possible.</label>
             <%= choices "videoLength"%>
           </div>
           <div class="grouped fields">
@@ -596,23 +609,53 @@
 
         <div class="title">
           <i class="dropdown icon"></i>
-          The video also requires
+          The video...
         </div>
         <div class="content">
           <div class="grouped fields">
-            <label>the student to print out a document to follow along.</label>
+            <label>has a document students can print out.</label>
             <%= choices2 "print"%>
           </div>
           <div class="grouped fields">
-            <label>the student to view an external website.</label>
+            <label>requires the student to use external website.</label>
             <%= choices2 "view"%>
           </div>
           <div class="grouped fields">
-            <label>the student to use additional software.</label>
+            <label>requires the student to use additional software.</label>
             <%= choices2 "use"%>
           </div>
         </div>
+
+      <div class="title">
+        <i class="dropdown icon"></i>
+        Overall
       </div>
+      <div class="content">
+        <div class="grouped fields">
+          <label>Overall this video should be...</label>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" value="Used as is" name="rubric[overall]" tabindex="0" class="hidden">
+              <label>Used as is</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" value="Used with revision" name="rubric[overall]" tabindex="0" class="hidden">
+              <label> Used with revision</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" value="Not used" name="rubric[overall]" tabindex="0" class="hidden">
+              <label>Not used</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+
         <%#end %>
       </form>
   </div>

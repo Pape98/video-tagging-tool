@@ -47,4 +47,5 @@ class Rubric
   field :print, type:String
   field :view, type:String
   field :use, type:String
+  field :overall, type:String
 end

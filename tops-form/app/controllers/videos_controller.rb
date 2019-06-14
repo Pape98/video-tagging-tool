@@ -89,11 +89,11 @@ class VideosController < ApplicationController
                                    :conveyMessage,:wordingAccurate,:wordingAppropriate,
                                    :contentAccurate,:contentOrganized,:contentRelevant,
                                    :sequencing,:weblinks,:graphicsEffective,:graphicsDistraction,
-                                   :graphicsQuality,:graphicsAppropriate,:textAppropriate,
+                                   :graphicsQuality,:textAppropriate,
                                    :textConsistent,:textAmount,:background,:interactive,
                                    :studentControl,:shownPresenter,:videoLength,:personal,
                                    :moving,:engaging,:normalPace,:enunciation,:problem,
-                                   :lecture,:review,:concept,:supplementary,:print,:view,:use)
+                                   :lecture,:review,:concept,:supplementary,:print,:view,:use,:overall)
   end
 
 

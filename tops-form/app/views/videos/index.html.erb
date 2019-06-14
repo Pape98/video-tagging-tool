@@ -29,15 +29,17 @@
       <td><%=video.section%></td>
       <td><%=video.presenter%></td>
       <td>
-        <% keywords = [] %>
-        <% video.segments.each do |segment| %>
-            <% keywords = keywords + segment[:keywords]  %>
-        <% end %>
-        <% keywords.uniq.each do |keyword| %>
-          <span class="item">
-            <span class="ui grey tiny label" style="margin-top: 10px !important;"> <%=keyword %>
-            </span>
-          </span>
+        <% if video.segments != nil %>
+          <% keywords = []%>
+            <% video.segments.each do |segment| %>
+                <% keywords = keywords.concat(segment[:keywords].to_a) %>
+            <% end %>
+            <% keywords.uniq.each do |keyword| %>
+              <span class="item">
+                <span class="ui grey tiny label" style="margin-top: 10px !important;"> <%=keyword %>
+                </span>
+              </span>
+          <% end %>
         <% end %>
 
       </td>

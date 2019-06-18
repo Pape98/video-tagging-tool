@@ -2,7 +2,7 @@ function fillData(){
 
     var courses =  $('#courses-label').data('courses');
     var presenter =  $('#presenter-label').data('presenter');
-    var x = $('.cut-input')
+    var x = $('.cut-input');
 
     if(courses != undefined) {
         $('#courses').dropdown('set selected',courses);
@@ -14,7 +14,7 @@ function fillData(){
         var keywords = $(x[i]).data('keywords');
         var cut = $(x[i]).data('cut');
         $('.'+cut).dropdown('set selected',keywords);
-        console.log(keywords)
+        console.log(cut)
     }
     update_ui()
 }

@@ -32,6 +32,7 @@ function update_ui(){
 
 $( document ).ready(function() {
 
+
     $('.ui.form')
         .form({
             fields: {
@@ -507,6 +508,13 @@ $( document ).ready(function() {
             }
         }
     });
+
+    $('.ui.sticky')
+        .sticky({
+            context: '#context',
+            offset:-25
+        })
+    ;
 
 
     })

@@ -1,8 +1,7 @@
 
-<h1 class="ui container centered header" style="margin-top: 25px">Tier One Proposal (TOPS)</h1>
-  <div class="ui sticky">
+<!--<h1 class="ui container centered header" style="margin-top: 25px">Tier One Proposal (TOPS)</h1>-->
     <div style="background: #500000">
-      <div class="ui huge maroon-bg menu" id="main-menu">
+      <div class="ui fixed huge maroon-bg menu" id="main-menu">
         <a href="/videos" class="item"> View All Entries</a>
         <a href="/videos/new" class="item">Create New Entry</a>
         <% if session[:role] == 'admin' %>
@@ -16,8 +15,6 @@
         </div>
       </div>
     </div>
-  </div>
-<div id="context">
 
 <% if flash[:notice] %>
   <div class="ui text container warning message">
@@ -27,3 +24,7 @@
     </div>
   </div>
 <% end %>
+<div style="    margin-bottom: 90px !important;
+">
+
+</div>

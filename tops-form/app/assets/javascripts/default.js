@@ -512,10 +512,10 @@ $( document ).ready(function() {
     $('.ui.sticky')
         .sticky({
             context: '#context',
-            offset:-25
+            // offset:-25,
+            // bottomOffset: 1000,
         })
     ;
-
 
     })
 

@@ -13,13 +13,19 @@ class VideosController < ApplicationController
   end
 
   def create
-    params[:rubric][:author] = session[:current_user_name]
-    rubric = Rubric.new(rubric_params)
-    @video =  rubric.create_video(video_params)
-    @video.lastEdit = session[:current_user_name]
-    @video.save
-    flash[:notice] = "Video has been created and has following id:'#{@video.id}'"
-    redirect_to video_path(@video)
+    video = Video.where(link: params[:video][:link])
+    if video.size == 1 # Checking if video already exists
+      flash[:notice] = "Video with entered link already exists!"
+      redirect_to new_video_path
+    else
+      params[:rubric][:author] = session[:current_user_name]
+      rubric = Rubric.new(rubric_params)
+      @video =  rubric.create_video(video_params)
+      @video.lastEdit = session[:current_user_name]
+      @video.save
+      flash[:notice] = "Video has been created and has following id:'#{@video.id}'"
+      redirect_to video_path(@video)
+    end
   end
 
 

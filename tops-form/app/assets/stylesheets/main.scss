@@ -1,6 +1,14 @@
 @import "semantic-ui";
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 
+#logo{
+  color: #D6D3C4 !important;
+  font-weight: bolder;
+  text-shadow: 3px 2px black;
+  line-height: 0.8em;
+  letter-spacing: 0.2em;
+
+}
 .maroon-bg{
   background:#500000 !important;
   color: white !important;

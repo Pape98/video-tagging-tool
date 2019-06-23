@@ -1,7 +1,7 @@
 
 <!--<h1 class="ui container centered header" style="margin-top: 25px">Tier One Proposal (TOPS)</h1>-->
     <div style="background: #500000">
-      <div class="ui fixed huge maroon-bg menu" id="main-menu">
+      <div class="ui  fixed huge maroon-bg menu" id="main-menu">
         <a href="/videos" class="item"> View All Entries</a>
         <a href="/videos/new" class="item">Create New Entry</a>
         <% if session[:role] == 'admin' %>
@@ -18,14 +18,13 @@
       </div>
     </div>
 
+<div id="main-content" style="padding: 75px 0 75px 0 !important;">
+
 <% if flash[:notice] %>
-  <div class="ui text container warning message" style="margin-top: 90px !important;">
+  <div class="ui text container warning message" >
     <i class="close icon"></i>
     <div class="header">
       <%=flash[:notice] %>
     </div>
   </div>
 <% end %>
-<div style="margin-bottom: 80px">
-
-</div>

@@ -13,8 +13,7 @@ class VideosController < ApplicationController
   end
 
   def create
-    video = Video.where(link: params[:video][:link])
-    if video.size > 1 # Checking if video already exists
+    if Video.where(link: params[:video][:link]).count >= 1
       flash[:notice] = "Video with entered link already exists!"
       redirect_to new_video_path
     else

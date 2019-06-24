@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 
 #logo{
-  color: #D6D3C4 !important;
   font-weight: bolder;
-  text-shadow: 3px 2px black;
-  line-height: 0.8em;
-  letter-spacing: 0.2em;
+  text-shadow: -1px 0 black, 0 3px black, 3px 0 black, 0 -1px black;
+font-size: 33px;
+  font-family: 'Oswald', sans-serif !important;
+
 
 }
 .maroon-bg{

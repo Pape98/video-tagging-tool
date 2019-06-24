@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a0a37f72-05ba-4aa8-b013-57c2220d0975" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/videos/_header.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/videos/_header.html.erb" afterDir="false" />
-    </list>
+    <list default="true" id="a0a37f72-05ba-4aa8-b013-57c2220d0975" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/log/" />
@@ -410,12 +407,12 @@
       <workItem from="1560547791468" duration="5263000" />
       <workItem from="1560832559818" duration="1668000" />
       <workItem from="1561160955240" duration="9708000" />
-      <workItem from="1561318028546" duration="5990000" />
+      <workItem from="1561318028546" duration="6186000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="199951000" />
+    <option name="totallyTimeSpent" value="200147000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -428,7 +425,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2253635" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />

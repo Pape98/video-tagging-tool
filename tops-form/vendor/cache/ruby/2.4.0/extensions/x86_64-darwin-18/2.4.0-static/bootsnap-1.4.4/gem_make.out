@@ -1,0 +1,15 @@
+current directory: /Users/Pape/Desktop/TOPS/tops-form/vendor/cache/ruby/2.4.0/gems/bootsnap-1.4.4/ext/bootsnap
+/Users/Pape/.rbenv/versions/2.4.0/bin/ruby -I /Users/Pape/.rbenv/versions/2.4.0/lib/ruby/site_ruby/2.4.0 -r ./siteconf20190624-26677-1kevsey.rb extconf.rb
+creating Makefile
+
+current directory: /Users/Pape/Desktop/TOPS/tops-form/vendor/cache/ruby/2.4.0/gems/bootsnap-1.4.4/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/Pape/Desktop/TOPS/tops-form/vendor/cache/ruby/2.4.0/gems/bootsnap-1.4.4/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/Pape/Desktop/TOPS/tops-form/vendor/cache/ruby/2.4.0/gems/bootsnap-1.4.4/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20190624-26677-rt92o7/bootsnap

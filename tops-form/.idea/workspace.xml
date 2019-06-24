@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a0a37f72-05ba-4aa8-b013-57c2220d0975" name="Default Changelist" comment="" />
+    <list default="true" id="a0a37f72-05ba-4aa8-b013-57c2220d0975" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.generators" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.generators" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.rakeTasks" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/tops-form.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tops-form.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/development.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/development.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-load-path-cache" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-load-path-cache" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/log/" />
@@ -34,7 +41,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/videos/_header.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
@@ -47,7 +54,16 @@
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/main.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Gemfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="53" column="21" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -407,12 +423,12 @@
       <workItem from="1560547791468" duration="5263000" />
       <workItem from="1560832559818" duration="1668000" />
       <workItem from="1561160955240" duration="9708000" />
-      <workItem from="1561318028546" duration="6990000" />
+      <workItem from="1561318028546" duration="7755000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="200951000" />
+    <option name="totallyTimeSpent" value="201716000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -735,13 +751,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-415">
-          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/welcome.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -755,7 +764,7 @@
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/main.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
@@ -763,6 +772,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="53" column="21" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
         </state>
       </provider>
     </entry>

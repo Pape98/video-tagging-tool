@@ -8,6 +8,7 @@ class Video
   field :cuts, type: String, default:""
   field :section, type: String, default:""
   field :topic, type:String, default:""
+  field :description, type:String, default:""
   field :courses, type:Array,default: []
   field :keywords, type:Array,default: []
   field :segments, type:Array,default: []

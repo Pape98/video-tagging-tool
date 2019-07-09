@@ -55,6 +55,10 @@
       </div>
     </div>
     <div class="field">
+      <label>Description</label>
+      <textarea name="video[description]" rows="3" value="<%=@video.description%>"></textarea>
+    </div>
+    <div class="field">
       <label id="courses-label" data-courses='<%=@video.courses %>'>Possible Course to use</label>
       <%= select("post", "courses", courses, {include_hidden: false },{:id => 'courses', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[courses][]"})%>
     </div>

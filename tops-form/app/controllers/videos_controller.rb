@@ -83,6 +83,7 @@ class VideosController < ApplicationController
                                      :section,
                                      :topic,
                                      :presenter,
+                                     :description,
                                      segments:[:cut,:keywords => []],
                                      :courses => [])
   end

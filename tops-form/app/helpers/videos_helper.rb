@@ -100,36 +100,52 @@ module VideosHelper
 
   counter = 0
 
-  def choices value
+  def choices (values = {:rubric => nil})
+    choice = values[:criteria]
+    if values.has_key?(:rubric)
+      rubric = values[:rubric]
+    end
 
-    choice = value
+    if rubric == "1"
+      r = "rubric1"
+    elsif  rubric == "2"
+      r = "rubric2"
+    elsif  rubric == "3"
+      r = "rubric3"
+    elsif  rubric == "4"
+      r = "rubric4"
+    elsif  rubric == "5"
+      r = "rubric5"
+    else
+      r = "rubric"
+    end
     @html = "  <div class=\"field\">
          <div class=\"ui radio checkbox\">
-           <input type=\"radio\" value=\"Strongly Agree\" name=\"rubric[#{choice}]\" tabindex=\"0\" class=\"hidden\">
+           <input type=\"radio\" value=\"Strongly Agree\" name=\"#{r}[#{choice}]\" tabindex=\"0\" class=\"hidden\">
            <label>Strongly Agree</label>
          </div>
        </div>
       <div class=\"field\">
          <div class=\"ui radio checkbox\">
-           <input type=\"radio\" value=\"Agree\" name=\"rubric[#{choice}]\" tabindex=\"0\" class=\"hidden\">
+           <input type=\"radio\" value=\"Agree\" name=\"#{r}[#{choice}]\" tabindex=\"0\" class=\"hidden\">
            <label> Agree</label>
          </div>
        </div>
     <div class=\"field\">
          <div class=\"ui radio checkbox\">
-           <input type=\"radio\" value=\"Disagree\" name=\"rubric[#{choice}]\" tabindex=\"0\" class=\"hidden\">
+           <input type=\"radio\" value=\"Disagree\" name=\"#{r}[#{choice}]\" tabindex=\"0\" class=\"hidden\">
            <label>Disagree</label>
          </div>
        </div>
         <div class=\"field\">
          <div class=\"ui radio checkbox\">
-           <input type=\"radio\" value=\"Strongly Disagree\" name=\"rubric[#{choice}]\" tabindex=\"0\" class=\"hidden\">
+           <input type=\"radio\" value=\"Strongly Disagree\" name=\"#{r}[#{choice}]\" tabindex=\"0\" class=\"hidden\">
            <label>Strongly Disagree</label>
          </div>
        </div>
 <div class=\"field\">
          <div class=\"ui radio checkbox\">
-           <input type=\"radio\" value=\"Not Applicable\" name=\"rubric[#{choice}]\" tabindex=\"0\" class=\"hidden\" checked>
+           <input type=\"radio\" value=\"Not Applicable\" name=\"#{r}[#{choice}]\" tabindex=\"0\" class=\"hidden\" checked>
            <label>Not Applicable</label>
          </div>
        </div>".html_safe

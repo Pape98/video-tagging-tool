@@ -1177,6 +1177,19 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="rails-dev-tweaks (vbundled(1.2.0)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="3" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/cache/ruby/2.4.0/gems/rails-dev-tweaks-1.2.0/lib" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/cache/ruby/2.4.0/gems/rails-dev-tweaks-1.2.0/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="rails-dom-testing (vbundled(2.0.3)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="3" />

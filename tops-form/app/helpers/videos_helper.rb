@@ -78,23 +78,23 @@ module VideosHelper
 
 
   def courses
-    [
-        # "141 - Business Math I",
-        # "142 - Business Math II",
-        # "150 - PreCalculus",
-        # "151 - Calculus I",
-        # "152 - Calculus II",
-        # "251 - Calculus III",
-        # "304 - Linear Algebra",
-        # "308 Differential Equations"
-        "141",
+    ["141",
+        "140",
         "142",
+        "147",
+        "148",
         "150",
         "151",
         "152",
+        "166",
+        "167",
+        "171",
+        "172",
         "251",
         "304",
-        "308"
+        "308",
+        "366" ,
+    "365"
     ]
   end
 

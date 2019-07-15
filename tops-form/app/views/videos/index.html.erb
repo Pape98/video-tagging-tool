@@ -38,7 +38,7 @@
     </tr>
     <%@videos.each do |video|  %>
     <tr>
-      <td class="edit" data-title="Last Edited By:" data-content="<%=video.lastEdit%>"><%=video.topic%></td>
+      <td class="edit" data-title="Last Edited By:" data-content="<%=video.lastEdit%>"><%=video.id%></td>
       <td><a href="<%=video.link%>"><%=video.link%></a></td>
       <td><%=video.presenter%></td>
       <td>
@@ -60,6 +60,12 @@
 
         <% video.courses.each do |course| %>
           <%case course %>
+        <%when "141" %>
+              <span class="item">
+          <span class="ui red tiny label" style="margin-top: 10px" >
+            <%=course%>
+          </span>
+              </span>
           <%when "141" %>
               <span class="item">
           <span class="ui black tiny label" style="margin-top: 10px" >
@@ -71,6 +77,18 @@
             <span class="ui yellow tiny label" style="margin-top: 10px">
               <%=course%>
             </span>
+              </span>
+          <%when "147" %>
+              <span class="item">
+          <span class="ui grey tiny label" style="margin-top: 10px" >
+            <%=course%>
+          </span>
+              </span>
+          <%when "148" %>
+              <span class="item">
+          <span class="ui purple tiny label" style="margin-top: 10px" >
+            <%=course%>
+          </span>
               </span>
           <%when "150" %>
               <span class="item">
@@ -90,6 +108,30 @@
               <%=course%>
             </span>
               </span>
+          <%when "166" %>
+              <span class="item">
+          <span class="ui green tiny label" style="margin-top: 10px" >
+            <%=course%>
+          </span>
+              </span>
+          <%when "167" %>
+              <span class="item">
+          <span class="ui blue tiny label" style="margin-top: 10px" >
+            <%=course%>
+          </span>
+              </span>
+          <%when "171" %>
+              <span class="item">
+          <span class="ui olive tiny label" style="margin-top: 10px" >
+            <%=course%>
+          </span>
+              </span>
+          <%when "172" %>
+              <span class="item">
+          <span class="ui orange tiny label" style="margin-top: 10px" >
+            <%=course%>
+          </span>
+              </span>
           <%when "251" %>
               <span class="item">
             <span class="ui teal tiny label" style="margin-top: 10px">
@@ -107,6 +149,18 @@
             <span class="ui violet tiny label" style="margin-top: 10px">
               <%=course%>
             </span>
+              </span>
+          <%when "365" %>
+              <span class="item">
+          <span class="ui pink tiny label" style="margin-top: 10px" >
+            <%=course%>
+          </span>
+              </span>
+          <%when "366" %>
+              <span class="item">
+          <span class="ui blue tiny label" style="margin-top: 10px" >
+            <%=course%>
+          </span>
               </span>
         <% end end  %>
 

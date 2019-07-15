@@ -11,7 +11,6 @@
 </h2>
 
 <div class="ui container">
-
   <%= form_for @video, url: {action: "update"}, html: {class: "ui form"} do |f| %>
     <h4 class="ui dividing header">Video Information</h4>
     <div class=" two required fields">
@@ -373,10 +372,11 @@
   <div class="content">
 
       <%#= form_for @video, url: {action: "pape"}, html: {class: "ui form"} do |f| %>
-    <form action="/rubric/create/<%=@video.id %>" method="POST" class="ui form" style="margin:0" id="newReview">
-      <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
 
-    <div class="ui accordion">
+    <form action="/rubric/create/<%=@video.id %>" method="POST" class="ui form" style="margin:0" id="newReview">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+      <div class="ui accordion">
         <div class="title">
           <i class="dropdown icon"></i>
           Sound Quality
@@ -384,21 +384,23 @@
         <div class="content">
           <div class="required grouped fields">
             <label>Speaker's voice is clear.</label>
-            <%= choices "voice" %>
+            <%= choices(criteria: "voice") %>
+
           </div>
           <div class="grouped fields">
             <label>There is no background noise.</label>
-            <%= choices "noise"%>
+            <%= choices(criteria: "noise") %>
           </div>
           <div class="grouped fields">
             <label>Speaker's voice volume is appropriate.</label>
-            <%= choices "volume"%>
+            <%= choices(criteria:"volume")%>
           </div>
           <div class="grouped fields">
             <label>Any enhancements (i.e. music, special sounds) are clear and not distracting.</label>
-            <%= choices "enhacements" %>
+            <%= choices(criteria:"enhacements") %>
           </div>
         </div>
+
         <div class="title">
           <i class="dropdown icon"></i>
           Video Quality
@@ -406,23 +408,23 @@
         <div class="content">
           <div class="grouped fields">
             <label>Overall video moves smoothly and seamlessly from shot to shot. (e.g., writing on a SmartSympodium is smooth and doesn't just appear in a chuck.  You see the writing develop over time.)</label>
-            <%= choices "overallSmooth"%>
+            <%= choices(criteria:"overallSmooth")%>
           </div>
           <div class="grouped fields">
             <label>Any transitions that are used in the video are smooth and not distracting. (fade-in or fade-out is okay, transition from one video clip to next.)</label>
-            <%= choices "transition"%>
+            <%= choices(criteria:"transition")%>
           </div>
 
           <div class="grouped fields">
             <label>The video is sharp, clear, and in focus.</label>
-            <%= choices "sharpFocus"%>
+            <%= choices(criteria:"sharpFocus")%>
           </div>
           <div class="grouped fields">
             <label>Digital effects are used appropriately for emphasis.  (e.g., added features like special effects, graphics. enhace for engagement/entertainment.)</label>
-            <%= choices "effects"%>
+            <%= choices(criteria:"effects")%>
           </div>
-
         </div>
+
 
         <div class="title">
           <i class="dropdown icon"></i>
@@ -431,18 +433,17 @@
         <div class="content">
           <div class="grouped fields">
             <label>Uses on-screen text or symbols to highlight important information. (e.g., change in color contrast highlighting information, arrow appears on screen to draw attention to region of screen.)</label>
-            <%= choices "symbol" %>
-          </div>
-          <div class="grouped fields">
-            <label>Extraneous information is minimized. (i.e., Information delivered via the video is synthesized and to the point. Instructor stays on topic and does not ramble on tangents not relelvant to the informaiton in the video. Music or other auditory/visual aspects have meaning and are not randomly inserted.)</label>
-            <%= choices "informationMinimized"%>
-          </div>
-          <div class="grouped fields">
-            <label>Uses both auditory and visual channels to convey information. (e.g., while showing a picture or animation, the instructor also gives a verbal explanation of the visual.)</label>
-            <%= choices "conveyMessage"%>
+            <%= choices(criteria:"symbol") %>
+            <div class="grouped fields">
+              <label>Extraneous information is minimized. (i.e., Information delivered via the video is synthesized and to the point. Instructor stays on topic and does not ramble on tangents not relelvant to the informaiton in the video. Music or other auditory/visual aspects have meaning and are not randomly inserted.)</label>
+              <%= choices(criteria:"informationMinimized")%>
+            </div>
+            <div class="grouped fields">
+              <label>Uses both auditory and visual channels to convey information. (e.g., while showing a picture or animation, the instructor also gives a verbal explanation of the visual.)</label>
+              <%= choices(criteria:"conveyMessage")%>
+            </div>
           </div>
         </div>
-
         <div class="title">
           <i class="dropdown icon"></i>
           Content Quality
@@ -450,15 +451,15 @@
         <div class="content">
           <div class="grouped fields">
             <label>Wording is accurate.</label>
-            <%= choices "wordingAccurate"%>
+            <%= choices(criteria:"wordingAccurate")%>
           </div>
           <div class="grouped fields">
             <label>Wording is appropriate. (e.g., doesn't contain slang, not offensive, professional.)</label>
-            <%= choices "wordingAppropriate"%>
+            <%= choices(criteria:"wordingAppropriate")%>
           </div>
           <div class="grouped fields">
             <label>All the content in the video is accurate and contains no errors.</label>
-            <%= choices "contentAccurate"%>
+            <%= choices(criteria:"contentAccurate")%>
           </div>
         </div>
 
@@ -469,19 +470,19 @@
         <div class="content">
           <div class="grouped fields">
             <label>Content is organized and flows well.</label>
-            <%= choices "contentOrganized" %>
+            <%= choices(criteria:"contentOrganized")%>
           </div>
           <div class="grouped fields">
             <label>There are no irrelevant/extraneous references to any other content (i.e., other videos, textbook references, specific exercises, mention of upcoming assignments, etc.)</label>
-            <%= choices  "contentRelevant"%>
+            <%= choices(criteria: "contentRelevant")%>
           </div>
           <div class="grouped fields">
             <label>There is no sequencing/numbering in the video that would prevent the video from being resequenced within a set of videos.</label>
-            <%= choices "sequencing"%>
+            <%= choices(criteria:"sequencing")%>
           </div>
           <div class="grouped fields">
             <label>The video does not reference any weblinks.</label>
-            <%= choices "weblinks"%>
+            <%= choices(criteria:"weblinks")%>
           </div>
         </div>
 
@@ -492,35 +493,35 @@
         <div class="content">
           <div class="grouped fields">
             <label>All graphics, video, audio, 3-D, or other enhancements are used effectively to enrich the learning experience.</label>
-            <%= choices "graphicsEffective"%>
+            <%= choices(criteria:"graphicsEffective")%>
           </div>
           <div class="grouped fields">
             <label>Images/graphics are not distracting.</label>
-            <%= choices "graphicsDistraction" %>
+            <%= choices(criteria:"graphicsDistraction")%>
           </div>
           <div class="grouped fields">
             <label>Images are high quality (e.g., resolution, ratio aspect, etc.)</label>
-            <%= choices "graphicsQuality"%>
+            <%= choices(criteria:"graphicsQuality")%>
           </div>
-<!--          <div class="grouped fields">-->
-<!--            <label>Colors used in images/graphics are appropriate.</label>-->
-            <%#= choices "graphicsAppropriate"%>
-<!--          </div>-->
+          <!--         <div class="grouped fields">-->
+          <!--           <label>Colors used in images/graphics are appropriate.</label>-->
+          <%#= choices(criteria:"graphicsAppropriate")%>
+          <!--         </div>-->
           <div class="grouped fields">
             <label>Text size (typed, handwritten) is appropriate.</label>
-            <%= choices "textAppropriate"%>
+            <%= choices(criteria:"textAppropriate")%>
           </div>
           <div class="grouped fields">
-            <label>Text/font style is consistent.</label>
-            <%= choices "textConsistent"%>
+            <label>Text/font style is consistent. (This includes clean coversions to PDF)</label>
+            <%= choices(criteria:"textConsistent")%>
           </div>
           <div class="grouped fields">
             <label>Amount of text on the slides is appropriate.</label>
-            <%= choices "textAmount" %>
+            <%= choices(criteria:"textAmount")%>
           </div>
           <div class="grouped fields">
-            <label>Background is clean/consistent and not distracting.</label>
-            <%= choices "background"%>
+            <label>Background color is clean/consistent and not distracting.</label>
+            <%= choices(criteria:"background")%>
           </div>
         </div>
 
@@ -531,11 +532,11 @@
         <div class="content">
           <div class="grouped fields">
             <label>The video has interactive questions or features embedded that require the student to answer during the video.  (e.g., instructor asks a question and student pauses video to formulate answer to question.)</label>
-            <%= choices "interactive"%>
+            <%= choices(criteria:"interactive")%>
           </div>
           <div class="grouped fields">
             <label>The video allows students to control movement of the video (i.e., skip ahead, go to different chapter)</label>
-            <%= choices "studentControl" %>
+            <%= choices(criteria:"studentControl")%>
           </div>
         </div>
 
@@ -545,32 +546,32 @@
         </div>
         <div class="content">
           <div class="grouped fields">
-            <label>The presenter is shown (as a talking head) at some point during the video.  </label>
-            <%= choices "shownPresenter" %>
+            <label>The presenter is shown (as a talking head) at some point during the video.</label>
+            <%= choices(criteria:"shownPresenter")%>
           </div>
           <div class="grouped fields">
             <label>The video can be broken into videos less than 10 minutes in length.  (If video is already less than 10 minutes record N/A).  Please note the timestamps where the video can be cut when possible.</label>
-            <%= choices "videoLength"%>
+            <%= choices(criteria:"videoLength")%>
           </div>
           <div class="grouped fields">
-            <label>The video has a personal feel to it.  The presenter comes across as talking to the viewer and not a general audience.</label>
-            <%= choices "personal"%>
+            <label>The presenter comes across as talking to the viewer and not a general audience.  (e.g., a video that is a recording of a "live" class lecture is not personal because the audience is an actual class)</label>
+            <%= choices(criteria:"personal")%>
           </div>
           <div class="grouped fields">
             <label>The video contains some "moving" parts to it.  (i.e., it is not a slide presentation with a voice over). </label>
-            <%= choices "moving"%>
+            <%= choices(criteria:"moving")%>
           </div>
           <div class="grouped fields">
             <label>The speaker is engaging and keeps the viewers attention (i.e., not monotone and uses voice inflection appropriately)</label>
-            <%= choices "engaging"%>
+            <%= choices(criteria:"engaging")%>
           </div>
           <div class="grouped fields">
             <label>The speaker talks at a normal conversational pace (e.g., does not purposefully slow down).</label>
-            <%= choices "normalPace"%>
+            <%= choices(criteria:"normalPace")%>
           </div>
           <div class="grouped fields">
             <label>The speaker enunciates well.</label>
-            <%= choices "enunciation"%>
+            <%= choices(criteria:"enunciation")%>
           </div>
         </div>
 
@@ -589,7 +590,7 @@
           </div>
           <div class="grouped fields">
             <label>Review</label>
-            <%= choices2 "review"%>
+            <%= choices2"review"%>
           </div>
           <div class="grouped fields">
             <label>Explaining a Concept</label>
@@ -620,38 +621,40 @@
           </div>
         </div>
 
-      <div class="title">
-        <i class="dropdown icon"></i>
-        Overall
-      </div>
-      <div class="content">
-        <div class="grouped fields">
-          <label>Overall this video should be...</label>
-          <div class="field">
-            <div class="ui radio checkbox">
-              <input type="radio" value="Used as is" name="rubric[overall]" tabindex="0" class="hidden">
-              <label>Used as is</label>
+        <div class="title">
+          <i class="dropdown icon"></i>
+          Overall
+        </div>
+        <div class="content">
+          <div class="grouped fields">
+            <label>Overall this video should be...</label>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" value="Used as is" name="rubric[overall]" tabindex="0" class="hidden">
+                <label>Used as is</label>
+              </div>
             </div>
-          </div>
-          <div class="field">
-            <div class="ui radio checkbox">
-              <input type="radio" value="Used with revision" name="rubric[overall]" tabindex="0" class="hidden">
-              <label> Used with revision</label>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" value="Used with revision" name="rubric[overall]" tabindex="0" class="hidden">
+                <label> Used with revision</label>
+              </div>
             </div>
-          </div>
-          <div class="field">
-            <div class="ui radio checkbox">
-              <input type="radio" value="Not used" name="rubric[overall]" tabindex="0" class="hidden">
-              <label>Not used</label>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" value="Not used" name="rubric[overall]" tabindex="0" class="hidden">
+                <label>Not used</label>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+
       </div>
 
-
-        <%#end %>
-      </form>
+      <div class=" ui center aligned container">
+        <button style="color: white; margin: 20px 0 20px 0" class="ui huge submit blue basic button">Create</button>
+      </div>
+    </form>
   </div>
   <div class="actions">
     <button class="ui positive button" form="newReview">Submit</button>

@@ -310,7 +310,7 @@ module VideosHelper
           </div>
           <div class=\"field\">
             <div class=\"ui radio checkbox\">
-              <input type=\"radio\" value=\"Not used\" name=\"rubric[overall]\" tabindex=\"0\" class=\"hidden\" #{c}
+              <input type=\"radio\" value=\"Not used\" name=\"rubric[overall]\" tabindex=\"0\" class=\"hidden\" #{c}>
               <label>Not used</label>
             </div>
           </div>".html_safe

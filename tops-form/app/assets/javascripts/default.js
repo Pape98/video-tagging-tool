@@ -78,9 +78,7 @@ $( document ).ready(function() {
         $.each($("#keywords option:selected"), function(){
             keywords.push($(this).val());
         });
-        console.log(keywords)
         var id = uniqueID()
-        console.log(id);
         var html = '<div class="field" style="margin-top:20px ">' +
                 '<div class="ui action input">' +
             '<input type="text" placeholder="Ex: 08:23" name="video[segments[]][cut]">' +

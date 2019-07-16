@@ -13,8 +13,9 @@ function fillData(){
     for(var i = 0; i < x.length; ++i){
         var keywords = $(x[i]).data('keywords');
         var cut = $(x[i]).data('cut');
-        console.log(cut)
-        $('.'+cut).dropdown('set selected',keywords);
+        if(cut != ''){
+            $('.'+cut).dropdown('set selected',keywords);
+        }
     }
     update_ui()
 }

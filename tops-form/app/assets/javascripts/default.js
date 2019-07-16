@@ -481,32 +481,14 @@ $( document ).ready(function() {
             '<div class="ui negative button deleteField">Delete</div>' +
             '        </div>' +
             '       </div>';
-        // $("#timekeyword").append(data);
         $('#timekeyword').append(html);
         $('#mfield' + id).dropdown('set selected',keywords);
 
         update_ui()
     });
 
-    // var data='<div class="field">' +
-    //     '<div class="ui action input">' +
-    //     '<input type="text" placeholder="Ex: 08:23" name="video[segments[]][cut]">' +
-    //     '<select id="mfield" multiple="multiple" class="ui fluid search dropdown" name="video[segments[]][keywords][]">' +
-    //
-    //         '</select>'+
-    //         '<div class="ui negative button deleteField" id="deleteField">Delete</div>' +
-    //         '</div>' +
-    //     '</div>';
-    //
-    //
-    //
-    //     $(".wrapper").on("click", ".deleteField", function(){
-    //         alert("Changed");
-    //     });
-
-
     $('.field').on('click', '.deleteField',function(){
-        alert("delete called")
+        $(this).parent('div').remove();
     });
 
     $('#addKeyword').click(function(){

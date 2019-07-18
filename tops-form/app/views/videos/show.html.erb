@@ -15,12 +15,8 @@
     </div>
   </div>
   <div class="row">
-    <div class="center aligned seven wide column">
-      <div class="ui 4:3 embed" data-url="http://mpeg.math.tamu.edu/Joe_Kahlig/count1/count1-7-14.html" data-placeholder="https://brandguide.tamu.edu/assets/img/logos/tam-stack.png" data-icon="right circle arrow"></div>
-      <a href="/videos/<%=@video.id %>/edit"> <span class="ui big blue button" style="margin-top: 20px">Edit</span></a>
-      <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/videos/<%=@video.id%>"class="item" style="color:red"><span class="ui big red button" style="margin-top: 20px">Delete</span></a>
-    </div>
-    <div class="nine wide column">
+    <div class=column">
+
       <table class="ui very compact table" style="margin: 0 !important;">
         <tbody>
         <tr class="beige-bg">
@@ -102,9 +98,37 @@
             </table>
           </td>
         </tr>
+        <tr>
+          <td>Resources</td>
+          <td>
+            <table class="ui center aligned celled very compact table">
+              <thead>
+              <tr>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Link</th>
+              </tr>
+              </thead>
+              <tbody>
+
+              <%@video.resources.each do |resource| %>
+                <tr>
+                  <td> <%=resource[:category]%></td>
+                  <td> <%=resource[:description]%></td>
+                  <td><a href="<%=resource[:link]%>"><i class=" linkify icon"></i></a></td>
+                </tr>
+
+              <% end %>
+              </tbody>
+            </table>
+          </td>
+        </tr>
         </tbody>
       </table>
-
+      <div class="ui center aligned container" style="margin-top: 20px">
+        <a href="/videos/<%=@video.id %>/edit"> <span class="ui big blue button" style="margin-top: 20px">Edit</span></a>
+        <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/videos/<%=@video.id%>"class="item" style="color:red"><span class="ui big red button" style="margin-top: 20px">Delete</span></a>
+      </div>
     </div>
   </div>
 

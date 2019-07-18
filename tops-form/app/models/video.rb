@@ -12,5 +12,6 @@ class Video
   field :courses, type:Array,default: []
   field :keywords, type:Array,default: []
   field :segments, type:Array,default: []
+  field :resources, type:Array,default: []
   field :lastEdit, type:String
 end

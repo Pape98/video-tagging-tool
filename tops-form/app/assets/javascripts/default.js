@@ -20,6 +20,9 @@ function fillData(){
     update_ui()
 }
 
+function pape(){
+    alert('success')
+}
 
 function addCut(val){
     var cut = val;
@@ -36,6 +39,25 @@ function uniqueID(){
 };
 $( document ).ready(function() {
 
+
+    $('#addResourceButton').click(function(){
+        var html = '<div class="field"> '+
+            ' <label>Resource</label>' +
+            '<div class="ui action input">'+
+            '<input class="ui big input" type="text" placeholder="Link" name="video[resources[]][link]">'+
+            '<input class="ui big input" type="text" placeholder="Description" name="video[resources[]][description]">' +
+            '<select id="courses" class="ui small search dropdown" name="video[resources[]][category]">'+
+            '<option value="">Resource Type</option>'+
+            '<option value="Questions">Questions</option>'+
+            '<option value="Answers">Answers</option>'+
+            '<option value="Solutions">Solutions</option>'+
+            '<option value="Notes">Notes</option>'+
+            '</select>'+
+            '</div>'+
+            '</div>';
+        $('#addResourceContainer').after(html);
+        update_ui()
+    });
 
     $('.ui.form')
         .form({
@@ -521,6 +543,7 @@ $( document ).ready(function() {
             // bottomOffset: 1000,
         })
     ;
+
 
     })
 

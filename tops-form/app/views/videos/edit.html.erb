@@ -28,7 +28,7 @@
       </div>
     </div>
     <div class="field" id="timekeyword">
-      <label>Segment Start Time/Keywords</label>
+      <label id="keywordLabel" data-keywords="<%=keywordNames%>">Segment Start Time/Keywords</label>
       <%counter = 1 %>
         <% @video.segments.each do |segment|  %>
         <div class="field">

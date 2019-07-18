@@ -1128,6 +1128,33 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="puma (vbundled(4.0.1)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="3" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/cache/ruby/2.4.0/gems/puma-4.0.1/bin" />
+          <root url="file://$MODULE_DIR$/vendor/cache/ruby/2.4.0/gems/puma-4.0.1/ext" />
+          <root url="file://$MODULE_DIR$/vendor/cache/ruby/2.4.0/gems/puma-4.0.1/lib" />
+          <root url="file://$MODULE_DIR$/vendor/cache/ruby/2.4.0/gems/puma-4.0.1/docs" />
+          <root url="file://$MODULE_DIR$/vendor/cache/ruby/2.4.0/gems/puma-4.0.1/tools" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/cache/ruby/2.4.0/gems/puma-4.0.1/bin" />
+          <root url="file://$MODULE_DIR$/vendor/cache/ruby/2.4.0/gems/puma-4.0.1/ext" />
+          <root url="file://$MODULE_DIR$/vendor/cache/ruby/2.4.0/gems/puma-4.0.1/lib" />
+          <root url="file://$MODULE_DIR$/vendor/cache/ruby/2.4.0/gems/puma-4.0.1/docs" />
+          <root url="file://$MODULE_DIR$/vendor/cache/ruby/2.4.0/gems/puma-4.0.1/tools" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/vendor/cache/ruby/2.4.0/gems/puma-4.0.1/bin" />
+          <root url="file://$MODULE_DIR$/vendor/cache/ruby/2.4.0/gems/puma-4.0.1/ext" />
+          <root url="file://$MODULE_DIR$/vendor/cache/ruby/2.4.0/gems/puma-4.0.1/docs" />
+          <root url="file://$MODULE_DIR$/vendor/cache/ruby/2.4.0/gems/puma-4.0.1/tools" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="rack (vbundled(2.0.7)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="3" />

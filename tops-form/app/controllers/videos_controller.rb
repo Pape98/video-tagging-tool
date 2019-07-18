@@ -14,18 +14,19 @@ class VideosController < ApplicationController
 
   def create
     # if Video.where(link: params[:video][:link]).count >= 1
-    if false
-      flash[:notice] = "Video with entered link already exists!"
-      redirect_to new_video_path
-    else
-      # params[:rubric][:author] = session[:current_user_name]
-      # rubric = Rubric.new(rubric_params)
-      @video =  Video.new(video_params)
-      @video.lastEdit = session[:current_user_name]
-      @video.save
-      flash[:notice] = "Video has been created and has following id:'#{@video.id}'"
-      redirect_to video_path(@video)
-    end
+    # if false
+    #   flash[:notice] = "Video with entered link already exists!"
+    #   redirect_to new_video_path
+    # else
+    #   # params[:rubric][:author] = session[:current_user_name]
+    #   # rubric = Rubric.new(rubric_params)
+    #   @video =  Video.new(video_params)
+    #   @video.lastEdit = session[:current_user_name]
+    #   @video.save
+    #   flash[:notice] = "Video has been created and has following id:'#{@video.id}'"
+    #   redirect_to video_path(@video)
+    # end
+    render json:params
   end
 
 

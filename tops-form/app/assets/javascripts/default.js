@@ -20,6 +20,9 @@ function fillData(){
     update_ui()
 }
 
+function pape(){
+    alert('success')
+}
 
 function addCut(val){
     var cut = val;
@@ -35,6 +38,8 @@ function uniqueID(){
     return indexforID++;
 };
 $( document ).ready(function() {
+
+
     $('#addResourceButton').click(function(){
         var html = '<div class="field"> '+
             ' <label>Resource</label>' +

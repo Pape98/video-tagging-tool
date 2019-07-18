@@ -67,11 +67,31 @@
       <label id="courses-label" data-courses='<%=@video.courses %>'>Possible Course to use</label>
       <%= select("post", "courses", courses, {include_hidden: false },{:id => 'courses', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[courses][]"})%>
     </div>
-    <div class="ui center aligned container">
-      <button class="ui blue huge submit  button" style="margin: 20px 0 20px 0;color: white">Save Video Information</button>
 
+    <h4 class="ui dividing header">Additional Resources</h4>
+    <div class="ui center aligned container field" id="addResourceContainer">
+      <div class="ui green button" id="addResourceButton"><i class="plus icon"></i>Add New Resource</div>
     </div>
-<!--      <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/videos/<%#=@video.id%>"><button class="ui negative button">Delete</button></a>-->
+    <%@video.resources.each do |resource| %>
+      <div class="field">
+        <label >Resource</label>
+        <div class="ui action input">
+            <input class="ui big input" type="text" value="<%=resource[:link]%>" name="video[resources[]][link]">
+            <input class="ui big input" type="text" value="<%=resource[:description]%>" name="video[resources[]][description]">
+            <select class="ui small search dropdown" name="video[resources[]][category]" data-category ="<%= resource[:category] %>">
+              <option>Resource Type</option>
+              <option value="Questions" <% if (resource[:category] == "Questions") %><%= "selected" %> <% end %>>Questions</option>
+              <option value="Answers" <% if (resource[:category] == "Answers") %><%= "selected" %> <% end %>>Answers</option>
+              <option value="Solutions" <% if (resource[:category] == "Solutions") %><%=  "selected" %> <% end %>>Solutions</option>
+              <option value="Notes" <% if (resource[:category] == "Notes") %><%=  "selected" %> <% end %>>Notes</option>
+            </select>
+          </div>
+        </div>
+    <% end  %>
+    <h1 class="ui dividing header"></h1>
+    <div class="ui center aligned container">
+      <button class="ui blue huge submit  button" style="margin: 20px 0 20px 0;color: white">Save Video </button>
+    </div>
 
   <% end %>
 

@@ -18,9 +18,9 @@ class VideosController < ApplicationController
       flash[:notice] = "Video with entered link already exists!"
       redirect_to new_video_path
     else
-      params[:rubric][:author] = session[:current_user_name]
-      rubric = Rubric.new(rubric_params)
-      @video =  rubric.create_video(video_params)
+      # params[:rubric][:author] = session[:current_user_name]
+      # rubric = Rubric.new(rubric_params)
+      @video =  Video.new(video_params)
       @video.lastEdit = session[:current_user_name]
       @video.save
       flash[:notice] = "Video has been created and has following id:'#{@video.id}'"

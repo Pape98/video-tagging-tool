@@ -10,5 +10,8 @@ Rails.application.routes.draw do
   post 'rubric/create/:id' , :to => 'videos#create_rubric'
   # id of rubric
   post 'rubric/update/:id' , :to => 'videos#update_rubric'
+  # id of rubric
+  post 'rubric/delete/:id' , :to => 'videos#destroy_rubric'
+
   root 'welcome#index'
 end

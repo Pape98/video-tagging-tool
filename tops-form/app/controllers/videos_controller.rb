@@ -58,7 +58,7 @@ class VideosController < ApplicationController
     rubric = Rubric.new(rubric_params)
     rubric.video = @video
     rubric.save
-    flash[:notice] = "#{rubric.author}'s has been created"
+    flash[:notice] = "#{rubric.author}'s rubric has been created"
     redirect_to @video
 
   end
@@ -70,6 +70,15 @@ class VideosController < ApplicationController
     flash[:notice] = "#{rubric.author}'s has been updated"
     video = Video.find(rubric.video_id)
     redirect_to video
+  end
+
+  def destroy_rubric
+    id = params[:id]
+    rubric = Rubric.find(id)
+    flash[:notice] = "#{rubric.author}'s rubric has been deleted"
+    rubric.destroy
+    redirect_to request.referrer
+  # render json: rubric
   end
 
   def destroy

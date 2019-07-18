@@ -28,7 +28,7 @@
 
 
        <div class="field" id="timekeyword">
-         <label>Segment Start Time/Keywords</label>
+         <label id="keywordLabel" data-keywords="<%=keywordNames%>">Segment Start Time/Keywords</label>
          <div class="ui action input">
            <input type="text" placeholder="Ex: 08:23" name="video[segments[]][cut]">
            <%= select("post", "keywords", keywordNames, {include_hidden: false },{:id => 'keywords', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[segments[]][keywords][]"})%>
@@ -72,7 +72,6 @@
      <div class=" ui center aligned container">
        <button style="color: white; margin: 20px 0 20px 0" class="ui huge submit blue button">Create</button>
      </div>
-
 
    </form>
 

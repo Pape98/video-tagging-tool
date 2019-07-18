@@ -10,6 +10,10 @@
   </div>
 </h2>
 
+<div class="ui center aligned text container">
+  <a class="ui big primary button" href="/videos/<%=@video.id %>">View Video</a>
+</div>
+
 <div class="ui container">
   <%= form_for @video, url: {action: "update"}, html: {class: "ui form"} do |f| %>
     <h4 class="ui dividing header">Video Information</h4>

@@ -11,6 +11,10 @@
   </div>
 </h2>
 
+<div class="ui center aligned text container">
+  <h3>Number of videos: <%=@videos.count %></h3>
+</div>
+
 <!--<div class="ui center aligned container">-->
 <!--  <div class="ui form">-->
 <!--    <div class="inline fields">-->
@@ -34,6 +38,7 @@
       <td>Presenter</td>
       <td>Keywords</td>
       <td>Courses</td>
+      <td>Status</td>
       <td></td>
     </tr>
     <%@videos.each do |video|  %>
@@ -165,7 +170,17 @@
         <% end end  %>
 
       </td>
-
+    <td>
+      <% video.rubrics.each do |rubric|%>
+        <% case rubric.overall %>
+        <% when 'Used as is' %>
+          <div style= "margin-top: 10px" class="ui green label"><%=rubric.overall %></div>
+        <% when 'Used with revision' %>
+          <div style= "margin-top: 10px" class="ui yellow label"><%=rubric.overall %></div>
+        <% when 'Not used' %>
+          <div style= "margin-top: 10px" class="ui red label"><%=rubric.overall %></div>
+      <% end end %>
+    </td>
     <td>
       <div class="ui link list">
       <a href="/videos/<%=video.id%>" class="item">View</a>

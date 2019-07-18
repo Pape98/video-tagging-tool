@@ -354,7 +354,11 @@
 
 
             <div class="ui center aligned container">
-              <button form = "<%=rubric.author%>" style="margin: 20px 0 20px 0;color: white;" class="ui basic huge  submit blue button">Save <%=rubric.author%>'s Rubric</button>
+              <div class="ui huge buttons">
+                <button form = "<%=rubric.author%>"class="ui submit blue button" >Save</button>
+                <div class="or"></div>
+                <a data-confirm="Are you sure?" rel="nofollow" data-method="post" href="/rubric/delete/<%=rubric.id%>"class="ui button">Delete</a>
+              </div>
             </div>
         </form>
     </div>

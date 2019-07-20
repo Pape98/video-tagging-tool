@@ -8,19 +8,19 @@ class VideosController < ApplicationController
   def index
     if params[:video].nil?
       @videos = Video.asc(:presenter)
-    elsif params[:video][:presenter] != ' '
+    elsif params[:status].nil? == false
+      temp = Rubric.where(overall: params[:status]).only(:video_id).map(&:video_id)
+      @videos =   Video.where(:_id.in => temp).all
+    else
       allKeywords = Keyword.pluck(:name)
       allCourses =  ["141", "140", "142", "147", "148",
                          "150","151", "152", "166", "167",
                          "171","172", "251", "304", "308",
-                         "366" ,"365"]
+                         "365" ,"366"]
       presenter = params[:video][:presenter]
       keywords = params[:video][:keywords].nil? ? [''] : params[:video][:keywords]
       courses = params[:video][:courses].nil? ? ['']: params[:video][:courses]
        @videos = Video.or(:presenter => presenter).or(:courses.in => courses).or(segments: {'$elemMatch': { keywords: {'$in': keywords} }})
-    else
-       temp = Rubric.where(overall: params[:status]).only(:video_id).map(&:video_id)
-       @videos =   Video.where(:_id.in => temp).all
     end
     # render json:params[:video]
   end

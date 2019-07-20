@@ -9,9 +9,26 @@ class VideosController < ApplicationController
     if params[:video].nil?
       @videos = Video.asc(:presenter)
     else
+      allKeywords = Keyword.pluck(:name)
+      allCourses =  ["141", "140", "142", "147", "148",
+                         "150","151", "152", "166", "167",
+                         "171","172", "251", "304", "308",
+                         "366" ,"365"]
       presenter = params[:video][:presenter]
-      keywords = params[:video][:keywords]
-      @videos = Video.where(presenter: presenter)
+      keywords = params[:video][:keywords].nil? ? [''] : params[:video][:keywords]
+      courses = params[:video][:courses].nil? ? ['']: params[:video][:courses]
+      # # @videos = Video.where(keywords:['Absolute','Absolute Maximun'])
+      # # @videos = Video.where(presenter:presenter).union.in.(courses: courses).union.in(keywords: keywords)
+      # # @videos = Video.where(courses: { '$in': courses }).union.in(keywords: { '$in': keywords })
+      # @videos = Video.or({:courses.in => courses},{:keywords.in => keywords})
+      # @videos = Video.or(segments: {'$elemMatch': { keywords: {'$in': keywords} }})
+       @videos = Video.or(:presenter => presenter).or(:courses.in => courses).or(segments: {'$elemMatch': { keywords: {'$in': keywords} }})
+      # User.where(c: {'$elemMatch' => {name: 'a'}})
+      # render json: keywords
+      #
+      # render plain: "#{courses.nil?}"
+
+      # render json:@videos
     end
     # render json:params[:video]
   end
@@ -25,8 +42,6 @@ class VideosController < ApplicationController
       flash[:notice] = "Video with entered link already exists!"
       redirect_to new_video_path
     else
-      # params[:rubric][:author] = session[:current_user_name]
-      # rubric = Rubric.new(rubric_params)
       @video =  Video.new(video_params)
       @video.lastEdit = session[:current_user_name]
       @video.save
@@ -96,6 +111,7 @@ class VideosController < ApplicationController
   end
 
   def video_params
+
        params.require(:video).permit(:link,
                                      :section,
                                      :topic,
@@ -104,6 +120,7 @@ class VideosController < ApplicationController
                                      segments:[:cut,:keywords => []],
                                      resources:[:link,:category,:description],
                                      :courses => [])
+
   end
 
 

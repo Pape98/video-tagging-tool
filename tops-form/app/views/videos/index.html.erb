@@ -15,6 +15,10 @@
   <h3>Number of videos: <%=@videos.count %></h3>
 </div>
 
+<div class="ui center aligned container" style="margin-top: 30px">
+  <a href="/videos"><button class="ui big primary button">View All</button></a>
+</div>
+
 <!--<div class="ui center aligned container">-->
 <!--  <div class="ui form">-->
 <!--    <div class="inline fields">-->
@@ -27,30 +31,6 @@
 <!--</div>-->
 <!--</div>-->
 
-
-<div class="ui container segment" style="margin-top: 40px">
-  <form class="ui form" action="/videos" method="GET">
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    <div class="field">
-      <label>Author/Presenter</label>
-      <%= select("post", "professors", professors.sort, {include_hidden: false,include_blank: true },{:id => 'presenter', :multiple => false, :class => 'ui fluid search dropdown',:name => "video[presenter]"})%>
-    </div>
-    <div class="field">
-      <label id="keywordLabel" data-keywords="<%=keywordNames%>">Keywords</label>
-      <%= select("post", "keywords", keywordNames, {include_hidden: false },{:id => 'keywords', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[keywords][]"})%>
-    </div>
-    <div class="field">
-      <label>Courses</label>
-      <%= select("post", "courses", courses, {include_hidden: false },{:id => 'courses', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[courses][]"})%>
-    </div>
-    <button class="ui positive submit button">Submit</button>
-  </form>
-
-</div>
-
-<div class="ui center aligned container" style="margin-top: 30px">
-  <a href="/videos"><div class="ui big primary button">View All</div></a>
-</div>
 
 <div class="ui container">
   <table class="ui very compact small center aligned celled striped table">
@@ -219,4 +199,27 @@
   </table>
 </div>
 
+  <div class="ui modal">
+      <div class="ui text container" style="margin-top: 40px">
+        <div class="ui warning attached message">
+          <i class="circular exclamation icon"></i>
+          You can only search one category at a time
+        </div>
+        <form class="ui form attached  segment" action="/videos" method="GET">
+          <div class="field">
+            <label>Author/Presenter</label>
+            <%= select("post", "professors", professors.sort, {include_hidden: false,include_blank: true },{:id => 'presenter', :multiple => false, :class => 'ui fluid search dropdown',:name => "video[presenter]"})%>
+          </div>
+          <div class="field">
+            <label id="keywordLabel" data-keywords="<%=keywordNames%>">Keywords</label>
+            <%= select("post", "keywords", keywordNames, {include_hidden: false },{:id => 'keywords', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[keywords][]"})%>
+          </div>
+          <div class="field">
+            <label>Courses</label>
+            <%= select("post", "courses", courses, {include_hidden: false },{:id => 'courses', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[courses][]"})%>
+          </div>
+          <button class="ui positive submit button">Submit</button>
+        </form>
+      </div>
+  </div>
 <%=render 'footer' %>

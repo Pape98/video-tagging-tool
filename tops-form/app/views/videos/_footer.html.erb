@@ -1,4 +1,4 @@
-<div class="ui basic big modal">
+<div class="ui basic big modal search">
   <div class="ui text container" style="margin-top: 40px">
     <div class="ui warning attached message">
       <i class="circular exclamation icon"></i>
@@ -15,6 +15,10 @@
       </div>
       <div class="field">
         <label>Courses</label>
+        <%= select("post", "courses", courses, {include_hidden: false },{:id => 'courses', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[courses][]"})%>
+      </div>
+      <div class="field">
+        <label>Status</label>
         <%= select("post", "courses", courses, {include_hidden: false },{:id => 'courses', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[courses][]"})%>
       </div>
       <button class="ui positive submit button">Submit</button>

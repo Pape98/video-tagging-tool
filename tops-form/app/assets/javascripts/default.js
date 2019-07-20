@@ -41,21 +41,6 @@ function uniqueID(){
 };
 $( document ).ready(function() {
 
-    $('#searchButton').click(function(){
-        $('.ui.modal')
-            .modal('show')
-        ;
-        update_ui()
-    })
-    $('.ui.search')
-        .search({
-            source : content,
-            searchFields   : [
-                'title'
-            ],
-            fullTextSearch: false
-        })
-    ;
 
     $('#addResourceButton').click(function(){
         KeywordList();
@@ -170,6 +155,13 @@ $( document ).ready(function() {
             // bottomOffset: 1000,
         })
     ;
+
+    $('#searchButton').click(function(){
+        $('.ui.modal.search')
+            .modal('show')
+        ;
+        update_ui()
+    });
 
 
     })

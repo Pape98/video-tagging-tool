@@ -8,7 +8,7 @@ class VideosController < ApplicationController
   def index
     if params[:video].nil?
       @videos = Video.asc(:presenter)
-    else
+    elsif params[:video][:presenter] != ' '
       allKeywords = Keyword.pluck(:name)
       allCourses =  ["141", "140", "142", "147", "148",
                          "150","151", "152", "166", "167",
@@ -17,19 +17,10 @@ class VideosController < ApplicationController
       presenter = params[:video][:presenter]
       keywords = params[:video][:keywords].nil? ? [''] : params[:video][:keywords]
       courses = params[:video][:courses].nil? ? ['']: params[:video][:courses]
-      # # @videos = Video.where(keywords:['Absolute','Absolute Maximun'])
-      # # @videos = Video.where(presenter:presenter).union.in.(courses: courses).union.in(keywords: keywords)
-      # # @videos = Video.where(courses: { '$in': courses }).union.in(keywords: { '$in': keywords })
-      # @videos = Video.or({:courses.in => courses},{:keywords.in => keywords})
-      # @videos = Video.or(segments: {'$elemMatch': { keywords: {'$in': keywords} }})
-      #  @videos = Video.or(:presenter => presenter).or(:courses.in => courses).or(segments: {'$elemMatch': { keywords: {'$in': keywords} }})
-      @videos = Video.any_of()
-      # User.where(c: {'$elemMatch' => {name: 'a'}})
-      # render json: keywords
-      #
-      # render plain: "#{courses.nil?}"
-
-      # render json:@videos
+       @videos = Video.or(:presenter => presenter).or(:courses.in => courses).or(segments: {'$elemMatch': { keywords: {'$in': keywords} }})
+    else
+       temp = Rubric.where(overall: params[:status]).only(:video_id).map(&:video_id)
+       @videos =   Video.where(:_id.in => temp).all
     end
     # render json:params[:video]
   end

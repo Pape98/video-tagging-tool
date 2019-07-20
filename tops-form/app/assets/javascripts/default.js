@@ -41,18 +41,12 @@ function uniqueID(){
 };
 $( document ).ready(function() {
 
-    var
-        content = [
-            {
-                title: 'Horse',
-                description: 'An Animal',
-            },
-            {
-                title: 'Cow',
-                description: 'Another Animal',
-            }
-        ]
-    ;
+    $('#searchButton').click(function(){
+        $('.ui.modal')
+            .modal('show')
+        ;
+        update_ui()
+    })
     $('.ui.search')
         .search({
             source : content,

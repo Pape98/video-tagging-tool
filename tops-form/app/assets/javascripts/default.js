@@ -41,6 +41,7 @@ function uniqueID(){
 };
 $( document ).ready(function() {
 
+
     $('#addResourceButton').click(function(){
         KeywordList();
         var html = '<div class="field"> '+
@@ -154,6 +155,13 @@ $( document ).ready(function() {
             // bottomOffset: 1000,
         })
     ;
+
+    $('#searchButton').click(function(){
+        $('.ui.modal.search')
+            .modal('show')
+        ;
+        update_ui()
+    });
 
 
     })

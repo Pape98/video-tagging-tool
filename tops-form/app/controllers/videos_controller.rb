@@ -6,7 +6,23 @@ class VideosController < ApplicationController
 
 
   def index
-    @videos = Video.all
+    if params[:video].nil?
+      @videos = Video.asc(:presenter)
+    elsif params[:video][:presenter] != ' '
+      allKeywords = Keyword.pluck(:name)
+      allCourses =  ["141", "140", "142", "147", "148",
+                         "150","151", "152", "166", "167",
+                         "171","172", "251", "304", "308",
+                         "366" ,"365"]
+      presenter = params[:video][:presenter]
+      keywords = params[:video][:keywords].nil? ? [''] : params[:video][:keywords]
+      courses = params[:video][:courses].nil? ? ['']: params[:video][:courses]
+       @videos = Video.or(:presenter => presenter).or(:courses.in => courses).or(segments: {'$elemMatch': { keywords: {'$in': keywords} }})
+    else
+       temp = Rubric.where(overall: params[:status]).only(:video_id).map(&:video_id)
+       @videos =   Video.where(:_id.in => temp).all
+    end
+    # render json:params[:video]
   end
 
   def new
@@ -18,8 +34,6 @@ class VideosController < ApplicationController
       flash[:notice] = "Video with entered link already exists!"
       redirect_to new_video_path
     else
-      # params[:rubric][:author] = session[:current_user_name]
-      # rubric = Rubric.new(rubric_params)
       @video =  Video.new(video_params)
       @video.lastEdit = session[:current_user_name]
       @video.save
@@ -89,6 +103,7 @@ class VideosController < ApplicationController
   end
 
   def video_params
+
        params.require(:video).permit(:link,
                                      :section,
                                      :topic,
@@ -97,6 +112,7 @@ class VideosController < ApplicationController
                                      segments:[:cut,:keywords => []],
                                      resources:[:link,:category,:description],
                                      :courses => [])
+
   end
 
 

@@ -15,6 +15,10 @@
   <h3>Number of videos: <%=@videos.count %></h3>
 </div>
 
+<div class="ui center aligned container" style="margin-top: 30px">
+  <a href="/videos"><button class="ui big primary button">View All</button></a>
+</div>
+
 <!--<div class="ui center aligned container">-->
 <!--  <div class="ui form">-->
 <!--    <div class="inline fields">-->
@@ -26,6 +30,7 @@
 <!--    </div>-->
 <!--</div>-->
 <!--</div>-->
+
 
 <div class="ui container">
   <table class="ui very compact small center aligned celled striped table">
@@ -43,7 +48,7 @@
     </tr>
     <%@videos.each do |video|  %>
     <tr>
-      <td class="edit" data-title="Last Edited By:" data-content="<%=video.lastEdit%>"><%=video.topic%></td>
+      <td class="edit" data-title="Last Edited By:" data-content="<%=video.lastEdit%>"><%=video.id%></td>
       <td><a href="<%=video.link%>"><%=video.link%></a></td>
       <td><%=video.presenter%></td>
       <td>

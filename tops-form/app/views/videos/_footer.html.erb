@@ -19,8 +19,12 @@
       </div>
       <div class="field">
         <label>Status</label>
-        <%= select("post", "courses", courses, {include_hidden: false },{:id => 'courses', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[courses][]"})%>
-      </div>
+        <select id="courses" class="ui small search dropdown" name="video[status]">
+          <option value="Type">Type</option>
+          <option value="Used as is">Used as is</option>
+          <option value="Used with revision">Used with revision</option>
+          <option value="Not used">Not used</option>
+          </select>'+      </div>
       <button class="ui positive submit button">Submit</button>
     </form>
   </div>

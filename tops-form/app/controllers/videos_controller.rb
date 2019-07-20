@@ -22,7 +22,8 @@ class VideosController < ApplicationController
       # # @videos = Video.where(courses: { '$in': courses }).union.in(keywords: { '$in': keywords })
       # @videos = Video.or({:courses.in => courses},{:keywords.in => keywords})
       # @videos = Video.or(segments: {'$elemMatch': { keywords: {'$in': keywords} }})
-       @videos = Video.or(:presenter => presenter).or(:courses.in => courses).or(segments: {'$elemMatch': { keywords: {'$in': keywords} }})
+      #  @videos = Video.or(:presenter => presenter).or(:courses.in => courses).or(segments: {'$elemMatch': { keywords: {'$in': keywords} }})
+      @videos = Video.any_of()
       # User.where(c: {'$elemMatch' => {name: 'a'}})
       # render json: keywords
       #

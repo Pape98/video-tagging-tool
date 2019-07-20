@@ -6,7 +6,14 @@ class VideosController < ApplicationController
 
 
   def index
-    @videos = Video.all
+    if params[:video].nil?
+      @videos = Video.asc(:presenter)
+    else
+      presenter = params[:video][:presenter]
+      keywords = params[:video][:keywords]
+      @videos = Video.where(presenter: presenter)
+    end
+    # render json:params[:video]
   end
 
   def new

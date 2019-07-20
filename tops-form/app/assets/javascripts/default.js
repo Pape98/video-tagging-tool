@@ -41,6 +41,28 @@ function uniqueID(){
 };
 $( document ).ready(function() {
 
+    var
+        content = [
+            {
+                title: 'Horse',
+                description: 'An Animal',
+            },
+            {
+                title: 'Cow',
+                description: 'Another Animal',
+            }
+        ]
+    ;
+    $('.ui.search')
+        .search({
+            source : content,
+            searchFields   : [
+                'title'
+            ],
+            fullTextSearch: false
+        })
+    ;
+
     $('#addResourceButton').click(function(){
         KeywordList();
         var html = '<div class="field"> '+

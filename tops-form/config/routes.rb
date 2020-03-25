@@ -13,5 +13,9 @@ Rails.application.routes.draw do
   # id of rubric
   post 'rubric/delete/:id' , :to => 'videos#destroy_rubric'
 
+  # API
+  get '/api/videos' , :to => 'api#videos'
+  get '/api/videos/:id' , :to => 'api#video'
+
   root 'welcome#index'
 end

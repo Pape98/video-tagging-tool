@@ -5,11 +5,12 @@ development:
     default:
       # Defines the name of the default database that Mongoid can connect to.
       # (required).
-      database: tops-development
+      # database: tops-development
       # Provides the hosts the default client can connect to. Must be an array
       # of host:port pairs. (required)
-      hosts:
-        - localhost:27017
+      # hosts:
+      #   - localhost:27017
+      uri: mongodb://pape98:221298@cluster0-shard-00-00-kpu2c.mongodb.net:27017,cluster0-shard-00-01-kpu2c.mongodb.net:27017,cluster0-shard-00-02-kpu2c.mongodb.net:27017/tops?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
       options:
         # Change the default write concern. (default = { w: 1 })
         # write:
@@ -149,9 +150,10 @@ development:
 test:
   clients:
     default:
-      database: tops-test
-      hosts:
-        - localhost:27017
+      # database: tops-test
+      # hosts:
+      #   - localhost:27017
+      uri: mongodb://pape98:221298@cluster0-shard-00-00-kpu2c.mongodb.net:27017,cluster0-shard-00-01-kpu2c.mongodb.net:27017,cluster0-shard-00-02-kpu2c.mongodb.net:27017/tops?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
       options:
         read:
           mode: :primary
@@ -160,9 +162,10 @@ test:
 production:
   clients:
     default:
-      database: tops-production
-      hosts:
-        - localhost:27017
+      # database: tops-production
+      # hosts:
+      #   - localhost:27017
+      uri: mongodb://pape98:221298@cluster0-shard-00-00-kpu2c.mongodb.net:27017,cluster0-shard-00-01-kpu2c.mongodb.net:27017,cluster0-shard-00-02-kpu2c.mongodb.net:27017/tops?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
       options:
         read:
           mode: :primary

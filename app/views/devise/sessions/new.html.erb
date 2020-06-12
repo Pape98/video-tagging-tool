@@ -1,0 +1,58 @@
+<%= stylesheet_link_tag '/stylesheets/welcome' %>
+</head>
+<body>
+
+
+
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <%= image_tag("TAM-Logo.png", alt: "TAMU Logo" , class:"ui centered small image " )%>
+    <h1 class="ui  maroon-ltr header ">
+      Tier One Proposal (TOPS)
+    </h1>
+
+    <% if alert %>
+      <div class="ui container negative message "><%= alert %></div>
+    <% end %>
+    <% if notice %>
+      <div class="ui container warning message"><%= notice %></div>
+    <% end %>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {:class => "ui form",:id => "loginform"}) do |f| %>
+      <div class="ui segment">
+
+        <div class="field">
+          <label for="name">First and Last Name</label>
+          <div class="ui left icon input">
+            <i class="user outline circular icon"></i>
+            <input autofocus="autofocus" autocomplete="name" type="text" name="name" id="name" />
+          </div>
+        </div>
+
+        <div class="field">
+          <%= f.label :username %>
+          <div class="ui left icon input">
+            <i class="circular user icon"></i>
+            <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+          </div>
+        </div>
+
+      <div class="field">
+        <%= f.label :password %>
+        <div class="ui left icon input">
+          <i class="lock circular icon"></i>
+          <%= f.password_field :password, autocomplete: "current-password" %>
+        </div>
+      </div>
+
+
+      <div class="actions">
+        <%= f.submit "Log in", :class => 'ui fluid submit maroon-bg button' %>
+      </div>
+        <div class="ui error message"></div>
+      </div>
+<% end %>
+    </div>
+    </div>
+
+<%#= render "devise/shared/links" %>

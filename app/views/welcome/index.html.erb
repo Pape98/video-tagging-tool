@@ -1,0 +1,24 @@
+<%= stylesheet_link_tag '/stylesheets/welcome' %>
+</head>
+<body>
+<%= stylesheet_link_tag '/stylesheets/welcome' %>
+</head>
+<body>
+
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <%= image_tag("TAM-Logo.png", alt: "TAMU Logo" , class:"ui centered small image " )%>
+    <h1 class="ui  maroon-ltr header ">
+      Tier One Proposal (TOPS)
+    </h1>
+    <% if alert %>
+      <div class="ui container negative message "><%= alert %></div>
+    <% end %>
+    <% if notice %>
+      <div class="ui container warning message"><%= notice %></div>
+    <% end %>
+    <div><%= link_to("Login",new_user_session_path,{class:"ui big maroon-bg button"}) %></div>
+    <%#= link_to("Sign Up",new_user_registration_path,) %>
+  </div>
+</div>
+

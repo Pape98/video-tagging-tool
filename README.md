@@ -13,7 +13,12 @@ Because these videos were recorded by different professors, they were not catego
 
 My solution was to create a single web interface that everyone could access and edit the same database. This allowed undergraduates to create a single instance for each video, and graduate students used the same instance to also do their work. This eradicated the need to create multiple instances.
 
-[Video of Interface]
+### Video of Solution
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=bQj2La-FvSw
+" target="_blank"><img src="http://img.youtube.com/vi/bQj2La-FvSw/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+
 
 ## Getting Started
 
@@ -21,24 +26,28 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Make sure you have Node.js installed on your machine. It can be downloaded [here]( https://nodejs.org/en/download/)
+Make sure Ruby is installed on your system. Fire command prompt and run command:
+```
+ruby -v
+
+```
+Make sure Rails is installed
+```
+rails -v
+```
 
 ### Installing
 ```
-git clone https://github.com/Pape98/DaliChallenge.git
-cd DaliChallenge
-npm install
-npm start
+git clone https://github.com/Pape98/TOPS-Video-Tool.git
+cd TOPS-Video-Tool
+bundle install
+rails s
 ```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [NodeJS](https://nodejs.org/en/) - The web framework used
-* [Fomantic UI](https://fomantic-ui.com/) - UI Framework used
+* [Rails](https://rubyonrails.org/) - The web framework used
+* [Semantic UI](https://semmntic-ui.com/) - UI Framework used
 
 ## Authors
 

@@ -1,6 +1,9 @@
 # TOPS Video Tagging Tool
 
 ## Background 
+
+Quick overview of project's contex, problem, and my proposed solution.
+
 ### Context
 
 The Math Department at Texas A&M is home to 5000 hours of streaming video content dedicated to helping students in math outside of the classrooms. These videos have been developed by various professors throuhout the years. The department is in the process of inclusing these videos as part of the Virtual Math Learning Center which will be a sub-branch of the Math Learning Center.
@@ -17,7 +20,7 @@ My solution was to create a single web interface that everyone could access and 
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=bQj2La-FvSw
 " target="_blank"><img src="http://img.youtube.com/vi/bQj2La-FvSw/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+alt="solution's video" border="10" /></a>
 
 
 ## Getting Started

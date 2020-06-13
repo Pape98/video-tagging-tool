@@ -1,5 +1,8 @@
 # TOPS Video Tagging Tool
 
+### Note
+For some reason, the demo site seems to only work after the page is refreshed many times. There exists a timeout issue with the Heroku server. If not feeling patient, you can either watch the demo video or clone the repo.
+
 ## Background 
 
 Quick overview of project's context, problem, and my proposed solution.

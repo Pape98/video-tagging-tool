@@ -1,0 +1,10 @@
+#main-menu {
+}
+#main-menu > a {
+    color: white !important;
+}
+
+.table{
+    margin-top: 30px !important;
+    margin-bottom: 40px !important;
+}

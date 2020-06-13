@@ -1,0 +1,32 @@
+<div class="ui basic big modal search">
+  <div class="ui text container" style="margin-top: 40px">
+    <div class="ui warning attached message">
+      <i class="circular exclamation icon"></i>
+      You can only search one category at a time
+    </div>
+    <form class="ui form attached  segment" action="/videos" method="GET">
+      <div class="field">
+        <label>Author/Presenter</label>
+        <%= select("post", "professors", professors.sort, {include_hidden: false,include_blank: true },{:id => 'presenter', :multiple => false, :class => 'ui fluid search dropdown',:name => "video[presenter]"})%>
+      </div>
+      <div class="field">
+        <label id="keywordLabel" data-keywords="<%=keywordNames%>">Keywords</label>
+        <%= select("post", "keywords", keywordNames, {include_hidden: false },{:id => 'keywords', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[keywords][]"})%>
+      </div>
+      <div class="field">
+        <label>Courses</label>
+        <%= select("post", "courses", courses, {include_hidden: false },{:id => 'courses', :multiple => true, :class => 'ui fluid search dropdown',:name => "video[courses][]"})%>
+      </div>
+      <div class="field">
+        <label>Status</label>
+        <select id="courses" class="ui small search dropdown" name="status">
+          <option disabled selected value>
+          <option value="Used as is">Used as is</option>
+          <option value="Used with revision">Used with revision</option>
+          <option value="Not used">Not used</option>
+          </select>'+      </div>
+      <button class="ui positive submit button">Submit</button>
+    </form>
+  </div>
+</div>
+</div>

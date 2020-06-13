@@ -50,13 +50,13 @@ rails s
 ### Features
 
 Users have the ability to:
-...* login based on their admin level
-...* create a single entry for each video
-...* create multiple evaluations for each instance of a video
-...* search videos by instructor name, keywors, or courses
-...* editing existing entries
-...* delete existing entries
-...* add new keywords
+  - login based on their admin level
+  - create a single entry for each video
+  - create multiple evaluations for each instance of a video
+  - search videos by instructor name, keywors, or courses   
+  - editing existing entries
+  - delete existing entries
+  - add new keywords
 
 ## Built With
 

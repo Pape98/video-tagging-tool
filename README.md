@@ -49,8 +49,12 @@ rails s
 
 ## Built With
 
-* [Rails](https://rubyonrails.org/) - The web framework used
-* [Semantic UI](https://semmntic-ui.com/) - UI Framework used
+* [Ruby on Rails](https://rubyonrails.org/)
+* [Semantic UI](https://semmntic-ui.com/)
+* [MongoDB] ()
+* [Apache Server]()
+* [Phusion Passenger]()
+* [JQuery]()
 
 ## Authors
 

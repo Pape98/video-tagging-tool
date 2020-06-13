@@ -39,6 +39,7 @@ gem 'awesome_print', '~> 1.8', require:"ap"
 gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
 
 gem 'passenger', '~> 5.0', '>= 5.0.30'
+gem "puma"
 
 # ##################################################################
 
@@ -59,7 +60,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "better_errors"
   gem "binding_of_caller"
-  gem "puma"
 end
 
 group :test do

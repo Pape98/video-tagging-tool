@@ -2,7 +2,7 @@
 
 ## Background 
 
-Quick overview of project's contex, problem, and my proposed solution.
+Quick overview of project's context, problem, and my proposed solution.
 
 ### Context
 

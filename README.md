@@ -20,7 +20,7 @@ My solution was to create a single web interface that everyone could access and 
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=bQj2La-FvSw
 " target="_blank"><img src="http://img.youtube.com/vi/bQj2La-FvSw/0.jpg" 
-alt="solution's video" border="10" width="500" height="500" /></a>
+alt="solution's video" border="10" width="700" height="500" /></a>
 
 
 ## Getting Started

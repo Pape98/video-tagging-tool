@@ -52,6 +52,7 @@ cd TOPS-Video-Tool
 bundle install
 rails s
 ```
+Access website on localhost with the port number printed on terminal (usually 3000).
 
 ### Features
 
